@@ -1,0 +1,22 @@
+#!/bin/bash
+#SBATCH --reservation=AtRiskUnstableEnvironment
+## the called SLURM script usees an internal array (ARRY) of chromosome names that the slurm array IDs are then used to index
+## ARRY=(1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 X)
+
+#######################
+
+SAMPLES=(NA19794 NA19734 HG01933 NA19794 )
+VCFPATH='/gpfs51/dors2/capra_lab/data/1000_genomes_project/phase3/vcf/'
+PREFIX='ALL.chr'
+SUFFIX='.phase3_shapeit2_mvncall_integrated_*.genotypes.vcf.gz'
+
+
+for i in "${SAMPLES[@]}"
+do
+	INDIV=${i}
+
+	sbatch --job-name=make.genome.$INDIV --mem-per-cpu=40000 --array=0-3 --time=2:00:00 --export=INDV=$INDIV,VCFPTH=$VCFPATH,PFX=$PREFIX,SFX=$SUFFIX make.genome.1KG.indiv.slurm
+	sbatch --job-name=make.genome.$INDIV --mem-per-cpu=19000 --array=4-22 --time=2:00:00 --export=INDV=$INDIV,VCFPTH=$VCFPATH,PFX=$PREFIX,SFX=$SUFFIX make.genome.1KG.indiv.slurm
+
+done
+
