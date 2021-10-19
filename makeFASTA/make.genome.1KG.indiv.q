@@ -24,4 +24,4 @@ mkdir -p ${DIRNAME}
 cd ${DIRNAME}
 
 
-bash /wynton/home/capra/egilbertson/projects/modern_human_3Dgenome/bin/makeFASTA/make.genome.1000kg.indiv.sh ${CHR} ${INDIV} ${VCFPTH} ${PFX} ${SFX}
+bash /wynton/home/capra/egilbertson/projects/modern_human_3Dgenome/bin/makeFASTA/make.genome.1000kg.indiv.hg38.sh ${CHR} ${INDIV} ${VCFPTH} ${PFX} ${SFX}
