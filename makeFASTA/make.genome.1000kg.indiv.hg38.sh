@@ -10,6 +10,8 @@ module load Sali CBI gcc gatk bedtools2 samtools htslib
 
 echo "modules loaded"
 
+
+pwd
 #!/bin/bash
 ### make bed files for all chromosomes lengths
 
@@ -57,7 +59,7 @@ gatk FastaAlternateReferenceMaker\
 echo "build fasta genome"
 ### Fix GATK output's default fasta headers
 sed -i "s/>1/>chr$CHR/g" chr${CHR}_${INDIV}_hg19_full.fa
-echo "fist fasta headers"
+echo "fix fasta headers"
 ### remove old dict and index file and remake using the corrected fasta header
 
 rm chr${CHR}_${INDIV}_hg19_full.dict
@@ -65,5 +67,5 @@ rm chr${CHR}_${INDIV}_hg19_full.fa.fai
 
 gatk CreateSequenceDictionary -R chr${CHR}_${INDIV}_hg19_full.fa
 samtools faidx chr${CHR}_${INDIV}_hg19_full.fa
-
+echo "done"
 ###
