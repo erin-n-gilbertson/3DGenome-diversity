@@ -48,7 +48,7 @@ rm chr${CHR}_${INDIV}.vcf
 ### build new genome fasta
 
 gatk FastaAlternateReferenceMaker\
- -R /wynton/group/capra/data/wynton_databases/goldenPath/hg38/chr${CHR}.fa.gz\
+ -R /wynton/group/capra/data/wynton_databases/goldenPath/hg38/chromosomes/chr${CHR}.fa.gz\
  -V chr${CHR}_${INDIV}.vcf.gz\
  -O chr${CHR}_${INDIV}_hg19_full.fa
 
