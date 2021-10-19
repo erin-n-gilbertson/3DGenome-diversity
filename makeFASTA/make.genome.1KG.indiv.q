@@ -1,6 +1,6 @@
 #!/bin/bash
 #$ -M erin.gilbertson@ucsf.edu
-#$ -m abe
+#$ -m a
 #$ -o /wynton/home/capra/egilbertson/projects/modern_human_3Dgenome/stdout
 #$ -e /wynton/home/capra/egilbertson/projects/modern_human_3Dgenome/stdout
 
@@ -20,6 +20,7 @@ SFX='.shapeit2_integrated_snvindels_v2a_27022019.GRCh38.phased.vcf.gz'
 
 cd /wynton/group/capra/data/wynton_databases/1000_genomes/release/20130502
 DIRNAME=$(grep ${INDV} integrated_call_samples_v3.20130502.ALL.panel | awk '{print $3"_"$2"_"$4"_"$1}')
+echo DIRNAME
 mkdir -p "${DIRNAME}"
 cd ${DIRNAME}
 
