@@ -16,8 +16,8 @@ SAMPLES=(NA19794)
 for i in "${SAMPLES[@]}"
 do
 	INDIV=${i}
-	qsub --N make.genome.$INDIV -l mem_free=40G -t 0-3 -l h_rt=2:00:00 -V make.genome.1KG.indiv.q
-	qsub --N make.genome.$INDIV -l mem_free=19G -t 4-22 -l h_rt=2:00:00 -V make.genome.1KG.indiv.q
+	qsub -N make.genome.$INDIV -l mem_free=40G -t 0-3 -l h_rt=2:00:00 -V make.genome.1KG.indiv.q
+	qsub -N make.genome.$INDIV -l mem_free=19G -t 4-22 -l h_rt=2:00:00 -V make.genome.1KG.indiv.q
 
 done
 
