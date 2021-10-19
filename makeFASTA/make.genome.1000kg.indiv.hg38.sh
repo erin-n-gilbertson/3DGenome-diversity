@@ -47,7 +47,7 @@ rm chr${CHR}_${INDIV}.vcf
 
 ### build new genome fasta
 
-java -jar gatk FastaAlternateReferenceMaker\
+gatk FastaAlternateReferenceMaker\
  -R /gpfs51/dors2/capra_lab/data/dna/human/hg38/chr${CHR}.fa\
  -V chr${CHR}_${INDIV}.vcf.gz\
  -O chr${CHR}_${INDIV}_hg19_full.fa
@@ -60,7 +60,7 @@ sed -i "s/>1/>chr$CHR/g" chr${CHR}_${INDIV}_hg19_full.fa
 rm chr${CHR}_${INDIV}_hg19_full.dict
 rm chr${CHR}_${INDIV}_hg19_full.fa.fai
 
-java -jar gatk CreateSequenceDictionary -R chr${CHR}_${INDIV}_hg19_full.fa
+gatk CreateSequenceDictionary -R chr${CHR}_${INDIV}_hg19_full.fa
 samtools faidx chr${CHR}_${INDIV}_hg19_full.fa
 
 ###
