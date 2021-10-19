@@ -16,8 +16,9 @@ SAMPLES=(NA19794)
 for i in "${SAMPLES[@]}"
 do
 	INDIV=${i}
-	qsub -N make.genome.$INDIV -l mem_free=40G -t 1-4 -l h_rt=2:00:00 -V /wynton/home/capra/egilbertson/projects/modern_human_3Dgenome/bin/makeFASTA/make.genome.1KG.indiv.q
-	qsub -N make.genome.$INDIV -l mem_free=19G -t 5-23 -l h_rt=2:00:00 -V /wynton/home/capra/egilbertson/projects/modern_human_3Dgenome/bin/makeFASTA/make.genome.1KG.indiv.q
+	qsub -N make.genome.$INDIV -l mem_free=19G -t 22 -l h_rt=2:00:00 -V /wynton/home/capra/egilbertson/projects/modern_human_3Dgenome/bin/makeFASTA/make.genome.1KG.indiv.q
+	#qsub -N make.genome.$INDIV -l mem_free=40G -t 1-4 -l h_rt=2:00:00 -V /wynton/home/capra/egilbertson/projects/modern_human_3Dgenome/bin/makeFASTA/make.genome.1KG.indiv.q
+	#qsub -N make.genome.$INDIV -l mem_free=19G -t 5-23 -l h_rt=2:00:00 -V /wynton/home/capra/egilbertson/projects/modern_human_3Dgenome/bin/makeFASTA/make.genome.1KG.indiv.q
 
 done
 
