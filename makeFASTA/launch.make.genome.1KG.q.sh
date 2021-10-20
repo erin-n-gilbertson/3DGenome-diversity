@@ -11,7 +11,7 @@
 
 
 ###### TODO_Erin
-INDIV=$(awk -v var="$SLURM_ARRAY_TASK_ID" 'NR==var' /wynton/home/capra/egilbertson/projects/modern_human_3Dgenome/data/1kg_indivs.txt)
+INDIV=$(awk -v var="$SGE_TASK_ID" 'NR==var' /wynton/home/capra/egilbertson/projects/modern_human_3Dgenome/data/1kg_indivs.txt)
 
 
 
