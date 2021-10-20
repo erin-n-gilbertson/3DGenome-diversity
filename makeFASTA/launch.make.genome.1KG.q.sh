@@ -12,7 +12,7 @@
 
 ###### TODO_Erin
 INDIV=$(awk -v var="$SGE_TASK_ID" 'NR==var' /wynton/home/capra/egilbertson/projects/modern_human_3Dgenome/data/1kg_indivs.txt)
-
+echo $INDIV
 
 
 qsub -N make.genome.$INDIV -l mem_free=40G -t 1-4 -l h_rt=2:00:00 -V /wynton/home/capra/egilbertson/projects/modern_human_3Dgenome/bin/makeFASTA/make.genome.1KG.indiv.q
