@@ -25,6 +25,11 @@ VCFSUFFIX=$5 # '.shapeit2_integrated_snvindels_v2a_27022019.GRCh38.phased.vcf.gz
 
 INPUTVCF=${VCFPATH}${VCFPREFIX}${CHR}${VCFSUFFIX}
 
+echo "CHR: ${CHR}"
+echo "Indiv:  ${INDIV}"
+echo "VCFPATH: ${VCFPATH}"
+echo "VCFPREFIX: ${VCFPREFIX}"
+echo "VCFSUFFIX: ${VCFSUFFIX}"
 echo "variables defined"
 ### Find column index for individual
 
