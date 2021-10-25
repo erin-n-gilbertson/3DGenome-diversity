@@ -1,8 +1,8 @@
 #!/bin/bash
 #$ -M erin.gilbertson@ucsf.edu
 #$ -m a
-#$ -o /wynton/home/capra/egilbertson/projects/modern_human_3Dgenome/stdout
-#$ -e /wynton/home/capra/egilbertson/projects/modern_human_3Dgenome/stdout
+#$ -o /wynton/home/capra/egilbertson/projects/modern_human_3Dgenome/stdout/$INDIV
+#$ -e /wynton/home/capra/egilbertson/projects/modern_human_3Dgenome/stdout/$INDIV
 
 
 ## Note: this slurm script is launched by the script "launch.make.genomes.slurm.sh"
@@ -27,4 +27,4 @@ mkdir -p "${DIRNAME}"
 cd ${DIRNAME}
 
 
-bash /wynton/home/capra/egilbertson/projects/modern_human_3Dgenome/bin/makeFASTA/make.genome.1000kg.indiv.hg38.sh ${CHR} ${INDIV} ${VCFPTH} ${PFX} ${SFX}
+bash /wynton/home/capra/egilbertson/projects/modern_human_3Dgenome/bin/makeFASTA/make.genome.1000kg.indiv.hg38.sh ${CHR} ${INDIV} ${VCFPTH} ${PFX} ${SFX} ${DIRNAME}

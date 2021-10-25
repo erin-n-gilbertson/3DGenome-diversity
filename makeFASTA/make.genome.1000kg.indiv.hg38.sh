@@ -5,7 +5,7 @@
 
 # /dors/capra_lab/users/rinkerd/projects/3DNeand/bin/make.genome.1000kg.indiv.sh
 #cd /dors/capra_lab/users/erin/RotationProject_Akita/data/genomes/1KG/EAS_CHB_male_NA18624
-#cd /wynton/home/capra/egilbertson/projects/modern_human_3Dgenome/data/genomes
+cd /wynton/home/capra/egilbertson/projects/modern_human_3Dgenome/data/genomes
 module load Sali CBI gcc gatk bedtools2 samtools htslib
 
 echo "modules loaded"
@@ -22,6 +22,7 @@ INDIV=$2	# 'NA19159'
 VCFPATH=$3	# '/gpfs51/dors2/capra_lab/data/1000_genomes_project/phase3/hg38_vcf/'
 VCFPREFIX=$4	# 'ALL.chr'
 VCFSUFFIX=$5 # '.shapeit2_integrated_snvindels_v2a_27022019.GRCh38.phased.vcf.gz'
+LOC=$6
 
 INPUTVCF=${VCFPATH}${VCFPREFIX}${CHR}${VCFSUFFIX}
 
@@ -31,6 +32,11 @@ echo "VCFPATH: ${VCFPATH}"
 echo "VCFPREFIX: ${VCFPREFIX}"
 echo "VCFSUFFIX: ${VCFSUFFIX}"
 echo "variables defined"
+echo "DIR: ${LOC}"
+
+cd $LOC
+wd = pwd
+echo "${wd}"
 ### Find column index for individual
 
 rm tmp${INDIV}.${CHR}
