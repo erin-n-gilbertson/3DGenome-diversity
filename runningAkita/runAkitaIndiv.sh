@@ -1,5 +1,5 @@
 #!/bin/bash
-#$ --N runAkitaIndiv
+#$ -N runAkitaIndiv
 #$ -M erin.gilbertson@ucsf.edu
 #$ -m a
 #$ -l h_rt 55:00:00
