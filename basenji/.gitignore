@@ -1,0 +1,12 @@
+**/*~
+**/*.pyc
+**/._*
+build/
+dist/
+basenji.egg-info/
+*/__pycache__/
+.DS_Store
+*/.DS_Store
+*/._.DS_Store
+**/.ipynb_checkpoints/
+data/hg19.fa*
