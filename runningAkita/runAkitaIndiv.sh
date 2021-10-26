@@ -4,8 +4,8 @@
 #$ -m a
 #$ -l h_rt=55:00:00
 #$ -l mem_free=10G
-#$ -o /wynton/group/capra/projects/modern_human_3Dgenome/stdout/runAkitaIndiv/${JOB_ID}
-#$ -e /wynton/group/capra/projects/modern_human_3Dgenome/stdout/runAkitaIndiv/${JOB_ID}
+#$ -o /wynton/group/capra/projects/modern_human_3Dgenome/stdout/runAkitaIndiv/akita.o
+#$ -e /wynton/group/capra/projects/modern_human_3Dgenome/stdout/runAkitaIndiv/akita.e
 #$ -t 1
 #!/usr/bin/env python
 
