@@ -13,7 +13,7 @@ echo "JOB_NAME: ${JOB_NAME}"
 echo "JOBID:  ${JOB_ID}"
 
 
-source activate akita
+conda activate akita
 
 #Identity individual to run Akita on using the listOfIndivs.txt file and array taskid
 indiv=$(awk -v var="$$SGE_TASK_ID" 'NR==var' listOfIndivs_all.txt)
