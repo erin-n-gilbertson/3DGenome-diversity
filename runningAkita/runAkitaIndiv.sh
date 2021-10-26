@@ -1,23 +1,22 @@
 #!/bin/bash
-#SBATCH --job-name=runAkitaIndiv
-#SBATCH --mail-user=erin.gilbertson@vanderbilt.edu
-#SBATCH --mail-type=FAIL
-#SBATCH --time=0-55:00:00
-#SBATCH --nodes=1
-#SBATCH --mem=10G
-#SBATCH --begin=now
-#SBATCH --output=runAkitaOneIndiv_%a.out
-#SBATCH --array=1-89%10
-#SBATCH --exclude=cn1345,cn1399,cn1426
+#$ --N runAkitaIndiv
+#$ -M erin.gilbertson@ucsf.edu
+#$ -m a
+#$ -l h_rt 55:00:00
+#$ --l mem_free 10G
+#$ -o /wynton/home/capra/egilbertson/projects/modern_human_3Dgenome/stdout/runAkitaOneIndiv_%a.out
+#$ - 1
+#$ -cwd
 #!/usr/bin/env python
 
-echo SBATCH_JOB_NAME: $SBATCH_JOB_NAME 
-echo SLURM_JOBID:  $SLURM_JOBID
+echo "JOB_NAME: ${JOB_NAME}"
+echo "JOBID:  ${JOB_ID}"
+
 
 source activate akita
 
 #Identity individual to run Akita on using the listOfIndivs.txt file and array taskid
-indiv=$(awk -v var="$SLURM_ARRAY_TASK_ID" 'NR==var' listOfIndivs.txt)
-
+indiv=$(awk -v var="$$SGE_TASK_ID" 'NR==var' listOfIndivs_all.txt)
+echo "Indiv: ${indiv}"
 #python runAkitaOnOneIndiv_noHarmonization.py "$indiv"
 python runAkitaOnOneIndiv_noHarmonization.py "$indiv"
