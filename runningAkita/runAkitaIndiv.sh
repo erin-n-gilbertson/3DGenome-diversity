@@ -12,6 +12,7 @@
 echo "JOB_NAME: ${JOB_NAME}"
 echo "JOBID:  ${JOB_ID}"
 
+source ~./bash_profile
 source ~/.bashrc
 conda activate akita
 #Identity individual to run Akita on using the listOfIndivs.txt file and array taskid
