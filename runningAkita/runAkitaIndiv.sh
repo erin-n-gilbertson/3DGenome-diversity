@@ -13,7 +13,7 @@ echo "JOB_NAME: ${JOB_NAME}"
 echo "JOBID:  ${JOB_ID}"
 
 
-conda activate akita
+source activate akita
 
 #Identity individual to run Akita on using the listOfIndivs.txt file and array taskid
 indiv=$(awk -v var="$SGE_TASK_ID" 'NR==var' /wynton/group/capra/projects/modern_human_3Dgenome/data/listOfIndivs_all.txt)
