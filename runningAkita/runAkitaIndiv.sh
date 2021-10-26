@@ -18,4 +18,4 @@ conda activate akita
 indiv=$(awk -v var="$SGE_TASK_ID" 'NR==var' /wynton/group/capra/projects/modern_human_3Dgenome/data/listOfIndivs_all.txt)
 echo "Indiv: ${indiv}"
 #python runAkitaOnOneIndiv_noHarmonization.py "$indiv"
-python runAkitaOnOneIndiv_noHarmonization.py "$indiv"
+python /wynton/group/capra/projects/modern_human_3Dgenome/bin/runningAkita/runAkitaOnOneIndiv_noHarmonization.py "$indiv"
