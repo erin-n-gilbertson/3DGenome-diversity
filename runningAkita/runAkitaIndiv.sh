@@ -3,7 +3,7 @@
 #$ -M erin.gilbertson@ucsf.edu
 #$ -m a
 #$ -l h_rt 55:00:00
-#$ --l mem_free 10G
+#$ -l mem_free 10G
 #$ -o /wynton/home/capra/egilbertson/projects/modern_human_3Dgenome/stdout/runAkitaOneIndiv_%a.out
 #$ - 1
 #$ -cwd
