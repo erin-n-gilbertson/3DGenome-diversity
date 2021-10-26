@@ -4,7 +4,7 @@
 #$ -m a
 #$ -l h_rt=55:00:00
 #$ -l mem_free=10G
-#$ -o /wynton/home/capra/egilbertson/projects/modern_human_3Dgenome/stdout/runAkitaOneIndiv_%a.out
+#$ -o /wynton/group/capra/projects/modern_human_3Dgenome/stdout/runAkitaOneIndiv_%a.out
 #$ -t 1
 #$ -cwd
 #!/usr/bin/env python

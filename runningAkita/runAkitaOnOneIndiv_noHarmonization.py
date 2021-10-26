@@ -32,7 +32,7 @@ from scipy import stats
 indiv = sys.argv[1].strip()
 print(indiv)
 chunks = {}
-with open("genome_chunks_large.txt") as f:
+with open("/wynton/group/capra/projects/modern_human_3Dgenome/data/genome_chunks_large.txt") as f:
     for line in f:
         chunk = line.strip().split("\t")
         chunks[chunk[0]] = [int(x) for x in chunk[1].split(",")]
@@ -40,7 +40,7 @@ f.close()
 
 ### load params, specify model ###
 
-model_dir = '/dors/capra_lab/users/evonne/nean_3d/bin/'
+model_dir = '/wynton/group/capra/projects/modern_human_3Dgenome/bin/basenji'
 params_file = model_dir+'params.json'
 model_file  = model_dir+'model_best.h5'
 with open(params_file) as params_open:
@@ -54,7 +54,7 @@ seqnn_model = seqnn.SeqNN(params_model)
 seqnn_model.restore(model_file)
 
 ### names of targets ###
-data_dir =   '/dors/capra_lab/users/evonne/nean_3d/bin/data/'
+data_dir =   '/wynton/group/capra/projects/modern_human_3Dgenome/bin/basenji/data/'
 
 hic_targets = pd.read_csv(data_dir+'/targets.txt',sep='\t')
 hic_file_dict_num = dict(zip(hic_targets['index'].values, hic_targets['file'].values) )
@@ -73,20 +73,18 @@ target_length1 = data_stats['seq_length'] // data_stats['pool_width']
 
 
 target_length1_cropped = target_length1 - 2*target_crop
-print('flattened representation length:', target_length) 
+print('flattened representation length:', target_length)
 print('symmetrix matrix size:', '('+str(target_length1_cropped)+','+str(target_length1_cropped)+')')
 
 ### find file location for the individuals considered ###
 
 def find_inFileLoc(indiv, chrm):
-    if (indiv == "vindija") | (indiv == "altai") | (indiv == "denisova") | (indiv == "chagyrskaya"):
-        in_file_loc = '/gpfs51/dors2/capra_lab/users/rinkerd/projects/3DNeand/data/genomes/%s/%s%s_hg19_masked.fa' % (indiv,chrm,indiv)
-    else:
-        in_file_loc = '/dors/capra_lab/users/erin/RotationProject_Akita/data/genomes/1KG/%s/%s_%s_hg19_full.fa' % (indiv,chrm,indiv.split("_")[3])
+    pop = indiv.split('_')[0]
+    in_file_loc ='/wynton/group/capra/projects/modern_human_3Dgenome/data/genomes/%s/%s/%s%s_hg19_masked.fa' % (pop,indiv,chrm,indiv)
     return in_file_loc
 
 
-### Functions to run akita across the genome ### 
+### Functions to run akita across the genome ###
 
 def runAkitaPreds(seq):
     if len(seq) != 2**20: raise ValueError('len(seq) != seq_length')
@@ -94,8 +92,8 @@ def runAkitaPreds(seq):
     test_pred_from_seq = seqnn_model.model.predict(np.expand_dims(seq_1hot,0))
     return test_pred_from_seq
 
-f_3d = open('3dpreds_%s.txt' % indiv,'w')
-f_coverage = open('coverage_%s.txt' % indiv,'w')
+f_3d = open('/wynton/group/capra/projects/modern_human_3Dgenome/data/akitaPreds/3dpreds/3dpreds_%s.txt' % indiv,'w')
+f_coverage = open('/wynton/group/capra/projects/modern_human_3Dgenome/data/akitaPreds/coverage/coverage_%s.txt' % indiv,'w')
 
 for chrm,pos_list in chunks.items():
     print("On chrom = %s" % chrm)
@@ -116,18 +114,18 @@ for chrm,pos_list in chunks.items():
             indiv_seq = indiv_fasta_open.fetch(chrm, start_loc, start_loc+2**20).upper()
             #masked_seq = mask_fasta_open.fetch(chrm, start_loc, start_loc+2**20).upper() #for the masked
             #human19_seq = human19_fasta_open.fetch(chrm, start_loc, start_loc+2**20).upper()
-            
+
             # calculate coverage
             indiv_coverage = np.mean([ 0 if s == "N" else 1 for s in indiv_seq])
             #masked_coverage = np.mean([ 0 if s == "N" else 1 for s in masked_seq]) # for the masked
-            
+
             # check if low coverage and then don't bother with calculating 3d predictions
             if (indiv_coverage != 1):
                 lowCoverage=True
                 continue
             else:
                 lowCoverage=False
-            
+
             # fill in missing sequence with human ref
             #indiv_fillMissing_seq = "".join([r if m == "N" else r if s == "N" else s for r, m, s in zip(human19_seq, masked_seq, indiv_seq)])
             # run predictions and save only the HFF cell type predictions
@@ -136,7 +134,7 @@ for chrm,pos_list in chunks.items():
         except:
             print("FAILED: %s at %s" % (chrm, start_loc))
             continue
-        
+
         # write output to files
         f_coverage.write("%s\t%s\t%s\n" % (chrm,start_loc,indiv_coverage))
         if not(lowCoverage):
