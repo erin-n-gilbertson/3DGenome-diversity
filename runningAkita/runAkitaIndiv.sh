@@ -14,9 +14,9 @@ echo "JOBID:  ${JOB_ID}"
 
 source ~/.bash_profile
 source ~/.bashrc
-echo "eg:source activate, pre"
-source activate akita
-echo "eg:source activate, post"
+echo "eg:conda activate, pre"
+source conda akita
+echo "eg:conda activate, post"
 #Identity individual to run Akita on using the listOfIndivs.txt file and array taskid
 indiv=$(awk -v var="$SGE_TASK_ID" 'NR==var' /wynton/group/capra/projects/modern_human_3Dgenome/data/listOfIndivs_all.txt)
 echo "Indiv: ${indiv}"
