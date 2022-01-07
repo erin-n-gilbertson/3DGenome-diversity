@@ -40,7 +40,7 @@ f.close()
 
 ### load params, specify model ###
 
-model_dir = '/wynton/group/capra/projects/modern_human_3Dgenome/bin/basenji/'
+model_dir = '/wynton/group/capra/projects/modern_human_3Dgenome/bin/basenji/manuscripts/akita/'
 params_file = model_dir+'params.json'
 model_file  = model_dir+'model_best.h5'
 with open(params_file) as params_open:
