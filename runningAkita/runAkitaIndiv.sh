@@ -17,10 +17,10 @@ source ~/.bashrc
 echo "eg:source activate, pre"
 echo "PATH: ${PATH}"
 echo "PYTHONPATH: ${PYTHONPATH}"
-source activate akita
+source /wynton/home/capra/egilbertson/envs/akita/bin/activate
 echo "eg:source activate, post"
 echo "PATH: ${PATH}"
-echo "PYTHONPATH: ${PYTHONPATH}" 
+echo "PYTHONPATH: ${PYTHONPATH}"
 #Identity individual to run Akita on using the listOfIndivs.txt file and array taskid
 indiv=$(awk -v var="$SGE_TASK_ID" 'NR==var' /wynton/group/capra/projects/modern_human_3Dgenome/data/listOfIndivs_all.txt)
 echo "Indiv: ${indiv}"
