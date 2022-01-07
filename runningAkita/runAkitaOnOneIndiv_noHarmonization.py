@@ -80,7 +80,8 @@ print('symmetrix matrix size:', '('+str(target_length1_cropped)+','+str(target_l
 
 def find_inFileLoc(indiv, chrm):
     pop = indiv.split('_')[0]
-    in_file_loc ='/wynton/group/capra/projects/modern_human_3Dgenome/data/genomes/%s/%s/%s%s_hg19_masked.fa' % (pop,indiv,chrm,indiv)
+    id = indiv.split('_')[3]
+    in_file_loc ='/wynton/group/capra/projects/modern_human_3Dgenome/data/genomes/%s/%s/%s_%s_hg38_full.fa' % (pop,indiv,chrm,id)
     return in_file_loc
 
 
