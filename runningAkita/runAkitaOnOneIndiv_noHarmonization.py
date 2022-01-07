@@ -54,7 +54,7 @@ seqnn_model = seqnn.SeqNN(params_model)
 seqnn_model.restore(model_file)
 
 ### names of targets ###
-data_dir =   '/wynton/group/capra/projects/modern_human_3Dgenome/bin/basenji/data/'
+data_dir =   '/wynton/group/capra/projects/modern_human_3Dgenome/bin/basenji/manuscripts/akita/'
 
 hic_targets = pd.read_csv(data_dir+'targets.txt',sep='\t')
 hic_file_dict_num = dict(zip(hic_targets['index'].values, hic_targets['file'].values) )
