@@ -13,11 +13,12 @@ echo "Indiv: ${INDIV}"
 ## ARRY=(1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 X)
 ARRY=(1)
 CHR=${ARRY[$SGE_TASK_ID]}
-
+echo "chr.q: ${CHR}"
 VCFPTH='/wynton/group/capra/data/wynton_databases/1000_genomes/release/20190312_biallelic_SNV_and_INDEL/'
 PFX='ALL.chr'
 SFX='.shapeit2_integrated_snvindels_v2a_27022019.GRCh38.phased.vcf.gz'
 
+echo "testing: '{print $3"_"$2"_"$4"_"$1}'"
 cd /wynton/group/capra/data/wynton_databases/1000_genomes/release/20130502
 DIRNAME=$(grep ${INDIV} integrated_call_samples_v3.20130502.ALL.panel | awk '{print $3"_"$2"_"$4"_"$1}')
 echo "Directory: ${DIRNAME}"
