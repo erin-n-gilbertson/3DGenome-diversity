@@ -1,7 +1,7 @@
 #!/bin/bash
 #$ -m a
-#$ -o /wynton/group/capra/projects/modern_human_3Dgenome/stdout/make_genome/$INDIV.o
-#$ -e /wynton/group/capra/projects/modern_human_3Dgenome/stdout/make_genome/$INDIV.e
+#$ -o /wynton/group/capra/projects/modern_human_3Dgenome/stdout/make_genome/test_ind.o
+#$ -e /wynton/group/capra/projects/modern_human_3Dgenome/stdout/make_genome/test_ind.e
 
 
 ## Note: this slurm script is launched by the script "launch.make.genomes.slurm.sh"
@@ -10,7 +10,7 @@ echo "JOB_NAME: ${JOB_NAME}"
 echo "JOBID:  ${JOB_ID}"
 echo "Indiv: ${INDIV}"
 
--- ARRY=(1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 X)
+## ARRY=(1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 X)
 ARRY=(1)
 CHR=${ARRY[$SGE_TASK_ID]}
 
