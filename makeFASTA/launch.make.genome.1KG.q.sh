@@ -1,8 +1,8 @@
 #!/bin/bash
 #$ -M erin.gilbertson@ucsf.edu
 #$ -m a
-#$ -o /wynton/home/capra/egilbertson/projects/modern_human_3Dgenome/stdout/make_genome/launch.o
-#$ -e /wynton/home/capra/egilbertson/projects/modern_human_3Dgenome/stdout/make_genome/launch.e
+#$ -o /wynton/group/capra/projects/modern_human_3Dgenome/stdout/make_genome/launch.o
+#$ -e /wynton/group/capra/projects/modern_human_3Dgenome/stdout/make_genome/launch.e
 #$ -t 1
 
 ## the called SLURM script usees an internal array (ARRY) of chromosome names that the slurm array IDs are then used to index
