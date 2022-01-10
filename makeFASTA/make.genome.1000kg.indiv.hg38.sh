@@ -5,7 +5,7 @@
 
 # /dors/capra_lab/users/rinkerd/projects/3DNeand/bin/make.genome.1000kg.indiv.sh
 #cd /dors/capra_lab/users/erin/RotationProject_Akita/data/genomes/1KG/EAS_CHB_male_NA18624
-cd /wynton/home/capra/egilbertson/projects/modern_human_3Dgenome/data/genomes
+cd /wynton/group/capra/projects/modern_human_3Dgenome/data/genomes
 module load Sali CBI gcc gatk bedtools2 samtools htslib
 
 echo "modules loaded"
