@@ -1,5 +1,4 @@
 #!/bin/bash
-#$ -M erin.gilbertson@ucsf.edu
 #$ -m a
 #$ -o /wynton/group/capra/projects/modern_human_3Dgenome/stdout/make_genome/${INDIV}.o
 #$ -e /wynton/group/capra/projects/modern_human_3Dgenome/stdout/make_genome/${INDIV}.e
