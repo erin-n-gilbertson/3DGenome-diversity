@@ -1,8 +1,8 @@
 #!/bin/bash
 #$ -M erin.gilbertson@ucsf.edu
 #$ -m a
-#$ -o /wynton/home/capra/egilbertson/projects/modern_human_3Dgenome/stdout/$JOB_NAME
-#$ -e /wynton/home/capra/egilbertson/projects/modern_human_3Dgenome/stdout/$JOB_NAME
+#$ -o /wynton/home/capra/egilbertson/projects/modern_human_3Dgenome/stdout/${INDIV}.o
+#$ -e /wynton/home/capra/egilbertson/projects/modern_human_3Dgenome/stdout/${INDIV}.e
 
 
 ## Note: this slurm script is launched by the script "launch.make.genomes.slurm.sh"
