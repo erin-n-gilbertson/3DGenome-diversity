@@ -35,8 +35,7 @@ echo "variables defined"
 echo "DIR: ${LOC}"
 
 cd $LOC
-wd = pwd
-echo "${wd}"
+pwd
 ### Find column index for individual
 
 rm tmp${INDIV}.${CHR}
