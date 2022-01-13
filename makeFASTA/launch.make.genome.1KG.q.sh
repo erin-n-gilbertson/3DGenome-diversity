@@ -15,6 +15,7 @@ INDIV=$(awk -v var="$SGE_TASK_ID" 'NR==var' /wynton/group/capra/projects/modern_
 echo $INDIV
 
 qsub -N make.genome.$INDIV -v "INDIV=$INDIV" -l mem_free=40G -t 1 -l h_rt=2:00:00 /wynton/group/capra/projects/modern_human_3Dgenome/bin/makeFASTA/make.genome.1KG.indiv.q
+echo "submitted"
 # qsub -N make.genome.$INDIV -v "INDIV=$INDIV" -l mem_free=40G -t 1-4 -l h_rt=2:00:00 /wynton/group/capra/projects/modern_human_3Dgenome/bin/makeFASTA/make.genome.1KG.indiv.q
 # qsub -N make.genome.$INDIV -v "INDIV=$INDIV" -l mem_free=19G -t 5-23 -l h_rt=2:00:00 /wynton/group/capra/projects/modern_human_3Dgenome/bin/makeFASTA/make.genome.1KG.indiv.q
 #
