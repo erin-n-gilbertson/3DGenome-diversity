@@ -1,7 +1,7 @@
 #!/bin/bash
 #$ -m a
-#$ -o /wynton/group/capra/projects/modern_human_3Dgenome/stdout/make_genome/test_ind.o
-#$ -e /wynton/group/capra/projects/modern_human_3Dgenome/stdout/make_genome/test_ind.e
+#$ -o /wynton/group/capra/projects/modern_human_3Dgenome/stdout/make_genome/
+#$ -e /wynton/group/capra/projects/modern_human_3Dgenome/stdout/make_genome/
 
 
 ## Note: this slurm script is launched by the script "launch.make.genomes.slurm.sh"
