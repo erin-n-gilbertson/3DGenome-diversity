@@ -6,7 +6,7 @@
 #$ -l mem_free=10G
 #$ -o /wynton/group/capra/projects/modern_human_3Dgenome/stdout/runAkitaIndiv/akita.o
 #$ -e /wynton/group/capra/projects/modern_human_3Dgenome/stdout/runAkitaIndiv/akita.e
-#$ -t 1
+#$ -t 1-504
 #!/usr/bin/env python
 
 echo "JOB_NAME: ${JOB_NAME}"
