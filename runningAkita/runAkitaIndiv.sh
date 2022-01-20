@@ -8,6 +8,7 @@
 #$ -e /wynton/group/capra/projects/modern_human_3Dgenome/stdout/runAkitaIndiv/akita.e
 #$ -t 1-504
 #!/usr/bin/env python
+#qsub -v indlist=listofPOP.txt runAkitaIndiv.sh
 
 echo "JOB_NAME: ${JOB_NAME}"
 echo "JOBID:  ${JOB_ID}"
@@ -22,7 +23,7 @@ echo "eg:source activate, post"
 echo "PATH: ${PATH}"
 echo "PYTHONPATH: ${PYTHONPATH}"
 #Identity individual to run Akita on using the listOfIndivs.txt file and array taskid
-indiv=$(awk -v var="$SGE_TASK_ID" 'NR==var' /wynton/group/capra/projects/modern_human_3Dgenome/data/listofEAS.txt)
+indiv=$(awk -v var="$SGE_TASK_ID" 'NR==var' /wynton/group/capra/projects/modern_human_3Dgenome/data/${indlist})
 echo "Indiv: ${indiv}"
 #python runAkitaOnOneIndiv_noHarmonization.py "$indiv"
 python /wynton/group/capra/projects/modern_human_3Dgenome/bin/runningAkita/runAkitaOnOneIndiv_noHarmonization.py "$indiv"
