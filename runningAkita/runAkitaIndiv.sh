@@ -8,7 +8,7 @@
 #$ -e /wynton/group/capra/projects/modern_human_3Dgenome/stdout/runAkitaIndiv/
 
 #!/usr/bin/env python
-#qsub -v indlist=listofPOP.txt runAkitaIndiv.sh
+#qsub -v indlist=listofPOP.txt -t {wc -l listofPOP.txt} runAkitaIndiv.sh
 
 echo "JOB_NAME: ${JOB_NAME}"
 echo "JOBID:  ${JOB_ID}"
