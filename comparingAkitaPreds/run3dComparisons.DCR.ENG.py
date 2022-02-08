@@ -54,7 +54,7 @@ from os import path
     # for b in range(0,len(mat),4): # change to no skipped spaces
         # if b <= center_size-1 or b >= len(mat)-center_size:
             # insulation_track.append(np.nan)
-            # continue   
+            # continue
         # with warnings.catch_warnings():
             # warnings.filterwarnings(action='ignore', message='Mean of empty slice')
             # focal_start = b-center_size-1
@@ -77,7 +77,7 @@ from os import path
 def comparePreds(indiv1, indiv2):
     mse = np.mean(np.square(indiv1 - indiv2))
     spearman = stats.spearmanr(indiv1, indiv2)[0]
-    
+
     # indiv1_triangle = [np.mean(indiv1[i]) for i in listOfIndexes]
     # indiv2_triangle = [np.mean(indiv2[i]) for i in listOfIndexes]
     # triangle_spearman = stats.spearmanr(indiv1_triangle, indiv2_triangle)[0]
@@ -85,7 +85,7 @@ def comparePreds(indiv1, indiv2):
     # mat1 = from_upper_triu(indiv1, 448, 2)
     # mat2 = from_upper_triu(indiv2, 448, 2)
     # insulation_spearman = stats.spearmanr(get_insulation_track(mat1,10,100),get_insulation_track(mat2,10,100),nan_policy="omit")[0]
-    
+
     # return (mse, spearman, triangle_mse, triangle_spearman, insulation_spearman)
     return (mse, spearman)
 
@@ -105,21 +105,21 @@ import gzip
 print("Indiv1 = %s, Indiv2 = %s" % (indivname1, indivname2),flush=True)
 
 
-in_file_loc1 = '/dors/capra_lab/users/erin/RotationProject_Akita/data/3dpreds/3dpredsPerIndiv/'
-in_file_loc2 = '/dors/capra_lab/users/erin/RotationProject_Akita/data/3dpreds/3dpredsPerIndiv/'
-    
+in_file_loc1 = '/wynton/group/capra/projects/modern_human_3Dgenome/data/akitaPreds/3dpreds/'
+in_file_loc2 = '/wynton/group/capra/projects/modern_human_3Dgenome/data/akitaPreds/3dpreds/'
+
 # if using gzip file read binary and use .decode() for l1 & l2 below (4x)
 if path.exists("%s3dpreds_%s.txt.gz" % (in_file_loc1, indivname1)):
     f1 = gzip.open("%s3dpreds_%s.txt.gz" % (in_file_loc1, indivname1),"rb")
 else:
     f1 = open("%s3dpreds_%s.txt" % (in_file_loc1, indivname1),"rb")
-    
+
 if path.exists("%s3dpreds_%s.txt.gz" % (in_file_loc2, indivname2)):
     f2 = gzip.open("%s3dpreds_%s.txt.gz" % (in_file_loc2, indivname2),"rb")
 else:
     f2 = open("%s3dpreds_%s.txt" % (in_file_loc2, indivname2),"rb")
 
-f_out = open("/dors/capra_lab/users/erin/RotationProject_Akita/data/3dpreds/3dcomp_%s_vs_%s.txt" % (indivname1,indivname2),"w")
+f_out = open("/wynton/group/capra/projects/modern_human_3Dgenome/data/pairwise/3dcomp_%s_vs_%s.txt" % (indivname1,indivname2),"w")
 
 # f_out.write("%s\t%s\t%s\t%s\t%s\t%s\t%s\n" % ("chr", "windowStartPos", "mse", "spearman", "triangle_mse","triangle_spearman", "insulation_spearman"))
 f_out.write("%s\t%s\t%s\t%s\n" % ("chr", "windowStartPos", "mse", "spearman"))
@@ -131,7 +131,7 @@ shift2 = 0
 print(len(lines1))
 print(len(lines2))
 for i in range(max(len(lines1),len(lines2))): # loop through indexes of the longest file
-  
+
   print(i, flush=True)
 
   # Handle instances when one file has extra regions at the end
@@ -140,11 +140,11 @@ for i in range(max(len(lines1),len(lines2))): # loop through indexes of the long
     indiv2 = l2.strip().split("\t")
     indiv2_chr = indiv2[0]
     indiv2_pos = indiv2[1]
-    print("File 1 missing %s:%s" % (indiv2_chr, indiv2_pos)) 
+    print("File 1 missing %s:%s" % (indiv2_chr, indiv2_pos))
     continue
   if (i + shift2) >= len(lines2):
     l1 = lines1[i + shift1].decode()
-    indiv1 = l1.strip().split("\t")  
+    indiv1 = l1.strip().split("\t")
     indiv1_chr = indiv1[0]
     indiv1_pos = indiv1[1]
     print("File 2 missing %s:%s" % (indiv1_chr, indiv1_pos))
@@ -161,14 +161,14 @@ for i in range(max(len(lines1),len(lines2))): # loop through indexes of the long
   indiv2_chr = indiv2[0]
   indiv2_pos = indiv2[1]
   indiv2 = list(map(float,indiv2[2:]))
-  
+
   # If the position at the current index is the same in both files, just simply output the comparison data
   if (indiv1_chr == indiv2_chr) and (indiv1_pos == indiv2_pos):
     mse, spearman = comparePreds(np.array(indiv1), np.array(indiv2))
     f_out.write("%s\t%s\t%s\t%s\n" % (indiv1_chr, indiv1_pos, mse, spearman))
         # mse, spearman, triangle_mse,triangle_spearman, insulation_spearman = comparePreds(np.array(indiv1), np.array(indiv2))
     # f_out.write("%s\t%s\t%s\t%s\t%s\t%s\t%s\n" % (indiv1_chr, indiv1_pos, mse, spearman, triangle_mse, triangle_spearman, insulation_spearman))
-  
+
   # If the position is not the same in both files, traverse one file by decrementing the shift variable
   elif (indiv1_chr == indiv2_chr):
     if int(indiv1_pos) > int(indiv2_pos):
@@ -194,4 +194,4 @@ for i in range(max(len(lines1),len(lines2))): # loop through indexes of the long
 
 f_out.close()
 f1.close()
-f2.close() 
+f2.close()

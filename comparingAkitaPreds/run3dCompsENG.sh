@@ -10,11 +10,11 @@
 #SBATCH --array=1-190%20
 
 
-echo SBATCH_JOB_NAME: $SBATCH_JOB_NAME 
+echo SBATCH_JOB_NAME: $SBATCH_JOB_NAME
 echo SLURM_JOBID:  $SLURM_JOBID
 
 source activate akita
 
-indivs=$(awk -v var="$SLURM_ARRAY_TASK_ID" 'NR==var' listOfIndivs_fix.txt)
+indivs=$(awk -v var="$SLURM_ARRAY_TASK_ID" 'NR==var' listOfPairwiseComps.txt)
 
 python run3dComparisons.DCR.ENG.py "$indivs" > runAkitaComps_"$SLURM_ARRAY_TASK_ID".python.out
