@@ -14,4 +14,6 @@ source /wynton/home/capra/egilbertson/envs/akita/bin/activate
 
 indivs=$(awk -v var="$SGE_TASK_ID" 'NR==var' /wynton/group/capra/projects/modern_human_3Dgenome/data/listOfPairwiseComps.txt)
 
+echo $indivs
+
 python run3dComparisons.DCR.ENG.py "$indivs" > runAkitaComps_"$SGE_TASK_ID".python.out
