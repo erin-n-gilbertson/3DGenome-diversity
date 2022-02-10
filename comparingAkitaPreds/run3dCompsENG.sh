@@ -1,20 +1,17 @@
 #!/bin/bash
-#SBATCH --job-name=runAkitaComps
-#SBATCH --mail-user=erin.gilbertson@vanderbilt.edu
-#SBATCH --mail-type=FAIL
-#SBATCH --time=0-3:00:00
-#SBATCH --nodes=1
-#SBATCH --mem=300G #80G
-#SBATCH --begin=now
-#SBATCH --output=stdout/runAkitaComps_%a.out
-#SBATCH --array=1-190%20
+#$ -N runAkitaComps
+#$ -l h_rt=3:00:00
+#$ -l mem_free=300G #80G
+#$ -o /wynton/group/capra/projects/modern_human_3Dgenome/stdout/runAkitaComps_%a.out
+#$ -t 1-30:3
 
 
-echo SBATCH_JOB_NAME: $SBATCH_JOB_NAME
-echo SLURM_JOBID:  $SLURM_JOBID
+echo "taskid: ${SGE_TASK_ID}"
+echo "JOB_NAME: ${JOB_NAME}"
 
-source activate akita
+source /wynton/home/capra/egilbertson/envs/akita/bin/activate
 
-indivs=$(awk -v var="$SLURM_ARRAY_TASK_ID" 'NR==var' listOfPairwiseComps.txt)
 
-python run3dComparisons.DCR.ENG.py "$indivs" > runAkitaComps_"$SLURM_ARRAY_TASK_ID".python.out
+indivs=$(awk -v var="$SGE_TASK_ID" 'NR==var' /wynton/group/capra/projects/modern_human_3Dgenome/data/listOfPairwiseComps.txt)
+
+python run3dComparisons.DCR.ENG.py "$indivs" > runAkitaComps_"$SGE_TASK_ID".python.out
