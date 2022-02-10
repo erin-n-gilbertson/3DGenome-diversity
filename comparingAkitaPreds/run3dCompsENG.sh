@@ -17,4 +17,4 @@ indivs=$(awk -v var="$SGE_TASK_ID" 'NR==var' /wynton/group/capra/projects/modern
 
 echo $indivs
 
-python /wynton/group/capra/projects/modern_human_3Dgenome/bin/comparingAkitaPreds/run3dComparisons.DCR.ENG.py "$indivs" > runAkitaComps_"$SGE_TASK_ID".python.out
+python /wynton/group/capra/projects/modern_human_3Dgenome/bin/comparingAkitaPreds/run3dComparisons.DCR.ENG.py "$indivs" > /wynton/group/capra/projects/modern_human_3Dgenome/stdout/comps/runAkitaComps_"$SGE_TASK_ID".python.out
