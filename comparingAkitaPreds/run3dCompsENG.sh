@@ -1,7 +1,7 @@
 #!/bin/bash
 #$ -N runAkitaComps
-#$ -l h_rt=3:00:00
-#$ -l mem_free=300G #80G
+#$ -l h_rt=1:00:00 #3
+#$ -l mem_free=80G #80G300
 #$ -e /wynton/group/capra/projects/modern_human_3Dgenome/stdout/comps/
 #$ -e /wynton/group/capra/projects/modern_human_3Dgenome/stdout/comps/
 #$ -t 1
