@@ -3,7 +3,7 @@
 #$ -l h_rt=3:00:00
 #$ -l mem_free=300G #80G
 #$ -o /wynton/group/capra/projects/modern_human_3Dgenome/stdout/runAkitaComps_%a.out
-#$ -t 1-30:3
+#$ -t 1
 
 
 echo "taskid: ${SGE_TASK_ID}"
