@@ -25,7 +25,7 @@ VCFPREFIX=$4	# 'ALL.chr'
 VCFSUFFIX=$5 # '.shapeit2_integrated_snvindels_v2a_27022019.GRCh38.phased.vcf.gz'
 LOC=$6
 VCFHEAD=$9
-REFCHRDIR=$10
+REFCHRDIR=${10}
 
 INPUTVCF=${VCFPATH}${VCFPREFIX}${CHR}${VCFSUFFIX}
 
