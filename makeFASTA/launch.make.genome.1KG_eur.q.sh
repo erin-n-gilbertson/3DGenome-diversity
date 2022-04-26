@@ -11,7 +11,7 @@
 
 ###### TODO_Erin
 echo $SGE_TASK_ID
-INDIV=$(awk -v var="$SGE_TASK_ID" 'NR==var' /wynton/group/capra/projects/modern_human_3Dgenome/data/1kg_indivs_eur.txt)
+INDIV=$(awk -v var="$SGE_TASK_ID" 'NR==var' /wynton/group/capra/projects/modern_human_3Dgenome/data/reference/lists/1kg_indivs_eur.txt)
 echo $INDIV
 
 
