@@ -17,7 +17,7 @@ echo $INDIV
 
 
 qsub -N make.genome_afr.$INDIV -v "INDIV=$INDIV" -l mem_free=80G -t 1-4 -l h_rt=4:00:00 /wynton/group/capra/projects/modern_human_3Dgenome/bin/makeFASTA/make.genome.1KG.indiv.q
-#qsub -N make.genome_afr.$INDIV -v "INDIV=$INDIV" -l mem_free=40G -t 5-23 -l h_rt=4:00:00 /wynton/group/capra/projects/modern_human_3Dgenome/bin/makeFASTA/make.genome.1KG.indiv.q
+qsub -N make.genome_afr.$INDIV -v "INDIV=$INDIV" -l mem_free=40G -t 5-23 -l h_rt=4:00:00 /wynton/group/capra/projects/modern_human_3Dgenome/bin/makeFASTA/make.genome.1KG.indiv.q
 #
 
 #
