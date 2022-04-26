@@ -37,6 +37,7 @@ echo "VCFSUFFIX: ${VCFSUFFIX}"
 echo "variables defined"
 echo "DIR: ${LOC}"
 
+
 cd $LOC
 pwd
 ### Find column index for individual
@@ -64,7 +65,9 @@ rm chr${CHR}_${INDIV}.vcf
 
 echo "made new vcf"
 ### build new genome fasta
-
+echo "REFCHRDIR: ${REFCHRDIR}"
+echo "CHR: ${CHR}"
+echo "INDIV: ${INDIV}"
 gatk FastaAlternateReferenceMaker\
  -R $REFCHRDIR/chr${CHR}.fa\
  -V chr${CHR}_${INDIV}.vcf.gz\
