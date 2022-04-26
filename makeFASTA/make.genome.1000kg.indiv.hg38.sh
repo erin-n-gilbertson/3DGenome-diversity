@@ -3,9 +3,9 @@
 # Example:
 # make.genome.1000.kg.indiv.sh 22 NA19159 '/gpfs51/dors2/capra_lab/data/1000_genomes_project/phase3/vcf/' 'ALL.chr' '.phase3_shapeit2_mvncall_integrated_v5a.20130502.genotypes.vcf.gz'
 
-# /dors/capra_lab/users/rinkerd/projects/3DNeand/bin/make.genome.1000kg.indiv.sh
-#cd /dors/capra_lab/users/erin/RotationProject_Akita/data/genomes/1KG/EAS_CHB_male_NA18624
-cd /wynton/group/capra/projects/modern_human_3Dgenome/data/genomes
+WRKDIR=$8
+
+cd ${WRKDIR}
 module load Sali CBI gcc gatk bedtools2 samtools htslib
 
 echo "modules loaded"
@@ -15,7 +15,8 @@ pwd
 #!/bin/bash
 ### make bed files for all chromosomes lengths
 
-awk '{print $1, "0", $2}' OFS='\t' /wynton/group/capra/data/wynton_databases/goldenPath/hg38/bigZips/latest/hg38.chrom.sizes > hg38.chrom.bed
+CHRPATH=$7
+awk '{print $1, "0", $2}' OFS='\t' ${CHRPATH} > hg38.chrom.bed
 
 CHR=$1	# '22'
 INDIV=$2	# 'NA19159'
@@ -23,6 +24,8 @@ VCFPATH=$3	# '/gpfs51/dors2/capra_lab/data/1000_genomes_project/phase3/hg38_vcf/
 VCFPREFIX=$4	# 'ALL.chr'
 VCFSUFFIX=$5 # '.shapeit2_integrated_snvindels_v2a_27022019.GRCh38.phased.vcf.gz'
 LOC=$6
+VCFHEAD=$9
+REFCHRDIR=$10
 
 INPUTVCF=${VCFPATH}${VCFPREFIX}${CHR}${VCFSUFFIX}
 
@@ -53,7 +56,7 @@ rm tmp${INDIV}.${CHR}
 
 zcat $INPUTVCF | awk -F '\t|:' -v IDV="$IDX" '/^[^#]/ {if($IDV!="0|0" && $IDV!="2|2" && $IDV!="0|2" && $IDV!="2|0" && $8~/VT=SNP/) print "chr"$1, $2, $3, $4, $5, ".", "." ,$IDV}' OFS='\t' > tmp${CHR}${INDIV}.vcf
 
-cat /wynton/home/capra/egilbertson/data/vcf.header.txt tmp${CHR}${INDIV}.vcf > chr${CHR}_${INDIV}.vcf
+cat ${VCFHEAD} tmp${CHR}${INDIV}.vcf > chr${CHR}_${INDIV}.vcf
 rm tmp${CHR}${INDIV}.vcf
 bgzip -c chr${CHR}_${INDIV}.vcf > chr${CHR}_${INDIV}.vcf.gz
 tabix -p vcf chr${CHR}_${INDIV}.vcf.gz
@@ -63,7 +66,7 @@ echo "made new vcf"
 ### build new genome fasta
 
 gatk FastaAlternateReferenceMaker\
- -R /wynton/home/capra/egilbertson/data/human_genome/chrms/chr${CHR}.fa\
+ -R $REFCHRDIR/chr${CHR}.fa\
  -V chr${CHR}_${INDIV}.vcf.gz\
  -O chr${CHR}_${INDIV}_hg38_full.fa
 
