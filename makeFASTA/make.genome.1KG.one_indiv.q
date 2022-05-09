@@ -25,7 +25,6 @@ CHRPATH='/wynton/group/capra/data/wynton_databases/goldenPath/hg38/bigZips/lates
 VCFHEAD='/wynton/home/capra/egilbertson/data/vcf.header.txt'
 REFCHRDIR='/wynton/home/capra/egilbertson/data/human_genome/chrms'
 
-echo "testing: '{print $3"_"$2"_"$4"_"$1}'"
 cd /wynton/group/capra/data/wynton_databases/1000_genomes/release/20130502
 DIRNAME=$(grep ${INDIV} integrated_call_samples_v3.20130502.ALL.panel | awk '{print $3"_"$2"_"$4"_"$1}')
 echo "Directory: ${DIRNAME}"

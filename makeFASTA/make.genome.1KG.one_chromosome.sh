@@ -3,10 +3,7 @@
 # Example:
 # make.genome.1000.kg.indiv.sh 22 NA19159 '/gpfs51/dors2/capra_lab/data/1000_genomes_project/phase3/vcf/' 'ALL.chr' '.phase3_shapeit2_mvncall_integrated_v5a.20130502.genotypes.vcf.gz'
 
-WRKDIR=${PATHS[10]}
 
-cd ${WRKDIR}
-echo "WRKDIR: ${WRKDIR}"
 module load Sali CBI gcc gatk bedtools2 samtools htslib
 
 echo "modules loaded"
@@ -15,6 +12,12 @@ echo "modules loaded"
 pwd
 #!/bin/bash
 ### make bed files for all chromosomes lengths
+
+
+WRKDIR=${PATHS[10]}
+
+cd ${WRKDIR}
+echo "WRKDIR: ${WRKDIR}"
 
 CHRPATH=$7
 awk '{print $1, "0", $2}' OFS='\t' ${CHRPATH} > hg38.chrom.bed
