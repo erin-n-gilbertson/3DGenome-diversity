@@ -12,6 +12,13 @@ echo "modules loaded"
 pwd
 #!/bin/bash
 ### make bed files for all chromosomes lengths
+echo "PATHS, PARAMS, INDIV"
+
+echo $PATHS
+echo
+echo $PARAMS
+echo
+echo $INDIV
 
 
 WRKDIR=${PATHS[10]}
