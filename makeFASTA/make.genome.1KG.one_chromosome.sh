@@ -22,36 +22,36 @@ echo "BIN"
 echo $BIN
 
 
-WRKDIR=${PATHS[10]}
-
-cd ${WRKDIR}
-echo "WRKDIR: ${WRKDIR}"
-
-CHRPATH=$7
-awk '{print $1, "0", $2}' OFS='\t' ${CHRPATH} > hg38.chrom.bed
-
-CHR=$1	# '22'
-INDIV=$2	# 'NA19159'
-VCFPATH=$3	# '/gpfs51/dors2/capra_lab/data/1000_genomes_project/phase3/hg38_vcf/'
-VCFPREFIX=$4	# 'ALL.chr'
-VCFSUFFIX=$5 # '.shapeit2_integrated_snvindels_v2a_27022019.GRCh38.phased.vcf.gz'
-LOC=$6
-VCFHEAD=$9
-REFCHRDIR=${10}
-
-INPUTVCF=${VCFPATH}${VCFPREFIX}${CHR}${VCFSUFFIX}
-
-echo "CHR: ${CHR}"
-echo "Indiv:  ${INDIV}"
-echo "VCFPATH: ${VCFPATH}"
-echo "VCFPREFIX: ${VCFPREFIX}"
-echo "VCFSUFFIX: ${VCFSUFFIX}"
-echo "variables defined"
-echo "DIR: ${LOC}"
-
-
-cd $LOC
-pwd
+# WRKDIR=${PATHS[10]}
+#
+# cd ${WRKDIR}
+# echo "WRKDIR: ${WRKDIR}"
+#
+# CHRPATH=$7
+# awk '{print $1, "0", $2}' OFS='\t' ${CHRPATH} > hg38.chrom.bed
+#
+# CHR=$1	# '22'
+# INDIV=$2	# 'NA19159'
+# VCFPATH=$3	# '/gpfs51/dors2/capra_lab/data/1000_genomes_project/phase3/hg38_vcf/'
+# VCFPREFIX=$4	# 'ALL.chr'
+# VCFSUFFIX=$5 # '.shapeit2_integrated_snvindels_v2a_27022019.GRCh38.phased.vcf.gz'
+# LOC=$6
+# VCFHEAD=$9
+# REFCHRDIR=${10}
+#
+# INPUTVCF=${VCFPATH}${VCFPREFIX}${CHR}${VCFSUFFIX}
+#
+# echo "CHR: ${CHR}"
+# echo "Indiv:  ${INDIV}"
+# echo "VCFPATH: ${VCFPATH}"
+# echo "VCFPREFIX: ${VCFPREFIX}"
+# echo "VCFSUFFIX: ${VCFSUFFIX}"
+# echo "variables defined"
+# echo "DIR: ${LOC}"
+#
+#
+# cd $LOC
+# pwd
 ### Find column index for individual
 #
 # rm tmp${INDIV}.${CHR}
