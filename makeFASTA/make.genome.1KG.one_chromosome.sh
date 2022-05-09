@@ -13,7 +13,7 @@ pwd
 #!/bin/bash
 ### make bed files for all chromosomes lengths
 echo "PATHS"
-echo $PATHS[0]
+echo ${PATHS[0]}
 
 echo "PARAMS"
 echo $PARAMS
