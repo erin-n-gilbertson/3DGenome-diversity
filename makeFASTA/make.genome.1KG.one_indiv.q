@@ -36,4 +36,4 @@ mkdir -p "${DIRNAME}"
 cd ${DIRNAME}
 
 
-bash /wynton/group/capra/projects/modern_human_3Dgenome/bin/makeFASTA/make.genome.1000kg.indiv.hg38.sh ${CHR} ${INDIV} ${VCFPTH} ${PFX} ${SFX} ${DIRNAME} ${CHRPATH} ${WRKDIR} ${VCFHEAD} ${REFCHRDIR}
+bash /wynton/group/capra/projects/modern_human_3Dgenome/bin/makeFASTA/make.genome.1KG.one_chromosome.sh ${CHR} ${INDIV} ${VCFPTH} ${PFX} ${SFX} ${DIRNAME} ${CHRPATH} ${WRKDIR} ${VCFHEAD} ${REFCHRDIR}
