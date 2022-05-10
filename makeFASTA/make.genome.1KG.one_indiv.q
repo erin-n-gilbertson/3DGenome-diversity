@@ -5,6 +5,7 @@
 
 
 -- Note: this slurm script is launched by the script "launch.make.genomes.slurm.sh"
+source ~/bin/bash_utils/ini_parse
 
 echo "JOB_NAME: ${JOB_NAME}"
 echo "JOBID:  ${JOB_ID}"
