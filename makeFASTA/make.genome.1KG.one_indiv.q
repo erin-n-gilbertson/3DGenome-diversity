@@ -20,8 +20,7 @@ echo "chr.q: ${CHR}"
 
 -- path to config.ini file that specifies variables and parameters needed here.
 CONFIGPATH='/wynton/group/capra/projects/modern_human_3Dgenome/bin/activeNotebooks/config_makeFASTA_1KG_SNVs.ini'
-defaultOpt1=$(cat $appPath/options/file.ini | getSetting 'default' 'opt1')
-defaultOpt2=$(cat $appPath/options/file.ini | getSetting 'default' 'opt2')
+
 
 VCFPTH=$(cat $CONFIGPATH | getSetting 'PATH' 'VCF_PATH')
 
