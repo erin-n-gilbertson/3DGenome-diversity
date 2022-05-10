@@ -21,11 +21,11 @@ echo "chr.q: ${CHR}"
 
 ## path to config.ini file that specifies variables and parameters needed here.
 CONFIGPATH='/wynton/group/capra/projects/modern_human_3Dgenome/bin/activeNotebooks/config_makeFASTA_1KG_SNVs.ini'
+echo "configpath: ${CONFIGPATH}"
 
+VCFPTH=$(cat ${CONFIGPATH} | getSetting 'PATH' 'VCF_PATH')
 
-VCFPTH=$(cat $CONFIGPATH | getSetting 'PATH' 'VCF_PATH')
-
-echo $VCFPTH
+echo "VCFPTH: ${VCFPTH}"
 # PFX='ALL.chr'
 # SFX='.shapeit2_integrated_snvindels_v2a_27022019.GRCh38.phased.vcf.gz'
 #
