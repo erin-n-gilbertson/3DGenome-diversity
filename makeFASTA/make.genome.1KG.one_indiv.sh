@@ -23,7 +23,7 @@ echo "chr.q: ${CHR}"
 CONFIGPATH='/wynton/group/capra/projects/modern_human_3Dgenome/bin/activeNotebooks/config_makeFASTA_1KG_SNVs.ini'
 echo "configpath: ${CONFIGPATH}"
 
-VCFPTH=$(cat ${CONFIGPATH} | getSetting 'PATH' 'VCF_PATH')
+VCFPTH=$(cat ${CONFIGPATH} | getSetting 'PATH' 'vcf_path')
 
 echo "VCFPTH: ${VCFPTH}"
 # PFX='ALL.chr'
