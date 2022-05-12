@@ -15,15 +15,17 @@ echo "JOBID:  ${JOB_ID}"
 
 source ~/.bash_profile
 source ~/.bashrc
-echo "eg:source activate, pre"
-echo "PATH: ${PATH}"
-echo "PYTHONPATH: ${PYTHONPATH}"
 source /wynton/home/capra/egilbertson/envs/akita/bin/activate
-echo "eg:source activate, post"
-echo "PATH: ${PATH}"
-echo "PYTHONPATH: ${PYTHONPATH}"
+
+source ~/bin/bash_utils/ini_parse
+CONFIGPATH='/wynton/group/capra/projects/modern_human_3Dgenome/bin/activeNotebooks/config_makeFASTA_1KG_SNVs.ini'
+
+INDIV_List=$(cat ${CONFIGPATH} | getSetting 'PATH' 'ind_list')
 #Identity individual to run Akita on using the listOfIndivs.txt file and array taskid
-indiv=$(awk -v var="$SGE_TASK_ID" 'NR==var' /wynton/group/capra/projects/modern_human_3Dgenome/data/${indlist})
+indiv=$(awk -v var="$SGE_TASK_ID" 'NR==var' ${INDIV_LIST}
 echo "Indiv: ${indiv}"
-#python runAkitaOnOneIndiv_noHarmonization.py "$indiv"
-python /wynton/group/capra/projects/modern_human_3Dgenome/bin/runningAkita/runAkitaOnOneIndiv_noHarmonization.py "$indiv"
+
+
+PYSCRIPT=$(cat ${CONFIGPATH} | getSetting 'BIN' 'run_akita_indiv')
+
+python PYSCRIPT "$indiv" ${CONFIGPATH}

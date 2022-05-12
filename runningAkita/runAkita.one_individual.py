@@ -9,7 +9,9 @@
 import os
 import sys
 import json
+import sonfigparser
 import subprocess
+
 os.environ["CUDA_VISIBLE_DEVICES"] = '-1' ### run on CPU
 
 import tensorflow as tf
@@ -28,11 +30,20 @@ from basenji import dataset, dna_io, seqnn
 from matplotlib.pyplot import xticks, yticks
 from scipy import stats
 
+## loading config
+configfile_name = sys.argv[2]
+
+config = configparser.ConfigParser()
+config.read(configfile_name)
+
+GENOME_CHUNKS=config["FILE"]["GENOME_CHUNKS"]
+
+
 ### read sys.argv and determine which regions of the genome are considered ###
 indiv = sys.argv[1].strip()
 print(indiv)
 chunks = {}
-with open("/wynton/group/capra/projects/modern_human_3Dgenome/data/genome_chunks_large.txt") as f:
+with open(GENOME_CHUNKS) as f:
     for line in f:
         chunk = line.strip().split("\t")
         chunks[chunk[0]] = [int(x) for x in chunk[1].split(",")]
@@ -40,9 +51,9 @@ f.close()
 
 ### load params, specify model ###
 
-model_dir = '/wynton/group/capra/projects/modern_human_3Dgenome/bin/basenji/manuscripts/akita/'
-params_file = model_dir+'params.json'
-model_file  = model_dir+'model_best.h5'
+model_dir = config["PATH"]["MODEL_DIR"]
+params_file = model_dir+config["FILE"]["AKITA_PARAMS"]
+model_file  = model_dir+config["FILE"]["MODEL"]
 with open(params_file) as params_open:
     params = json.load(params_open)
     params_model = params['model']
@@ -54,15 +65,16 @@ seqnn_model = seqnn.SeqNN(params_model)
 seqnn_model.restore(model_file)
 
 ### names of targets ###
-data_dir =   '/wynton/group/capra/projects/modern_human_3Dgenome/bin/basenji/manuscripts/akita/data/'
+data_dir =  config["PATH"]["DATA_DIR"]
+targets_file = config["FILE"]["TARGETS"]
 
-hic_targets = pd.read_csv(data_dir+'targets.txt',sep='\t')
+hic_targets = pd.read_csv(data_dir+targets_file,sep='\t')
 hic_file_dict_num = dict(zip(hic_targets['index'].values, hic_targets['file'].values) )
 hic_file_dict     = dict(zip(hic_targets['identifier'].values, hic_targets['file'].values) )
 hic_num_to_name_dict = dict(zip(hic_targets['index'].values, hic_targets['identifier'].values) )
 
 ### read data parameters ###
-data_stats_file = '%s/statistics.json' % data_dir
+data_stats_file = data_dir+config["FILE"]["STATS"]
 with open(data_stats_file) as data_stats_open:
     data_stats = json.load(data_stats_open)
 seq_length = data_stats['seq_length']
@@ -81,7 +93,7 @@ print('symmetrix matrix size:', '('+str(target_length1_cropped)+','+str(target_l
 def find_inFileLoc(indiv, chrm):
     pop = indiv.split('_')[0]
     id = indiv.split('_')[3]
-    in_file_loc ='/wynton/group/capra/projects/modern_human_3Dgenome/data/genomes/%s/%s/%s_%s_hg38_full.fa' % (pop,indiv,chrm,id)
+    in_file_loc = config["PATH"]["INPUT_FASTA_DIR"]+'/%s/%s/%s_%s_hg38_full.fa' % (pop,indiv,chrm,id)
     return in_file_loc
 
 
@@ -93,8 +105,8 @@ def runAkitaPreds(seq):
     test_pred_from_seq = seqnn_model.model.predict(np.expand_dims(seq_1hot,0))
     return test_pred_from_seq
 
-f_3d = open('/wynton/group/capra/projects/modern_human_3Dgenome/data/akitaPreds/3dpreds/3dpreds_%s.txt' % indiv,'w')
-f_coverage = open('/wynton/group/capra/projects/modern_human_3Dgenome/data/akitaPreds/coverage/coverage_%s.txt' % indiv,'w')
+f_3d = open((config["PATH"]["OUT_PREDS"] + '3dpreds_%s.txt' % indiv),'w')
+f_coverage = open((config["PATH"]["OUT_COV"] + 'coverage_%s.txt' % indiv),'w')
 
 for chrm,pos_list in chunks.items():
     print("On chrom = %s" % chrm)
