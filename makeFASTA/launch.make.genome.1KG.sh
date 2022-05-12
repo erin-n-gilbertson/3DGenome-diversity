@@ -22,9 +22,8 @@ list=$(cat ${CONFIGPATH} | getSetting 'PARAMS' 'list')
 echo "path: $path"
 echo "list: $list"
 
-
-INDIV=${path}/${list}
-echo $INDIV
+list_path=${path}/${list}
+INDIV=$(awk -v var="$SGE_TASK_ID" 'NR==var' ${list_path})
 
 
 qsub -N make.genome.$INDIV -v "INDIV=$INDIV" -l mem_free=80G -t 1-4 -l h_rt=4:00:00 $(cat ${CONFIGPATH} | getSetting 'BIN' 'make_fasta_indiv')
