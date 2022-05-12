@@ -16,8 +16,8 @@ source ~/bin/bash_utils/ini_parse
 
 ###### TODO_Erin
 echo $SGE_TASK_ID
-path= $(cat ${CONFIGPATH} | getSetting 'PATH' 'LIST_PATH')
-list=$(cat ${CONFIGPATH} | getSetting 'PARAMS' 'LIST')
+path= $(cat ${CONFIGPATH} | getSetting 'PATH' 'list_path')
+list=$(cat ${CONFIGPATH} | getSetting 'PARAMS' 'list')
 echo "path: $path"
 echo "list: $list"
 
