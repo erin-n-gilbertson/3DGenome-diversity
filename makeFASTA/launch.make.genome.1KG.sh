@@ -11,12 +11,13 @@
 ## ARRY=(1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 X)
 
 source ~/bin/bash_utils/ini_parse
+CONFIGPATH='/wynton/group/capra/projects/modern_human_3Dgenome/bin/activeNotebooks/config_makeFASTA_1KG_SNVs.ini'
 
 
 
 ###### TODO_Erin
 echo $SGE_TASK_ID
-path= $(cat ${CONFIGPATH} | getSetting 'PATH' 'list_path')
+path=$(cat ${CONFIGPATH} | getSetting 'PATH' 'list_path')
 list=$(cat ${CONFIGPATH} | getSetting 'PARAMS' 'list')
 echo "path: $path"
 echo "list: $list"
