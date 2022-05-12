@@ -20,6 +20,8 @@ source /wynton/home/capra/egilbertson/envs/akita/bin/activate
 
 source ~/bin/bash_utils/ini_parse
 CONFIGPATH='/wynton/group/capra/projects/modern_human_3Dgenome/bin/activeNotebooks/config_runAkita.ini'
+echo ${CONFIG_PATH}
+
 
 INDIV_LIST=$(cat ${CONFIGPATH} | getSetting 'PATH' 'IND_LIST')
 echo ${INDIV_LIST}
