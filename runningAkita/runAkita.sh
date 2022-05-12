@@ -21,7 +21,8 @@ source /wynton/home/capra/egilbertson/envs/akita/bin/activate
 source ~/bin/bash_utils/ini_parse
 CONFIGPATH='/wynton/group/capra/projects/modern_human_3Dgenome/bin/activeNotebooks/config_makeFASTA_1KG_SNVs.ini'
 
-INDIV_LIST=$(cat ${CONFIGPATH} | getSetting 'PATH' 'ind_list')
+INDIV_LIST=$(cat ${CONFIGPATH} | getSetting 'PATH' 'IND_LIST')
+echo ${INDIV_LIST}
 
 #Identity individual to run Akita on using the listOfIndivs.txt file and array taskid
 indiv=$(awk -v var="$SGE_TASK_ID" 'NR==var' ${INDIV_LIST})
