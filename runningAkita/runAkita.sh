@@ -6,9 +6,10 @@
 #$ -l mem_free=10G
 #$ -o /wynton/group/capra/projects/modern_human_3Dgenome/stdout/runAkitaIndiv/
 #$ -e /wynton/group/capra/projects/modern_human_3Dgenome/stdout/runAkitaIndiv/
+#$ -t 1
 
 #!/usr/bin/env python
-#qsub -v indlist=listofPOP.txt -t {wc -l listofPOP.txt} runAkitaIndiv.sh
+#qsub runAkitaIndiv.sh
 
 echo "JOB_NAME: ${JOB_NAME}"
 echo "JOBID:  ${JOB_ID}"
@@ -28,4 +29,4 @@ echo "Indiv: ${indiv}"
 
 PYSCRIPT=$(cat ${CONFIGPATH} | getSetting 'BIN' 'run_akita_indiv')
 
-python PYSCRIPT "$indiv" ${CONFIGPATH}
+#python PYSCRIPT "$indiv" ${CONFIGPATH}
