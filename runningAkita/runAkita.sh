@@ -23,7 +23,7 @@ CONFIGPATH='/wynton/group/capra/projects/modern_human_3Dgenome/bin/activeNoteboo
 
 INDIV_List=$(cat ${CONFIGPATH} | getSetting 'PATH' 'ind_list')
 #Identity individual to run Akita on using the listOfIndivs.txt file and array taskid
-indiv=$(awk -v var="$SGE_TASK_ID" 'NR==var' ${INDIV_LIST}
+indiv=$(awk -v var="$SGE_TASK_ID" 'NR==var' ${INDIV_LIST})
 echo "Indiv: ${indiv}"
 
 
