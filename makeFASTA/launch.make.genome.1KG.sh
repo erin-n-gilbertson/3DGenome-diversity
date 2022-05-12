@@ -23,7 +23,7 @@ echo "path: $path"
 echo "list: $list"
 
 
-INDIV=$(awk -v var="$SGE_TASK_ID" 'NR==var' $(cat ${CONFIGPATH} | getSetting 'PATH' 'LIST_PATH')/$(cat ${CONFIGPATH} | getSetting 'PARAMS' 'LIST'))
+INDIV=${path}/${list}
 echo $INDIV
 
 
