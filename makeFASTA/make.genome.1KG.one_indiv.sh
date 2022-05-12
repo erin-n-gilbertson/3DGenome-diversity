@@ -15,11 +15,9 @@ echo "Indiv: ${INDIV}"
 
 
 
-## path to config.ini file that specifies variables and parameters needed here.
-## THIS IS THE ONLY THING THAT SHOULD HAVE TO CHANGE!!!
 
-CONFIGPATH='/wynton/group/capra/projects/modern_human_3Dgenome/bin/activeNotebooks/config_makeFASTA_1KG_SNVs.ini'
-echo "configpath: ${CONFIGPATH}"
+
+
 
 VCFPTH=$(cat ${CONFIGPATH} | getSetting 'PATH' 'vcf_path')
 
