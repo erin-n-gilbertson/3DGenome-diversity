@@ -16,7 +16,12 @@ source ~/bin/bash_utils/ini_parse
 
 ###### TODO_Erin
 echo $SGE_TASK_ID
-echo $(cat ${CONFIGPATH} | getSetting 'PATH' 'LIST_PATH')/$(cat ${CONFIGPATH} | getSetting 'PARAMS' 'LIST')
+path= $(cat ${CONFIGPATH} | getSetting 'PATH' 'LIST_PATH')
+list=$(cat ${CONFIGPATH} | getSetting 'PARAMS' 'LIST')
+echo "path: $path"
+echo "list:" $list"
+
+
 INDIV=$(awk -v var="$SGE_TASK_ID" 'NR==var' $(cat ${CONFIGPATH} | getSetting 'PATH' 'LIST_PATH')/$(cat ${CONFIGPATH} | getSetting 'PARAMS' 'LIST'))
 echo $INDIV
 
