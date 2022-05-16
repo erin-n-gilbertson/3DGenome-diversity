@@ -46,6 +46,6 @@ cd ${WRKDIR}
 
 mkdir -p "${DIRNAME}"
 cd ${DIRNAME}
+echo "dirname: ${DIRNAME}"
 
-
-#bash $(cat ${CONFIGPATH} | getSetting 'BIN' 'make_fasta_chrm') ${CHR} ${INDIV} ${VCFPTH} ${PFX} ${SFX} ${DIRNAME} ${CHRPATH} ${WRKDIR} ${VCFHEAD} ${REFCHRDIR}
+bash $(cat ${CONFIGPATH} | getSetting 'BIN' 'make_fasta_chrm') ${CHR} ${INDIV} ${VCFPTH} ${PFX} ${SFX} ${DIRNAME} ${CHRPATH} ${WRKDIR} ${VCFHEAD} ${REFCHRDIR}

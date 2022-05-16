@@ -28,8 +28,8 @@ list_path=${path}/${list}
 INDIV=$(awk -v var="$SGE_TASK_ID" 'NR==var' ${list_path})
 
 
-qsub -N make.genome.$INDIV -v "INDIV=$INDIV","CONFIGPATH=$CONFIGPATH" -l mem_free=80G -t 1-4 -l h_rt=4:00:00 $(cat ${CONFIGPATH} | getSetting 'BIN' 'make_fasta_indiv')
-qsub -N make.genome.$INDIV -v "INDIV=$INDIV","CONFIGPATH=$CONFIGPATH" -l mem_free=40G -t 5-23 -l h_rt=4:00:00 $(cat ${CONFIGPATH} | getSetting 'BIN' 'make_fasta_indiv')
+qsub -N make.genome.$INDIV -v "INDIV=$INDIV","CONFIGPATH=$CONFIGPATH" -l mem_free=80G -t 22 -l h_rt=4:00:00 $(cat ${CONFIGPATH} | getSetting 'BIN' 'make_fasta_indiv')
+#qsub -N make.genome.$INDIV -v "INDIV=$INDIV","CONFIGPATH=$CONFIGPATH" -l mem_free=40G -t 5-23 -l h_rt=4:00:00 $(cat ${CONFIGPATH} | getSetting 'BIN' 'make_fasta_indiv')
 #
 
 #
