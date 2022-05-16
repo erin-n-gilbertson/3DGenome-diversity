@@ -41,10 +41,11 @@ DIRNAME=$(grep ${INDIV} integrated_call_samples_v3.20130502.ALL.panel | awk '{pr
 echo "Directory: ${DIRNAME}"
 
 WRKDIR=$(cat ${CONFIGPATH} | getSetting 'PATH' 'fasta_out_path')
+echo "wrkdir: ${WRKDIR}"
 cd ${WRKDIR}
 
 mkdir -p "${DIRNAME}"
 cd ${DIRNAME}
 
 
-bash $(cat ${CONFIGPATH} | getSetting 'BIN' 'make_fasta_chrm') ${CHR} ${INDIV} ${VCFPTH} ${PFX} ${SFX} ${DIRNAME} ${CHRPATH} ${WRKDIR} ${VCFHEAD} ${REFCHRDIR}
+#bash $(cat ${CONFIGPATH} | getSetting 'BIN' 'make_fasta_chrm') ${CHR} ${INDIV} ${VCFPTH} ${PFX} ${SFX} ${DIRNAME} ${CHRPATH} ${WRKDIR} ${VCFHEAD} ${REFCHRDIR}
