@@ -75,7 +75,7 @@ echo "INDIV: ${INDIV}"
 gatk FastaAlternateReferenceMaker\
  -R $REFCHRDIR/chr${CHR}.fa\
  -V chr${CHR}_${INDIV}.vcf.gz\
- -O chr${CHR}_${INDIV}_hg38_full.fa
+ -O ./chr${CHR}_${INDIV}_hg38_full.fa
 
 echo "build fasta genome"
 ### Fix GATK output's default fasta headers
