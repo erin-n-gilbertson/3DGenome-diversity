@@ -34,4 +34,4 @@ echo "Indiv: ${indiv}"
 PYSCRIPT=$(cat ${CONFIGPATH} | getSetting 'BIN' 'run_akita_indiv')
 echo "script: ${PYSCRIPT}"
 
-python PYSCRIPT "$indiv" ${CONFIGPATH}
+python ${PYSCRIPT} "$indiv" ${CONFIGPATH}
