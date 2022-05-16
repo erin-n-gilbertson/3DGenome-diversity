@@ -9,7 +9,7 @@
 import os
 import sys
 import json
-import sonfigparser
+import configparser
 import subprocess
 
 os.environ["CUDA_VISIBLE_DEVICES"] = '-1' ### run on CPU
