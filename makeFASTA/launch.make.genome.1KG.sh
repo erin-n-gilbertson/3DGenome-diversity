@@ -2,7 +2,7 @@
 #$ -m a
 #$ -o /wynton/group/capra/projects/modern_human_3Dgenome/stdout/make_genome/launch.o
 #$ -e /wynton/group/capra/projects/modern_human_3Dgenome/stdout/make_genome/launch.e
-#$ -t 1
+#$ -t 1-2504
 
 # -t 1-2548
 
