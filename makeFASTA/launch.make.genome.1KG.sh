@@ -4,7 +4,6 @@
 #$ -e /wynton/group/capra/projects/modern_human_3Dgenome/stdout/make_genome/launch.e
 #$ -t 1-2504
 
-# -t 1-2548
 
 # update '-t' flag for however many individuals are in the population list
 ## the called SLURM script usees an internal array (ARRY) of chromosome names that the slurm array IDs are then used to index

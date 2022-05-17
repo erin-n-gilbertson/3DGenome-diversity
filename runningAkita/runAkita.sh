@@ -6,7 +6,7 @@
 #$ -l mem_free=10G
 #$ -o /wynton/group/capra/projects/modern_human_3Dgenome/stdout/runAkitaIndiv/
 #$ -e /wynton/group/capra/projects/modern_human_3Dgenome/stdout/runAkitaIndiv/
-#$ -t 1
+#$ -t 1728
 
 #!/usr/bin/env python
 #qsub runAkitaIndiv.sh
