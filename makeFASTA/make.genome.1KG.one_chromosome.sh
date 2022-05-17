@@ -48,6 +48,8 @@ cwd=$(pwd)
 ## Find column index for individual
 
 rm tmp${INDIV}.${CHR}
+zcat $INPUTVCF | grep -m 1 $INDIV > tmp${INDIV}.${CHR}
+
 
 if ! [ -s tmp${INDIV}.${CHR} ]; then
 	echo "Individual "${INDIV}" not found on chromosome "${CHR}"in 1000 genomes vcf"
@@ -75,18 +77,18 @@ echo "INDIV: ${INDIV}"
 gatk FastaAlternateReferenceMaker\
  -R $REFCHRDIR/chr${CHR}.fa\
  -V chr${CHR}_${INDIV}.vcf.gz\
- -O ${cwd}/chr${CHR}_${INDIV}_hg38_full.fa
+ -O chr${CHR}_${INDIV}_hg38_full.fa
 
 echo "build fasta genome"
 ### Fix GATK output's default fasta headers
-sed -i "s/>1/>chr$CHR/g" ${cwd}/chr${CHR}_${INDIV}_hg38_full.fa
+sed -i "s/>1/>chr$CHR/g" chr${CHR}_${INDIV}_hg38_full.fa
 echo "fix fasta headers"
 ### remove old dict and index file and remake using the corrected fasta header
 
-rm ${cwd}/chr${CHR}_${INDIV}_hg38_full.dict
-rm ${cwd}/chr${CHR}_${INDIV}_hg38_full.fa.fai
+rm chr${CHR}_${INDIV}_hg38_full.dict
+rm chr${CHR}_${INDIV}_hg38_full.fa.fai
 
-gatk CreateSequenceDictionary -R ${cwd}/chr${CHR}_${INDIV}_hg38_full.fa
-samtools faidx ${cwd}/chr${CHR}_${INDIV}_hg38_full.fa
+gatk CreateSequenceDictionary -R chr${CHR}_${INDIV}_hg38_full.fa
+samtools faidx chr${CHR}_${INDIV}_hg38_full.fa
 echo "done"
 ###
