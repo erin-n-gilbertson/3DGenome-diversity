@@ -14,7 +14,7 @@ pwd
 ### make bed files for all chromosomes lengths
 
 
-WRKDIR=${PATHS[10]}
+WRKDIR=$8
 
 cd ${WRKDIR}
 echo "WRKDIR: ${WRKDIR}"
@@ -48,7 +48,6 @@ cwd=$(pwd)
 ## Find column index for individual
 
 rm tmp${INDIV}.${CHR}
-zcat $INPUTVCF | grep -m 1 $INDIV > tmp${INDIV}.${CHR}
 
 if ! [ -s tmp${INDIV}.${CHR} ]; then
 	echo "Individual "${INDIV}" not found on chromosome "${CHR}"in 1000 genomes vcf"
