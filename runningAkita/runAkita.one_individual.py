@@ -37,7 +37,7 @@ config = configparser.ConfigParser()
 config.read(configfile_name)
 
 GENOME_CHUNKS=config["FILE"]["GENOME_CHUNKS"]
-
+data_source=config[""][""]
 
 ### read sys.argv and determine which regions of the genome are considered ###
 indiv = sys.argv[1].strip()
@@ -90,10 +90,12 @@ print('symmetrix matrix size:', '('+str(target_length1_cropped)+','+str(target_l
 
 ### find file location for the individuals considered ###
 
-def find_inFileLoc(indiv, chrm):
+def find_inFileLoc(indiv, chrm, data_source):
     pop = indiv.split('_')[0]
     id = indiv.split('_')[3]
-    in_file_loc = config["PATH"]["INPUT_FASTA_DIR"]+'%s/%s/%s_%s_hg38_full.fa' % (pop,indiv,chrm,id)
+    in_file_loc = config["PATH"]["INPUT_FASTA_DIR"]+config["FILE"]["FASTA_NAMING"] % eval(config["FILE"]["NAMING_VARS"])
+
+
     return in_file_loc
 
 

@@ -19,7 +19,7 @@ source ~/.bashrc
 source /wynton/home/capra/egilbertson/envs/akita/bin/activate
 
 source ~/bin/bash_utils/ini_parse
-CONFIGPATH='/wynton/group/capra/projects/modern_human_3Dgenome/bin/activeNotebooks/config_runAkita.ini'
+CONFIGPATH='/wynton/group/capra/projects/modern_human_3Dgenome/bin/activeNotebooks/config_runAkita_ensembl-ancestral.ini'
 echo "config: ${CONFIGPATH}"
 
 
