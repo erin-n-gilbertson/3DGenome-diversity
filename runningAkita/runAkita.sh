@@ -26,6 +26,8 @@ INDIV_LIST=$(cat ${CONFIGPATH} | getSetting 'PATH' 'ind_list')
 echo "list: ${INDIV_LIST}"
 
 #Identity individual to run Akita on using the listOfIndivs.txt file and array taskid
+echo "SGE_TASK_ID: $SGE_TASK_ID"
+
 indiv=$(awk -v var="$SGE_TASK_ID" 'NR==var' ${INDIV_LIST})
 echo "Indiv: ${indiv}"
 
