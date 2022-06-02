@@ -48,9 +48,9 @@ with open(GENOME_CHUNKS) as f:
         chunk = line.strip().split("\t")
         chunks[chunk[0]] = [int(x) for x in chunk[1].split(",")]
 f.close()
-
+print('genome chunks made')
 ### load params, specify model ###
-
+print('load params and model')
 model_dir = config["PATH"]["MODEL_DIR"]
 params_file = model_dir+config["FILE"]["AKITA_PARAMS"]
 model_file  = model_dir+config["FILE"]["MODEL"]
@@ -62,9 +62,11 @@ with open(params_file) as params_open:
 seqnn_model = seqnn.SeqNN(params_model)
 
 ### restore model ###
+print('restore model')
 seqnn_model.restore(model_file)
 
 ### names of targets ###
+print('targets')
 data_dir =  config["PATH"]["DATA_DIR"]
 targets_file = config["FILE"]["TARGETS"]
 
@@ -74,6 +76,7 @@ hic_file_dict     = dict(zip(hic_targets['identifier'].values, hic_targets['file
 hic_num_to_name_dict = dict(zip(hic_targets['index'].values, hic_targets['identifier'].values) )
 
 ### read data parameters ###
+print('read data paramenters')
 data_stats_file = data_dir+config["FILE"]["STATS"]
 with open(data_stats_file) as data_stats_open:
     data_stats = json.load(data_stats_open)
@@ -91,6 +94,7 @@ print('symmetrix matrix size:', '('+str(target_length1_cropped)+','+str(target_l
 ### find file location for the individuals considered ###
 
 def find_inFileLoc(indiv, chrm, data_source):
+    print('find fasta location')
     pop = indiv.split('_')[0]
     id = indiv.split('_')[3]
     print(config["PATH"]["INPUT_FASTA_DIR"])
@@ -104,6 +108,7 @@ def find_inFileLoc(indiv, chrm, data_source):
 ### Functions to run akita across the genome ###
 
 def runAkitaPreds(seq):
+    print('run predictions')
     if len(seq) != 2**20: raise ValueError('len(seq) != seq_length')
     seq_1hot = dna_io.dna_1hot(seq)
     test_pred_from_seq = seqnn_model.model.predict(np.expand_dims(seq_1hot,0))
