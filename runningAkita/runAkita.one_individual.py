@@ -93,6 +93,8 @@ print('symmetrix matrix size:', '('+str(target_length1_cropped)+','+str(target_l
 def find_inFileLoc(indiv, chrm, data_source):
     pop = indiv.split('_')[0]
     id = indiv.split('_')[3]
+    print(config["PATH"]["INPUT_FASTA_DIR"])
+    print(config["FILE"]["FASTA_NAMING"] % eval(config["FILE"]["NAMING_VARS"]))
     in_file_loc = config["PATH"]["INPUT_FASTA_DIR"]+config["FILE"]["FASTA_NAMING"] % eval(config["FILE"]["NAMING_VARS"])
 
 
