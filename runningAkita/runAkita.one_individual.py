@@ -101,7 +101,7 @@ def find_inFileLoc(indiv, chrm):
     print(config["PATH"]["INPUT_FASTA_DIR"])
     print(config["FILE"]["FASTA_NAMING"] % eval(config["FILE"]["NAMING_VARS"]))
     in_file_loc = config["PATH"]["INPUT_FASTA_DIR"]+config["FILE"]["FASTA_NAMING"] % eval(config["FILE"]["NAMING_VARS"])
-
+    print("location: " + in_file_loc)
 
     return in_file_loc
 
@@ -137,7 +137,7 @@ for chrm,pos_list in chunks.items():
             print('chrm: ' + chrm)
             print('start loc:')
             print(start_loc)
-            indiv_seq = indiv_fasta_open.fetch(chrm, start_loc, start_loc+2**20).upper()
+            indiv_seq = indiv_fasta_open.fetch(chrm.strip('chr'), start_loc, start_loc+2**20).upper()
             print('fetched fasta seq')
             #masked_seq = mask_fasta_open.fetch(chrm, start_loc, start_loc+2**20).upper() #for the masked
             #human19_seq = human19_fasta_open.fetch(chrm, start_loc, start_loc+2**20).upper()
