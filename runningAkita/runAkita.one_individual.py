@@ -121,7 +121,7 @@ f_coverage = open((config["PATH"]["OUT_COV"] + 'coverage_%s.txt' % indiv),'w')
 for chrm,pos_list in chunks.items():
     print("On chrom = %s" % chrm)
     try:
-        in_file_loc_indiv = find_inFileLoc(indiv, chrm,)
+        in_file_loc_indiv = find_inFileLoc(indiv, chrm)
         print(in_file_loc_indiv)
         indiv_fasta_open = pysam.Fastafile(in_file_loc_indiv)
         #mask_fasta_open = pysam.Fastafile('/gpfs51/dors2/capra_lab/users/rinkerd/projects/3DNeand/data/genomes/masked_hg19_reference/%s_hg19_archaic.masked.fa' % chrm) #for the masked
@@ -135,11 +135,13 @@ for chrm,pos_list in chunks.items():
         try: # some input start locations won't work because when + 1Mb they are past the end of the chromosome stop
             # Fetch the fasta sequence
             indiv_seq = indiv_fasta_open.fetch(chrm, start_loc, start_loc+2**20).upper()
+            print('fetched fasta seq')
             #masked_seq = mask_fasta_open.fetch(chrm, start_loc, start_loc+2**20).upper() #for the masked
             #human19_seq = human19_fasta_open.fetch(chrm, start_loc, start_loc+2**20).upper()
 
             # calculate coverage
             indiv_coverage = np.mean([ 0 if s == "N" else 1 for s in indiv_seq])
+            print('calculated coverage')
             #masked_coverage = np.mean([ 0 if s == "N" else 1 for s in masked_seq]) # for the masked
 
             # check if low coverage and then don't bother with calculating 3d predictions
@@ -148,6 +150,7 @@ for chrm,pos_list in chunks.items():
                 continue
             else:
                 lowCoverage=False
+            print('checked if low coverage')
 
             # fill in missing sequence with human ref
             #indiv_fillMissing_seq = "".join([r if m == "N" else r if s == "N" else s for r, m, s in zip(human19_seq, masked_seq, indiv_seq)])
