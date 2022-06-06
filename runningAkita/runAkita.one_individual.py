@@ -93,7 +93,7 @@ print('symmetrix matrix size:', '('+str(target_length1_cropped)+','+str(target_l
 
 ### find file location for the individuals considered ###
 
-def find_inFileLoc(indiv, chrm, data_source):
+def find_inFileLoc(indiv, chrm):
     print('find fasta location')
     pop = indiv.split('_')[0]
     id = indiv.split('_')[3]
@@ -120,7 +120,7 @@ f_coverage = open((config["PATH"]["OUT_COV"] + 'coverage_%s.txt' % indiv),'w')
 for chrm,pos_list in chunks.items():
     print("On chrom = %s" % chrm)
     try:
-        in_file_loc_indiv = find_inFileLoc(indiv, chrm)
+        in_file_loc_indiv = find_inFileLoc(indiv, chrm,)
         print(in_file_loc_indiv)
         indiv_fasta_open = pysam.Fastafile(in_file_loc_indiv)
         #mask_fasta_open = pysam.Fastafile('/gpfs51/dors2/capra_lab/users/rinkerd/projects/3DNeand/data/genomes/masked_hg19_reference/%s_hg19_archaic.masked.fa' % chrm) #for the masked
