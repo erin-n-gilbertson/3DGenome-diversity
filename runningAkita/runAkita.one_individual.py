@@ -99,7 +99,7 @@ def find_inFileLoc(indiv, chrm):
         pop = indiv.split('_')[0]
         id = indiv.split('_')[3]
     except:
-        continue
+        pass
     print('testing testing 123')
     print(config["PATH"]["INPUT_FASTA_DIR"])
     print(config["FILE"]["FASTA_NAMING"] % eval(config["FILE"]["NAMING_VARS"]))
