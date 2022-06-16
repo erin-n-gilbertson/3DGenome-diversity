@@ -11,6 +11,11 @@ import os.path
 from os import path
 import gzip
 
+configfile_name = sys.argv[2]
+
+config = configparser.ConfigParser()
+config.read(configfile_name)
+
 ### for converting from flattened upper-triangluar vector to symmetric matrix  ###
 
 # def from_upper_triu(vector_repr, matrix_len, num_diags):
@@ -44,21 +49,15 @@ indivname2=sys.argv[1].split(" ")[1]
 print("Indiv1 = %s, Indiv2 = %s" % (indivname1, indivname2),flush=True)
 
 
-in_file_loc1 = '/wynton/group/capra/projects/modern_human_3Dgenome/data/akitaPreds/3dpreds/'
-in_file_loc2 = '/wynton/group/capra/projects/modern_human_3Dgenome/data/akitaPreds/3dpreds/'
+in_file_loc = config["PATH"]["INPUT_PATH"]
+
 
 # if using gzip file read binary and use .decode() for l1 & l2 below (4x)
-if path.exists("%s3dpreds_%s.txt.gz" % (in_file_loc1, indivname1)):
-    f1 = gzip.open("%s3dpreds_%s.txt.gz" % (in_file_loc1, indivname1),"rb")
-else:
-    f1 = open("%s3dpreds_%s.txt" % (in_file_loc1, indivname1),"rb")
 
-if path.exists("%s3dpreds_%s.txt.gz" % (in_file_loc2, indivname2)):
-    f2 = gzip.open("%s3dpreds_%s.txt.gz" % (in_file_loc2, indivname2),"rb")
-else:
-    f2 = open("%s3dpreds_%s.txt" % (in_file_loc2, indivname2),"rb")
+f1 = open("%s/3dpreds_%s.txt" % (in_file_loc, indivname1),"rb")
+f2 = open("%s/3dpreds_%s.txt" % (in_file_loc, indivname2),"rb")
 
-f_out = open("/wynton/group/capra/projects/modern_human_3Dgenome/data/pairwise/3dcomp_%s_vs_%s.txt" % (indivname1,indivname2),"w")
+f_out = open("%s/3dcomp_%s_vs_%s.txt" % (config["PATH"]["OUT_PATH"],indivname1,indivname2),"w")
 
 # f_out.write("%s\t%s\t%s\t%s\t%s\t%s\t%s\n" % ("chr", "windowStartPos", "mse", "spearman", "triangle_mse","triangle_spearman", "insulation_spearman"))
 f_out.write("%s\t%s\t%s\t%s\n" % ("chr", "windowStartPos", "mse", "spearman"))

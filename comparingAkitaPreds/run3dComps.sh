@@ -1,20 +1,27 @@
 #!/bin/bash
-#SBATCH --job-name=runAkitaComps
-#SBATCH --mail-user=evonne.mcarthur@vanderbilt.edu
-#SBATCH --mail-type=FAIL
-#SBATCH --time=3-00:00:00
-#SBATCH --nodes=1
-#SBATCH --mem=30G #80G
-#SBATCH --begin=now
-#SBATCH --output=runAkitaComps_%a.out
-#SBATCH --array=1-290%30
+#$ -N runAkitaComps
+#$ -l h_rt=3:00:00 #3
+#$ -l mem_free=300G #80G300
+#$ -e /wynton/group/capra/projects/modern_human_3Dgenome/stdout/comps/
+#$ -o /wynton/group/capra/projects/modern_human_3Dgenome/stdout/comps/
+#$ -t 1-3133756
 
 
-echo SBATCH_JOB_NAME: $SBATCH_JOB_NAME 
-echo SLURM_JOBID:  $SLURM_JOBID
+echo "taskid: ${SGE_TASK_ID}"
+echo "JOB_NAME: ${JOB_NAME}"
 
-source activate basenji
+source ~/.bash_profile
+source ~/.bashrc
+source /wynton/home/capra/egilbertson/envs/akita/bin/activate
 
-indivs=$(awk -v var="$SLURM_ARRAY_TASK_ID" 'NR==var' list_tmp.txt)
+source ~/bin/bash_utils/ini_parse
 
-python run3dComparisons.DCR.ENG.py "$indivs" > runAkitaComps_"$SLURM_ARRAY_TASK_ID".python.out
+COMP_LIST=$(cat ${CONFIGPATH} | getSetting 'FILE' 'comp_list')
+
+
+
+indivs=$(awk -v var="$SGE_TASK_ID" 'NR==var' ${COMP_LIST})
+
+echo $indivs
+
+python ${PYSCRIPT} "$indivs" ${CONFIGPATH}> /wynton/group/capra/projects/modern_human_3Dgenome/stdout/comps/runAkitaComps_"$SGE_TASK_ID".python.out
