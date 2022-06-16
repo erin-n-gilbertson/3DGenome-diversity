@@ -23,5 +23,7 @@ COMP_LIST=$(cat ${CONFIGPATH} | getSetting 'FILE' 'comp_list')
 indivs=$(awk -v var="$SGE_TASK_ID" 'NR==var' ${COMP_LIST})
 
 echo $indivs
+PYSCRIPT=$(cat ${CONFIGPATH} | getSetting 'BIN' 'run_comps_indiv')
+
 
 python ${PYSCRIPT} "$indivs" ${CONFIGPATH}> /wynton/group/capra/projects/modern_human_3Dgenome/stdout/comps/runAkitaComps_"$SGE_TASK_ID".python.out
