@@ -151,7 +151,7 @@ for chrm,pos_list in chunks.items():
             #masked_coverage = np.mean([ 0 if s == "N" else 1 for s in masked_seq]) # for the masked
 
             # check if low coverage and then don't bother with calculating 3d predictions
-            if (indiv_coverage != 1):
+            if (indiv_coverage < 0.9):
                 lowCoverage=True
                 f_coverage.write("%s\t%s\t%s\n" % (chrm,start_loc,indiv_coverage))
                 continue
