@@ -153,6 +153,7 @@ for chrm,pos_list in chunks.items():
             # check if low coverage and then don't bother with calculating 3d predictions
             if (indiv_coverage != 1):
                 lowCoverage=True
+                f_coverage.write("%s\t%s\t%s\n" % (chrm,start_loc,indiv_coverage))
                 continue
             else:
                 lowCoverage=False
