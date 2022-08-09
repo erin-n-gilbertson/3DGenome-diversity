@@ -46,7 +46,7 @@ f.close()
 
 print("Indiv1 = %s, Indiv2 = %s" % (indivname1, indivname2),flush=True)
 f_out = open("SeqComps_%s_vs_%s.txt" % (indivname1,indivname2),"w")
-f_out.write("%s\t%s\t%s\t%s\t%s\t%s\n" % ('chrm','start_loc',indivname1 + '_coverage',indivname2 + '_coverage','hg38_coverage', 'seqComp_raw'))
+f_out.write("%s\t%s\t%s\t%s\t%s\n" % ('chrm','start_loc',indivname1 + '_coverage',indivname2 + '_coverage', 'seqComp_raw'))
 
 # Loop over chrms and positions
 for chrm,pos_list in chunks.items():
@@ -70,7 +70,7 @@ for chrm,pos_list in chunks.items():
             # calculate sequence comparisons
             seqComp_raw = sum([1 if i1 == i2 else 0 for i1,i2 in zip(indiv1_seq,indiv2_seq)])/len(indiv1_seq)
             # write output to files
-            f_out.write("%s\t%s\t%s\t%s\t%s\t%s\n" % (chrm,start_loc,indiv1_coverage,indiv2_coverage, hg38_coverage, seqComp_raw))
+            f_out.write("%s\t%s\t%s\t%s\t%s\n" % (chrm,start_loc,indiv1_coverage,indiv2_coverage, seqComp_raw))
         except ValueError:
             print("FAILED: %s at %s" % (chrm, start_loc))
             continue
