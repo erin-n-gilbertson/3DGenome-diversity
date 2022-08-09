@@ -45,7 +45,9 @@ with open(GENOME_CHUNKS) as f:
 f.close()
 
 print("Indiv1 = %s, Indiv2 = %s" % (indivname1, indivname2),flush=True)
-f_out = open("SeqComps_%s_vs_%s.txt" % (indivname1,indivname2),"w")
+
+out_path = config["PATH"]["OUT_PATH"]
+f_out = open("%s/SeqComps_%s_vs_%s.txt" % (out_path,indivname1,indivname2),"w")
 f_out.write("%s\t%s\t%s\t%s\t%s\n" % ('chrm','start_loc',indivname1 + '_coverage',indivname2 + '_coverage', 'seqComp_raw'))
 
 # Loop over chrms and positions
