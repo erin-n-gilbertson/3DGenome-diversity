@@ -46,7 +46,7 @@ f.close()
 
 print("Indiv1 = %s, Indiv2 = %s" % (indivname1, indivname2),flush=True)
 f_out = open("SeqComps_%s_vs_%s.txt" % (indivname1,indivname2),"w")
-f_out.write("%s\t%s\t%s\t%s\t%s\t%s\t%s\n" % ('chrm','start_loc',indivname1 + '_coverage',indivname2 + '_coverage','hg38_coverage','seqComp_fillMissing', 'seqComp_raw'))
+f_out.write("%s\t%s\t%s\t%s\t%s\t%s\n" % ('chrm','start_loc',indivname1 + '_coverage',indivname2 + '_coverage','hg38_coverage', 'seqComp_raw'))
 
 # Loop over chrms and positions
 for chrm,pos_list in chunks.items():
@@ -54,7 +54,6 @@ for chrm,pos_list in chunks.items():
     try:
         indiv1_fasta_open = find_fastaFiles(indivname1, chrm)
         indiv2_fasta_open = find_fastaFiles(indivname2, chrm)
-        human38_fasta_open = pysam.Fastafile('/wynton/home/capra/egilbertson/data/human_genome/chrms/%s.fa' % chrm)
     except OSError:
         print("Failed on chr: %s" % chrm)
         continue
@@ -65,19 +64,13 @@ for chrm,pos_list in chunks.items():
             # Fetch the fasta sequence
             indiv1_seq = indiv1_fasta_open.fetch(chrm, start_loc, start_loc+2**20).upper()
             indiv2_seq = indiv2_fasta_open.fetch(chrm, start_loc, start_loc+2**20).upper()
-            human38_seq = human38_fasta_open.fetch(chrm, start_loc, start_loc+2**20).upper()
             # calculate coverage
             indiv1_coverage = np.mean([ 0 if s == "N" else 1 for s in indiv1_seq])
             indiv2_coverage = np.mean([ 0 if s == "N" else 1 for s in indiv2_seq])
-            hg38_coverage = np.mean([ 0 if s == "N" else 1 for s in human38_seq])
-            # fill in missing sequence with human ref
-            indiv1_fillMissing_seq = "".join([r if s == "N" else s for r, s in zip(human38_seq, indiv1_seq)])
-            indiv2_fillMissing_seq = "".join([r if s == "N" else s for r, s in zip(human38_seq, indiv2_seq)])
             # calculate sequence comparisons
-            seqComp_fillMissing = sum([1 if i1 == i2 else 0 for i1,i2 in zip(indiv1_fillMissing_seq,indiv2_fillMissing_seq)])/len(indiv1_fillMissing_seq)
             seqComp_raw = sum([1 if i1 == i2 else 0 for i1,i2 in zip(indiv1_seq,indiv2_seq)])/len(indiv1_seq)
             # write output to files
-            f_out.write("%s\t%s\t%s\t%s\t%s\t%s\t%s\n" % (chrm,start_loc,indiv1_coverage,indiv2_coverage, hg38_coverage, seqComp_fillMissing, seqComp_raw))
+            f_out.write("%s\t%s\t%s\t%s\t%s\t%s\n" % (chrm,start_loc,indiv1_coverage,indiv2_coverage, hg38_coverage, seqComp_raw))
         except ValueError:
             print("FAILED: %s at %s" % (chrm, start_loc))
             continue
