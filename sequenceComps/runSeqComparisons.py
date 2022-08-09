@@ -64,7 +64,7 @@ for chrm,pos_list in chunks.items():
             # Fetch the fasta sequence
             indiv1_seq = indiv1_fasta_open.fetch(chrm, start_loc, start_loc+2**20).upper()
             indiv2_seq = indiv2_fasta_open.fetch(chrm, start_loc, start_loc+2**20).upper()
-            print("length of seq1: %s, length of seq2: %s", %(len(indiv1_seq), len(indiv2_seq)))
+            print("length of seq1: %s, length of seq2: %s", % (str(len(indiv1_seq)), str(len(indiv2_seq))))
             # calculate coverage
             indiv1_coverage = np.mean([ 0 if s == "N" else 1 for s in indiv1_seq])
             indiv2_coverage = np.mean([ 0 if s == "N" else 1 for s in indiv2_seq])
