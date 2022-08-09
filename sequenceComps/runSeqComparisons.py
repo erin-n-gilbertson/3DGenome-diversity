@@ -69,7 +69,7 @@ for chrm,pos_list in chunks.items():
             indiv1_coverage = np.mean([ 0 if s == "N" else 1 for s in indiv1_seq])
             indiv2_coverage = np.mean([ 0 if s == "N" else 1 for s in indiv2_seq])
             # calculate sequence comparisons
-            if len(indiv1_seq !=0):
+            if len(indiv1_seq) !=0 :
                 seqComp_raw = sum([1 if i1 == i2 else 0 for i1,i2 in zip(indiv1_seq,indiv2_seq)])/len(indiv1_seq)
             else:
                 seqComp_raw = 'na'
