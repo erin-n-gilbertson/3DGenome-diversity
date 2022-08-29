@@ -17,7 +17,7 @@ source ~/.bashrc
 source /wynton/home/capra/egilbertson/envs/akita/bin/activate
 
 # change directories
-cd ../pairwise/sequence
+cd /wynton/group/capra/projects/modern_human_3Dgenome/data/pairwise/sequence
 
 # assign variables using the SGE task ID to get a specific pair of individuals
 ind1=$(awk -v row=$SGE_TASK_ID 'NR == row {print $1}' ../baseline_sequence_pairs.txt)
