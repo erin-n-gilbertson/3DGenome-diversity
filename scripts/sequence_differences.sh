@@ -1,24 +1,27 @@
 #!/bin/bash
 #$ -N sequence_differences
-#$ -t 1-2485
-#$ -M colin.brand@ucsf.edu
+#$ -t 1-3
+#$ -M erin.gilbertson@ucsf.edu
 #$ -m ae
 #$ -cwd
-#$ -o ~/../../../group/capra/projects/pan_3d_genome/scripts/sequence_differences.out
-#$ -e ~/../../../group/capra/projects/pan_3d_genome/scripts/sequence_differences.err
+#$ -o /wynton/group/capra/projects/modern_human_3Dgenome/stdout/sequence_diffs/sequence_differences.out
+#$ -e /wynton/group/capra/projects/modern_human_3Dgenome/stdout/sequence_diffs/sequence_differences.err
 #$ -l h_rt=24:00:00
 #$ -l mem_free=20G
 
-# load conda environment
-source ~/miniconda3/etc/profile.d/conda.sh
-conda activate ancestral_allele
+echo "JOB_NAME: ${JOB_NAME}"
+echo "JOBID:  ${JOB_ID}"
+
+source ~/.bash_profile
+source ~/.bashrc
+source /wynton/home/capra/egilbertson/envs/akita/bin/activate
 
 # change directories
-cd ../data/sequence_differences
+cd ../pairwise/sequence
 
 # assign variables using the SGE task ID to get a specific pair of individuals
-ind1=$(awk -v row=$SGE_TASK_ID 'NR == row {print $1}' ../sample_pairs.txt)
-ind2=$(awk -v row=$SGE_TASK_ID 'NR == row {print $2}' ../sample_pairs.txt)
+ind1=$(awk -v row=$SGE_TASK_ID 'NR == row {print $1}' ../baseline_sequence_pairs.txt)
+ind2=$(awk -v row=$SGE_TASK_ID 'NR == row {print $2}' ../baseline_sequence_pairs.txt)
 
 # run
-python ../../scripts/sequence_differences.py --intervals ../pantro6_intervals.txt --sample_1 ../fastas/"$ind1".fa --sample_2 ../fastas/"$ind2".fa --sample_1_id "$ind1" --sample_2_id "$ind2"
+python /wynton/group/capra/projects/modern_human_3Dgenome/bin/scripts/sequence_differences.py --intervals /wynton/group/capra/projects/modern_human_3Dgenome/data/reference/genome_chunks_large.txt --sample_1 /wynton/group/capra/projects/modern_human_3Dgenome/data/genomes/baselines/"$ind1".fa --sample_2 /wynton/group/capra/projects/modern_human_3Dgenome/data/genomes/baselines/"$ind2".fa --sample_1_id "$ind1" --sample_2_id "$ind2"
