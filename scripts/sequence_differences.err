@@ -1,0 +1,962 @@
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 38, in main
+    seq2 = pysam.FastaFile(f'{args.sample_2}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 38, in main
+    seq2 = pysam.FastaFile(f'{args.sample_2}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 38, in main
+    seq2 = pysam.FastaFile(f'{args.sample_2}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 38, in main
+    seq2 = pysam.FastaFile(f'{args.sample_2}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 38, in main
+    seq2 = pysam.FastaFile(f'{args.sample_2}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 38, in main
+    seq2 = pysam.FastaFile(f'{args.sample_2}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 38, in main
+    seq2 = pysam.FastaFile(f'{args.sample_2}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 38, in main
+    seq2 = pysam.FastaFile(f'{args.sample_2}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 38, in main
+    seq2 = pysam.FastaFile(f'{args.sample_2}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 38, in main
+    seq2 = pysam.FastaFile(f'{args.sample_2}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 38, in main
+    seq2 = pysam.FastaFile(f'{args.sample_2}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 38, in main
+    seq2 = pysam.FastaFile(f'{args.sample_2}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 38, in main
+    seq2 = pysam.FastaFile(f'{args.sample_2}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 38, in main
+    seq2 = pysam.FastaFile(f'{args.sample_2}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 38, in main
+    seq2 = pysam.FastaFile(f'{args.sample_2}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 38, in main
+    seq2 = pysam.FastaFile(f'{args.sample_2}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 38, in main
+    seq2 = pysam.FastaFile(f'{args.sample_2}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 38, in main
+    seq2 = pysam.FastaFile(f'{args.sample_2}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 38, in main
+    seq2 = pysam.FastaFile(f'{args.sample_2}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 38, in main
+    seq2 = pysam.FastaFile(f'{args.sample_2}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 38, in main
+    seq2 = pysam.FastaFile(f'{args.sample_2}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 38, in main
+    seq2 = pysam.FastaFile(f'{args.sample_2}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 38, in main
+    seq2 = pysam.FastaFile(f'{args.sample_2}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 38, in main
+    seq2 = pysam.FastaFile(f'{args.sample_2}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 38, in main
+    seq2 = pysam.FastaFile(f'{args.sample_2}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 38, in main
+    seq2 = pysam.FastaFile(f'{args.sample_2}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 38, in main
+    seq2 = pysam.FastaFile(f'{args.sample_2}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-troglodytes.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
+Traceback (most recent call last):
+  File "../../scripts/sequence_differences.py", line 46, in <module>
+    main()
+  File "../../scripts/sequence_differences.py", line 37, in main
+    seq1 = pysam.FastaFile(f'{args.sample_1}').fetch(chr, int(x), int(y))
+  File "pysam/libcfaidx.pyx", line 123, in pysam.libcfaidx.FastaFile.__cinit__
+  File "pysam/libcfaidx.pyx", line 155, in pysam.libcfaidx.FastaFile._open
+OSError: file `../fastas/Cindy-verus.fa` not found
