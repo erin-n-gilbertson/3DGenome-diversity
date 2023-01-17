@@ -18,31 +18,30 @@ config.read(configfile_name)
 
 ### find file location for the individuals considered ###
 
-def find_fastaFiles(indiv, chrm, source):
+def find_fastaFiles(indiv, chrm):
     fasta_dir = config["PATH"]["FASTA_PATH"]
-    if source == '1kg':
-        in_file_loc = '%s/1KG/%s/%s_%s_hg38_full.fa' % (fasta_dir,indiv,chrm,indiv.split("_")[3])
-    if source == 'baseline':
+    if indiv == 'hg38_reference':
         in_file_loc = '%s/baselines/%s.fa' % (fasta_dir,indiv)
+    
+    elif indiv == 'hsmrca_ancestral':
+        in_file_loc = '%s/human_archaic_ancestor/human_archaic_ancestor_in_hg38_%s.fasta' % (fasta_dir,chrm)
+    else:
+        in_file_loc = '%s/1KG/%s/%s_%s_hg38_full.fa' % (fasta_dir,indiv,chrm,indiv.split("_")[3])
+
     indiv_fasta_open = pysam.Fastafile(in_file_loc)
     print("find fasta")
     print(indiv)
     print(in_file_loc)
     return indiv_fasta_open
 
-def get_source(indivname):
-    if indivname=="hg38_reference" or indivname=="hsmrca_ancestral":
-        return 'baseline'
-    else:
-        return '1kg'
+
         
 #####################################
 
 # input individuals
 indivname1=sys.argv[1].strip().split(" ")[0]
 indivname2=sys.argv[1].strip().split(" ")[1]
-source1 = get_source(indivname1)
-source2 = get_source(indivname2)
+
 # read in chr/pos file over genome
 GENOME_CHUNKS=config["FILE"]["GENOME_CHUNKS"]
 chunks = {}
@@ -53,7 +52,7 @@ with open(GENOME_CHUNKS) as f:
 f.close()
 
 print("Indiv1 = %s, Indiv2 = %s" % (indivname1, indivname2),flush=True)
-print(source1, source2)
+
 
 out_path = config["PATH"]["OUT_PATH"]
 f_out = open("%s/SeqComps_%s_vs_%s.txt" % (out_path,indivname1,indivname2),"w")
@@ -63,8 +62,8 @@ f_out.write("%s\t%s\t%s\t%s\t%s\n" % ('chrm','start_loc',indivname1 + '_coverage
 for chrm,pos_list in chunks.items():
     print("On chrom = %s" % chrm,flush=True)
     try:
-        indiv1_fasta_open = find_fastaFiles(indivname1, chrm, source1)
-        indiv2_fasta_open = find_fastaFiles(indivname2, chrm, source2)
+        indiv1_fasta_open = find_fastaFiles(indivname1, chrm)
+        indiv2_fasta_open = find_fastaFiles(indivname2, chrm)
     except OSError:
         print("Failed on chr: %s" % chrm)
         continue
