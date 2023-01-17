@@ -12,7 +12,6 @@
 ## path to config.ini file that specifies variables and parameters needed here.
 ## THIS IS THE ONLY THING THAT SHOULD HAVE TO CHANGE!!!
 source ~/bin/bash_utils/ini_parse
-CONFIGPATH='/wynton/group/capra/projects/modern_human_3Dgenome/bin/activeNotebooks/config_makeFASTA_1KG_SNVs.ini'
 
 
 
