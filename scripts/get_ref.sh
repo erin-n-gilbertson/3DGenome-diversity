@@ -20,4 +20,4 @@ echo "JOB_NAME: ${JOB_NAME}"
 echo "JOBID:  ${JOB_ID}"
 echo "TASKID: ${SGE_TASK_ID}"
 
-(grep chr$SGE_TASK_ID all_chrs_hg38.txt | head |awk '{printf("%s:%s-%s\n",substr($1,4),$2,$2);}'; | while read P; do samtools faidx /wynton/group/capra/data/hg38_fasta/2022-03-14/hg38.fa ${P} ; done) > erin_test/out_chr$SGE_TASK_ID.txt 
+(grep chr$SGE_TASK_ID all_chrs_hg38.txt | head |awk '{printf("%s:%s-%s\n",substr($1,4),$2,$2);}' | while read P; do samtools faidx /wynton/group/capra/data/hg38_fasta/2022-03-14/hg38.fa ${P} ; done) > erin_test/out_chr$SGE_TASK_ID.txt 
