@@ -3,7 +3,7 @@
 #$ -M erin.gilbertson@ucsf.edu
 #$ -m a
 #$ -l h_rt=24:00:00
-#$ -l mem_free=10G
+#$ -l mem_free=50G
 #$ -o /wynton/group/capra/projects/modern_human_3Dgenome/stdout/getRef/
 #$ -e /wynton/group/capra/projects/modern_human_3Dgenome/stdout/getRef/
 #$ -t 1-22
