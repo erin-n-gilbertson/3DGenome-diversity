@@ -11,7 +11,7 @@
 
 source ~/.bash_profile
 source ~/.bashrc
-source /wynton/home/capra/egilbertson/envs/akita/bin/activate
+#source /wynton/home/capra/egilbertson/envs/akita/bin/activate
 
 module load CBI samtools
 
