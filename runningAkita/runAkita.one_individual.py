@@ -175,11 +175,11 @@ for chrm,pos_list in chunks.items():
             print("made predictions")
 
 
-            ind_pred_HFF = ind_pred[:,:,0][0] # using [:,:,0][0] here for HFF
-            ind_pred_H1ESC = ind_pred[:,:,1][0] # using [:,:,1][0] here for H1ESC
-            ind_pred_GM12878 = ind_pred[:,:,2][0] # using [:,:,2][0] here for GM12878
-            ind_pred_IMR90 = ind_pred[:,:,3][0] # using [:,:,3][0] here for IMR90
-            ind_pred_HCT116 = ind_pred[:,:,4][0] # using [:,:,4][0] here for HCT116
+            ind_pred_HFF = indiv_pred[:,:,0][0] # using [:,:,0][0] here for HFF
+            ind_pred_H1ESC = indiv_pred[:,:,1][0] # using [:,:,1][0] here for H1ESC
+            ind_pred_GM12878 = indiv_pred[:,:,2][0] # using [:,:,2][0] here for GM12878
+            ind_pred_IMR90 = indiv_pred[:,:,3][0] # using [:,:,3][0] here for IMR90
+            ind_pred_HCT116 = indiv_pred[:,:,4][0] # using [:,:,4][0] here for HCT116
             print("split cell types")
         except:
             print("FAILED: %s at %s" % (chrm, start_loc))
