@@ -138,6 +138,7 @@ for chrm,pos_list in chunks.items():
         #human19_fasta_open = pysam.Fastafile('/dors/capra_lab/data/dna/human/hg19/%s.fa' % chrm)
     except:
         print("Failed on chr: %s:" % chrm)
+        indiv_fasta_open = pysam.Fastafile(in_file_loc_indiv)
         continue
 
     for start_loc in pos_list:
