@@ -139,13 +139,14 @@ for chrm,pos_list in chunks.items():
     except:
         print("Failed on chr: %s:" % chrm)
         continue
-
+    if chrm != 'chr1':
+        pass
     for start_loc in pos_list:
         print("starting predictions on %s" % start_loc)
         try: # some input start locations won't work because when + 1Mb they are past the end of the chromosome stop
             # Fetch the fasta sequence
             print('chrm: ' + chrm)
-            #print('start loc:' + start_loc)
+            print('start loc:' + str(start_loc))
             indiv_seq = indiv_fasta_open.fetch(chrm, start_loc, start_loc+2**20).upper()
             print('fetched fasta seq')
             #masked_seq = mask_fasta_open.fetch(chrm, start_loc, start_loc+2**20).upper() #for the masked
@@ -167,11 +168,11 @@ for chrm,pos_list in chunks.items():
                 lowCoverage=False
             print('checked if low coverage')
 
-            # fill in missing sequence with human ref
-            #indiv_fillMissing_seq = "".join([r if m == "N" else r if s == "N" else s for r, m, s in zip(human19_seq, masked_seq, indiv_seq)])
-            # run predictions and save only the HFF cell type predictions
-            indiv_pred  = runAkitaPreds(indiv_seq)
-            print("made predictions")
+            # # fill in missing sequence with human ref
+            # #indiv_fillMissing_seq = "".join([r if m == "N" else r if s == "N" else s for r, m, s in zip(human19_seq, masked_seq, indiv_seq)])
+            # # run predictions and save only the HFF cell type predictions
+            # indiv_pred  = runAkitaPreds(indiv_seq)
+            # print("made predictions")
 
 
             # ind_pred_HFF = ind_pred[:,:,0][0] # using [:,:,0][0] here for HFF
