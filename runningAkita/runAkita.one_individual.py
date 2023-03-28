@@ -118,8 +118,15 @@ def runAkitaPreds(seq):
     test_pred_from_seq = seqnn_model.model.predict(np.expand_dims(seq_1hot,0))
     return test_pred_from_seq
 
-f_3d = open((config["PATH"]["OUT_PREDS"] + '3dpreds_%s.txt' % indiv),'w')
+#f_3d = open((config["PATH"]["OUT_PREDS"] + '3dpreds_%s.txt' % indiv),'w')
 f_coverage = open((config["PATH"]["OUT_COV"] + 'coverage_%s.txt' % indiv),'w')
+
+HFF_out = open((config["PATH"]["OUT_PREDS"] + '3d_predictions_HFF_%s.txt' % (indiv)),'w')
+H1ESC_out = open((config["PATH"]["OUT_PREDS"] + '3d_predictions_H1ESC_%s.txt' % (indiv)),'w')
+GM12878_out = open((config["PATH"]["OUT_PREDS"] + '3d_predictions_GM12878_%s.txt' % (indiv)),'w')
+IMR90_out = open((config["PATH"]["OUT_PREDS"] + '3d_predictions_IMR90_%s.txt' % (indiv)),'w')
+HCT116_out = open((config["PATH"]["OUT_PREDS"] + '3d_predictions_HCT116_%s.txt' % (indiv)),'w')
+
 
 for chrm,pos_list in chunks.items():
     print("On chrom = %s" % chrm)
@@ -163,7 +170,11 @@ for chrm,pos_list in chunks.items():
             #indiv_fillMissing_seq = "".join([r if m == "N" else r if s == "N" else s for r, m, s in zip(human19_seq, masked_seq, indiv_seq)])
             # run predictions and save only the HFF cell type predictions
             indiv_pred  = runAkitaPreds(indiv_seq)
-            indiv_pred_hff = indiv_pred[:,:,0][0]
+            ind_pred_HFF = ind_pred[:,:,0][0] # using [:,:,0][0] here for HFF
+            ind_pred_H1ESC = ind_pred[:,:,1][0] # using [:,:,1][0] here for H1ESC
+            ind_pred_GM12878 = ind_pred[:,:,2][0] # using [:,:,2][0] here for GM12878
+            ind_pred_IMR90 = ind_pred[:,:,3][0] # using [:,:,3][0] here for IMR90
+            ind_pred_HCT116 = ind_pred[:,:,4][0] # using [:,:,4][0] here for HCT116
         except:
             print("FAILED: %s at %s" % (chrm, start_loc))
             continue
@@ -171,9 +182,21 @@ for chrm,pos_list in chunks.items():
         # write output to files
         f_coverage.write("%s\t%s\t%s\n" % (chrm,start_loc,indiv_coverage))
         if not(lowCoverage):
-            f_3d.write(chrm + "\t" + str(start_loc) + "\t" + "\t".join([str(x) for x in indiv_pred_hff]) + "\n")
+            HFF_out.write(chr + "\t" + str(start_loc) + "\t" + "\t".join([str(x) for x in ind_pred_HFF]) + "\n")
+            H1ESC_out.write(chr + "\t" + str(start_loc) + "\t" + "\t".join([str(x) for x in ind_pred_H1ESC]) + "\n")
+            GM12878_out.write(chr + "\t" + str(start_loc) + "\t" + "\t".join([str(x) for x in ind_pred_GM12878]) + "\n")
+            IMR90_out.write(chr + "\t" + str(start_loc) + "\t" + "\t".join([str(x) for x in ind_pred_IMR90]) + "\n")
+            HCT116_out.write(chr + "\t" + str(start_loc) + "\t" + "\t".join([str(x) for x in ind_pred_HCT116]) + "\n")
         else:
-            f_3d.write(chrm + "\t" + str(start_loc) + "\t" + "NA\n")
+            HFF_out.write(chrm + "\t" + str(start_loc) + "\t" + "NA\n")
+            H1ESC_out.write(chrm + "\t" + str(start_loc) + "\t" + "NA\n")
+            GM12878_out.write(chrm + "\t" + str(start_loc) + "\t" + "NA\n")
+            IMR90_out.write(chrm + "\t" + str(start_loc) + "\t" + "NA\n")
+            HCT116_out.write(chrm + "\t" + str(start_loc) + "\t" + "NA\n")
 
-f_3d.close()
+HFF_out.close()
+H1ESC_out.close()
+GM12878_out.close()
+IMR90_out.close()
+HCT116_out.close()
 f_coverage.close()
