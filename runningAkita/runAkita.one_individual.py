@@ -145,7 +145,7 @@ for chrm,pos_list in chunks.items():
         try: # some input start locations won't work because when + 1Mb they are past the end of the chromosome stop
             # Fetch the fasta sequence
             print('chrm: ' + chrm)
-            print('start loc:' + start_loc)
+            # print('start loc: ' + start_loc)
             # indiv_seq = indiv_fasta_open.fetch(chrm, start_loc, start_loc+2**20).upper()
             # print('fetched fasta seq')
             #masked_seq = mask_fasta_open.fetch(chrm, start_loc, start_loc+2**20).upper() #for the masked
