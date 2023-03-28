@@ -138,16 +138,14 @@ for chrm,pos_list in chunks.items():
         #human19_fasta_open = pysam.Fastafile('/dors/capra_lab/data/dna/human/hg19/%s.fa' % chrm)
     except:
         print("Failed on chr: %s:" % chrm)
-        indiv_fasta_open = pysam.Fastafile(in_file_loc_indiv)
         continue
-
+        
     for start_loc in pos_list:
         print("starting predictions on %s" % start_loc)
         try: # some input start locations won't work because when + 1Mb they are past the end of the chromosome stop
             # Fetch the fasta sequence
             print('chrm: ' + chrm)
-            print('start loc:')
-            print(start_loc)
+            print('start loc:' + start_loc)
             indiv_seq = indiv_fasta_open.fetch(chrm, start_loc, start_loc+2**20).upper()
             print('fetched fasta seq')
             #masked_seq = mask_fasta_open.fetch(chrm, start_loc, start_loc+2**20).upper() #for the masked
@@ -160,10 +158,12 @@ for chrm,pos_list in chunks.items():
 
             # check if low coverage and then don't bother with calculating 3d predictions
             if (indiv_coverage < 0.99):
+                print("low coverage")
                 lowCoverage=True
                 f_coverage.write("%s\t%s\t%s\n" % (chrm,start_loc,indiv_coverage))
                 continue
             else:
+                print("high coverage")
                 lowCoverage=False
             print('checked if low coverage')
 
@@ -171,11 +171,13 @@ for chrm,pos_list in chunks.items():
             #indiv_fillMissing_seq = "".join([r if m == "N" else r if s == "N" else s for r, m, s in zip(human19_seq, masked_seq, indiv_seq)])
             # run predictions and save only the HFF cell type predictions
             indiv_pred  = runAkitaPreds(indiv_seq)
+            print("made predictions")
             ind_pred_HFF = ind_pred[:,:,0][0] # using [:,:,0][0] here for HFF
             ind_pred_H1ESC = ind_pred[:,:,1][0] # using [:,:,1][0] here for H1ESC
             ind_pred_GM12878 = ind_pred[:,:,2][0] # using [:,:,2][0] here for GM12878
             ind_pred_IMR90 = ind_pred[:,:,3][0] # using [:,:,3][0] here for IMR90
             ind_pred_HCT116 = ind_pred[:,:,4][0] # using [:,:,4][0] here for HCT116
+            print("split cell types")
         except:
             print("FAILED: %s at %s" % (chrm, start_loc))
             continue
