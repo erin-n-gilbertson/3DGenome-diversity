@@ -167,11 +167,13 @@ for chrm,pos_list in chunks.items():
                 lowCoverage=False
             print('checked if low coverage')
 
-            # # fill in missing sequence with human ref
-            # #indiv_fillMissing_seq = "".join([r if m == "N" else r if s == "N" else s for r, m, s in zip(human19_seq, masked_seq, indiv_seq)])
-            # # run predictions and save only the HFF cell type predictions
-            # indiv_pred  = runAkitaPreds(indiv_seq)
-            # print("made predictions")
+            # fill in missing sequence with human ref
+            #indiv_fillMissing_seq = "".join([r if m == "N" else r if s == "N" else s for r, m, s in zip(human19_seq, masked_seq, indiv_seq)])
+            # run predictions and save only the HFF cell type predictions
+            indiv_pred  = runAkitaPreds(indiv_seq)
+            print("made predictions")
+
+
             # ind_pred_HFF = ind_pred[:,:,0][0] # using [:,:,0][0] here for HFF
             # ind_pred_H1ESC = ind_pred[:,:,1][0] # using [:,:,1][0] here for H1ESC
             # ind_pred_GM12878 = ind_pred[:,:,2][0] # using [:,:,2][0] here for GM12878
