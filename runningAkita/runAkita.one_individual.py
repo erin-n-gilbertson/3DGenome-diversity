@@ -151,10 +151,10 @@ for chrm,pos_list in chunks.items():
             #masked_seq = mask_fasta_open.fetch(chrm, start_loc, start_loc+2**20).upper() #for the masked
             #human19_seq = human19_fasta_open.fetch(chrm, start_loc, start_loc+2**20).upper()
 
-            # # calculate coverage
-            # indiv_coverage = np.mean([ 0 if s == "N" else 1 for s in indiv_seq])
-            # print('calculated coverage')
-            # #masked_coverage = np.mean([ 0 if s == "N" else 1 for s in masked_seq]) # for the masked
+            # calculate coverage
+            indiv_coverage = np.mean([ 0 if s == "N" else 1 for s in indiv_seq])
+            print('calculated coverage')
+            #masked_coverage = np.mean([ 0 if s == "N" else 1 for s in masked_seq]) # for the masked
 
             # # check if low coverage and then don't bother with calculating 3d predictions
             # if (indiv_coverage < 0.99):
