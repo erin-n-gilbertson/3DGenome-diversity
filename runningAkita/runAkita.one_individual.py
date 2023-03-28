@@ -156,16 +156,16 @@ for chrm,pos_list in chunks.items():
             print('calculated coverage')
             #masked_coverage = np.mean([ 0 if s == "N" else 1 for s in masked_seq]) # for the masked
 
-            # # check if low coverage and then don't bother with calculating 3d predictions
-            # if (indiv_coverage < 0.99):
-            #     print("low coverage")
-            #     lowCoverage=True
-            #     f_coverage.write("%s\t%s\t%s\n" % (chrm,start_loc,indiv_coverage))
-            #     continue
-            # else:
-            #     print("high coverage")
-            #     lowCoverage=False
-            # print('checked if low coverage')
+            # check if low coverage and then don't bother with calculating 3d predictions
+            if (indiv_coverage < 0.99):
+                print("low coverage")
+                lowCoverage=True
+                f_coverage.write("%s\t%s\t%s\n" % (chrm,start_loc,indiv_coverage))
+                continue
+            else:
+                print("high coverage")
+                lowCoverage=False
+            print('checked if low coverage')
 
             # # fill in missing sequence with human ref
             # #indiv_fillMissing_seq = "".join([r if m == "N" else r if s == "N" else s for r, m, s in zip(human19_seq, masked_seq, indiv_seq)])
