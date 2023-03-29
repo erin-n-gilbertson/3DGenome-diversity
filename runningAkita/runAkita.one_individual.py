@@ -186,11 +186,11 @@ for chrm,pos_list in chunks.items():
         # write output to files
         f_coverage.write("%s\t%s\t%s\n" % (chrm,start_loc,indiv_coverage))
         if not(lowCoverage):
-            HFF_out.write(chr + "\t" + str(start_loc) + "\t" + "\t".join([str(x) for x in ind_pred_HFF]) + "\n")
-            H1ESC_out.write(chr + "\t" + str(start_loc) + "\t" + "\t".join([str(x) for x in ind_pred_H1ESC]) + "\n")
-            GM12878_out.write(chr + "\t" + str(start_loc) + "\t" + "\t".join([str(x) for x in ind_pred_GM12878]) + "\n")
-            IMR90_out.write(chr + "\t" + str(start_loc) + "\t" + "\t".join([str(x) for x in ind_pred_IMR90]) + "\n")
-            HCT116_out.write(chr + "\t" + str(start_loc) + "\t" + "\t".join([str(x) for x in ind_pred_HCT116]) + "\n")
+            HFF_out.write(chrm + "\t" + str(start_loc) + "\t" + "\t".join([str(x) for x in ind_pred_HFF]) + "\n")
+            H1ESC_out.write(chrm + "\t" + str(start_loc) + "\t" + "\t".join([str(x) for x in ind_pred_H1ESC]) + "\n")
+            GM12878_out.write(chrm + "\t" + str(start_loc) + "\t" + "\t".join([str(x) for x in ind_pred_GM12878]) + "\n")
+            IMR90_out.write(chrm + "\t" + str(start_loc) + "\t" + "\t".join([str(x) for x in ind_pred_IMR90]) + "\n")
+            HCT116_out.write(chrm + "\t" + str(start_loc) + "\t" + "\t".join([str(x) for x in ind_pred_HCT116]) + "\n")
         else:
             HFF_out.write(chrm + "\t" + str(start_loc) + "\t" + "NA\n")
             H1ESC_out.write(chrm + "\t" + str(start_loc) + "\t" + "NA\n")
