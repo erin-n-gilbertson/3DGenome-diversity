@@ -139,8 +139,6 @@ for chrm,pos_list in chunks.items():
     except:
         print("Failed on chr: %s:" % chrm)
         continue
-    if chrm != 'chr1':
-        pass
     for start_loc in pos_list:
         print("starting predictions on %s" % start_loc)
         try: # some input start locations won't work because when + 1Mb they are past the end of the chromosome stop
@@ -199,6 +197,7 @@ for chrm,pos_list in chunks.items():
             GM12878_out.write(chrm + "\t" + str(start_loc) + "\t" + "NA\n")
             IMR90_out.write(chrm + "\t" + str(start_loc) + "\t" + "NA\n")
             HCT116_out.write(chrm + "\t" + str(start_loc) + "\t" + "NA\n")
+        print("done loc")
 
 HFF_out.close()
 H1ESC_out.close()
