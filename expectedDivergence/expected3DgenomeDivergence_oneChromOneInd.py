@@ -27,55 +27,52 @@ FASTA_PATH = os.path.join(DATA_PATH, "genomes")
 
 OUT_DIR = os.path.join(RESULTS_PATH, "expectedDist")
 
+os.environ["CUDA_VISIBLE_DEVICES"] = '-1' ### run on CPU
+print(tf.__version__)
+if tf.__version__[0] == '1':
+    tf.compat.v1.enable_eager_execution()
+
+MODEL_DIR = '%s/basenji/manuscripts/akita/' % BIN_PATH
+AKITA_PARAMS = 'params.json'
+MODEL = 'model_best.h5'
+TARGETS = "targets.txt"
+STATS = "statistics.json"
+#Setting up Akita model
+### load params, specify model ###
+print('load params and model')
+params_file = os.path.join(MODEL_DIR, AKITA_PARAMS)
+model_file  = os.path.join(MODEL_DIR, MODEL)
+with open(params_file) as params_open:
+    params = json.load(params_open)
+    params_model = params['model']
+    params_train = params['train']
+
+seqnn_model = seqnn.SeqNN(params_model)
+
+### restore model ###
+print('restore model')
+seqnn_model.restore(model_file)
+
+print('read data paramenters')
+data_stats_file = os.path.join(MODEL_DIR, "data/%s" % STATS)
+with open(data_stats_file) as data_stats_open:
+    data_stats = json.load(data_stats_open)
+seq_length = data_stats['seq_length']
+target_length = data_stats['target_length']
+hic_diags =  data_stats['diagonal_offset']
+target_crop = data_stats['crop_bp'] // data_stats['pool_width']
+target_length1 = data_stats['seq_length'] // data_stats['pool_width']
+
+
+target_length1_cropped = target_length1 - 2*target_crop
+print('flattened representation length:', target_length)
+print('symmetrix matrix size:', '('+str(target_length1_cropped)+','+str(target_length1_cropped)+')')
+
 def main():
     mod_indiv = sys.argv[1]
     chrm = sys.argv[2]
-    setupAkitaModel()
     oneChromOneInd(mod_indiv, chrm)
 
-    return
-
-def setupAkitaModel():
-    os.environ["CUDA_VISIBLE_DEVICES"] = '-1' ### run on CPU
-    print(tf.__version__)
-    if tf.__version__[0] == '1':
-        tf.compat.v1.enable_eager_execution()
-
-    MODEL_DIR = '%s/basenji/manuscripts/akita/' % BIN_PATH
-    AKITA_PARAMS = 'params.json'
-    MODEL = 'model_best.h5'
-    TARGETS = "targets.txt"
-    STATS = "statistics.json"
-    #Setting up Akita model
-    ### load params, specify model ###
-    print('load params and model')
-    params_file = os.path.join(MODEL_DIR, AKITA_PARAMS)
-    model_file  = os.path.join(MODEL_DIR, MODEL)
-    with open(params_file) as params_open:
-        params = json.load(params_open)
-        params_model = params['model']
-        params_train = params['train']
-
-    seqnn_model = seqnn.SeqNN(params_model)
-
-    ### restore model ###
-    print('restore model')
-    seqnn_model.restore(model_file)
-
-    print('read data paramenters')
-    data_stats_file = os.path.join(MODEL_DIR, "data/%s" % STATS)
-    with open(data_stats_file) as data_stats_open:
-        data_stats = json.load(data_stats_open)
-    seq_length = data_stats['seq_length']
-    target_length = data_stats['target_length']
-    hic_diags =  data_stats['diagonal_offset']
-    target_crop = data_stats['crop_bp'] // data_stats['pool_width']
-    target_length1 = data_stats['seq_length'] // data_stats['pool_width']
-
-
-    target_length1_cropped = target_length1 - 2*target_crop
-    print('flattened representation length:', target_length)
-    print('symmetrix matrix size:', '('+str(target_length1_cropped)+','+str(target_length1_cropped)+')')
     return
 
 
