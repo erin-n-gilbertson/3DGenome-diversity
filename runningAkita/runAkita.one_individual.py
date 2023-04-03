@@ -39,6 +39,8 @@ config.read(configfile_name)
 GENOME_CHUNKS=config["FILE"]["GENOME_CHUNKS"]
 
 
+
+
 ### read sys.argv and determine which regions of the genome are considered ###
 indiv = sys.argv[1].strip()
 print(indiv)
