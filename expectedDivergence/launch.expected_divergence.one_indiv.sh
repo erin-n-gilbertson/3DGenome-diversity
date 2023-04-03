@@ -9,6 +9,8 @@
 
 #!/usr/bin/env python
 
+cd /wynton/group/capra/projects/modern_human_3Dgenome/bin/expectedDivergence
+
 echo "JOB_NAME: ${JOB_NAME}"
 echo "JOBID:  ${JOB_ID}"
 
