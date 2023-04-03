@@ -25,7 +25,7 @@ RESULTS_PATH = os.path.join(BASE_PATH, "results")  # where I analyze results
 
 FASTA_PATH = os.path.join(DATA_PATH, "genomes")
 
-OUT_DIR = os.path.join(RESULTS_PATH, "expectedDist")
+OUT_DIR = os.path.join(RESULTS_PATH, "expectedDiv")
 
 os.environ["CUDA_VISIBLE_DEVICES"] = '-1' ### run on CPU
 print(tf.__version__)
@@ -70,7 +70,9 @@ print('symmetrix matrix size:', '('+str(target_length1_cropped)+','+str(target_l
 
 def main():
     mod_indiv = sys.argv[1]
-    chrm = sys.argv[2]
+    print("mod_indiv: %s" % mod_indiv)
+    chrm = "chr%s" % sys.argv[2]
+    print("chr: %s" % chrm)
     oneChromOneInd(mod_indiv, chrm)
 
     return
