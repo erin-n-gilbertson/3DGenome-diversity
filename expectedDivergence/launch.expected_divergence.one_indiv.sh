@@ -4,7 +4,7 @@
 #$ -m a
 #$ -l h_rt=55:00:00
 #$ -l mem_free=10G
-#$ -o /wynton/group/capra/projects/modern_human_3Dgenome/stdout/expedctedDiv/
+#$ -o /wynton/group/capra/projects/modern_human_3Dgenome/stdout/expectedDiv/
 #$ -e /wynton/group/capra/projects/modern_human_3Dgenome/stdout/expectedDiv/
 
 #!/usr/bin/env python
