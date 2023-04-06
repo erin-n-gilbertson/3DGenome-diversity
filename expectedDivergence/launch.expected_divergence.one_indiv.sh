@@ -21,7 +21,7 @@ source ~/.bashrc
 load_conda
 conda activate modern3d
 
-MOD_INDIV="SAS_BEB_female_HG03007"
+MOD_INDIV="EAS_CDX_female_HG00759"
 
 ARRY=(1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22)
 
