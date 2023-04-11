@@ -12,7 +12,10 @@ echo "JOB_NAME: ${JOB_NAME}"
 
 source ~/.bash_profile
 source ~/.bashrc
-source /wynton/home/capra/egilbertson/envs/akita/bin/activate
+#source /wynton/home/capra/egilbertson/envs/akita/bin/activate
+
+load_conda
+conda activate modern3d
 
 source ~/bin/bash_utils/ini_parse
 
