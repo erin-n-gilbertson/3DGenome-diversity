@@ -20,7 +20,7 @@ config.read(configfile_name)
 
 def find_fastaFiles(indiv, chrm):
     fasta_dir = config["PATH"]["FASTA_PATH"]
-    if (indiv == 'hg38_reference') | indiv == ('GAGP_ancestral'):
+    if (indiv == 'hg38_reference') | (indiv == 'GAGP_ancestral'):
         in_file_loc = '%s/baselines/%s.fa' % (fasta_dir,indiv)
     
     elif indiv == 'hsmrca_ancestral':

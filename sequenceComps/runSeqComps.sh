@@ -6,7 +6,7 @@
 #$ -l mem_free=10G
 #$ -o /wynton/group/capra/projects/modern_human_3Dgenome/stdout/runSeqComps/
 #$ -e /wynton/group/capra/projects/modern_human_3Dgenome/stdout/runSeqComps/
-#$ -t 1-2504
+#$ -t 1-3
 
 
 echo "JOB_NAME: ${JOB_NAME}"
