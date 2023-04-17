@@ -27,7 +27,9 @@ def find_fastaFiles(indiv, chrm):
         in_file_loc = '%s/human_archaic_ancestor/human_archaic_ancestor_in_hg38_%s.fasta' % (fasta_dir,chrm)
 
     else:
-        in_file_loc = '%s/1KG/%s/%s_%s_hg38_full.fa' % (fasta_dir,indiv,chrm,indiv.split("_")[3])
+        pop = indiv.split('_')[0]
+        idi = indiv.split('_')[3]
+        in_file_loc = '%s/1KG/%s/%s/%s_%s_hg38_full.fa' % (fasta_dir,pop, indiv,chrm,idi)
 
     indiv_fasta_open = pysam.Fastafile(in_file_loc)
     print("find fasta")
