@@ -107,7 +107,7 @@ def oneChromOneInd(mod_indiv, chrm):
     anc_indiv_fasta_open = pysam.Fastafile(in_file_loc_anc_indiv)
     mod_indiv_fasta_open = pysam.Fastafile(in_file_loc_mod_indiv)
 
-    f = open("%s/%s_%s_empiricDist_test.tsv" % (OUT_DIR, mod_indiv,chrm),"w")
+    f = open("%s/%s_%s_empiricDist_remake.tsv" % (OUT_DIR, mod_indiv,chrm),"w")
 
     for start_loc in chunks[chrm]:
         anc_indiv_seq = anc_indiv_fasta_open.fetch(chrm, start_loc, start_loc+2**20).upper()
