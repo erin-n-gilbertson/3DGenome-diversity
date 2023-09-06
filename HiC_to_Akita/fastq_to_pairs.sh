@@ -16,7 +16,7 @@ mkdir QC_R2
 
 fastqc -t $nThreads $fastq1 -o $outdir/QC_R1
 fastqc -t $nThreads $fastq2 -o $outdir/QC_R2
-# bwa mem -t $nThreads -SP5M /wynton/group/capra/projects/modern_human_3Dgenome/data/genomes/hg38_reference.fa $fastq1 $fastq2 | samtools view -Shb - > $prefix.bam
+bwa mem -t $nThreads -SP5M /wynton/group/capra/projects/modern_human_3Dgenome/data/genomes/hg38_reference.fa $fastq1 $fastq2 | samtools view -Shb - > $prefix.bam
 # samtools view -h $prefix.bam | {
 # 	pairtools parse -c /wynton/group/capra/projects/modern_human_3Dgenome/data/genomes/hg38.chrom.bed --add-columns mapq
 # } | {
