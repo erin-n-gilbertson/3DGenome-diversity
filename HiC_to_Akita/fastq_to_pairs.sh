@@ -1,8 +1,7 @@
 #!/bin/bash
 
-source ~/.bashrc
-module load CBI fastqc bwa samtools 
-load_conda
+
+module load CBI fastqc bwa samtools miniconda3/4.12.0-py39
 conda activate modern3d
 
 fastq1=$1
