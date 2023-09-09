@@ -64,8 +64,9 @@ def main():
 			file_end = len(lines)
 		elif args.end is not None:
 			file_end = args.end
-			
-		lines = lines[args.start, file_end]
+		print("args.start: %s" % args.start)	
+		print("file_end: %s" % file_end)
+		lines = lines[args.start:file_end]
 		for line in lines:
 			line = line.split('\t')
 			
