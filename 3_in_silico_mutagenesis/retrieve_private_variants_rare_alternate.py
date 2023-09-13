@@ -24,7 +24,10 @@ def main():
 	# construct match line
 	match = []
 	for x in range(1,131):
-		if x in args.ids:
+		print(args.ids)
+		ids = args.ids - 4
+		print(ids)
+		if x in ids:
 			match.append(1)
 		else: 
 			match.append(0)
