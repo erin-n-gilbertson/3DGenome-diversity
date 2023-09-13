@@ -23,9 +23,9 @@ def main():
 	
 	# construct match line
 	match = []
-	for x in range(1,131):
+	for x in range(5,135):
 		print(args.ids)
-		ids = args.ids - 4
+		ids = args.ids
 		print(ids)
 		if x in ids:
 			match.append(1)
