@@ -2,6 +2,7 @@ from cooltools.lib.numutils import observed_over_expected, adaptive_coarsegrain
 from cooltools.lib.numutils import interpolate_bad_singletons, set_diag, interp_nan
 from astropy.convolution import Gaussian2DKernel
 from astropy.convolution import convolve
+import numpy as np
 
 def get_target(chrom,start,end,genome_hic_cool):
     pool_width = 2048
