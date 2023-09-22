@@ -1,6 +1,6 @@
 #!/bin/bash
 #$ -S /bin/bash       # the shell language when run via the job scheduler [IMPORTANT]
-#$ -l mem_free=10G     # job requires up to 1 GiB of RAM per slot
+#$ -l mem_free=2G     # job requires up to 1 GiB of RAM per slot
 #$ -l h_rt=72:00:00   # job requires up to 24 hours of runtime
 
 load_conda
