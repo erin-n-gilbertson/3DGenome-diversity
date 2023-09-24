@@ -3,6 +3,10 @@
 #$ -l mem_free=2G     # job requires up to 1 GiB of RAM per slot
 #$ -l h_rt=72:00:00   # job requires up to 24 hours of runtime
 
+
+source ~/.bash_profile
+source ~/.bashrc
+
 load_conda
 conda activate hic
 module load CBI fastqc bwa samtools 
