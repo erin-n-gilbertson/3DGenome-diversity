@@ -4,10 +4,9 @@
 #$ -l h_rt=72:00:00   # job requires up to 24 hours of runtime
 
 
-source ~/.bash_profile
-source ~/.bashrc
 
-load_conda
+
+module load CBI miniconda3/4.12.0-py39
 conda activate hic
 module load CBI fastqc bwa samtools 
 #conda activate modern3d
@@ -19,8 +18,8 @@ prefix=HG00864
 outdir=/wynton/group/capra/projects/modern_human_3Dgenome/data/experimental
 
 cd $outdir
-mkdir QC_R1
-mkdir QC_R2
+# mkdir QC_R1
+# mkdir QC_R2
 
 #fastqc -t ${NSLOTS} $fastq1 -o $outdir/QC_R1
 #fastqc -t ${NSLOTS} $fastq2 -o $outdir/QC_R2
