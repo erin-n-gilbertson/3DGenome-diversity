@@ -22,7 +22,7 @@ mkdir QC_R2
 #fastqc -t ${NSLOTS} $fastq2 -o $outdir/QC_R2
 #bwa index /wynton/group/capra/projects/modern_human_3Dgenome/data/genomes/hg38_reference.fa
 
-bwa mem -t ${NSLOTS} -SP5M /wynton/group/capra/projects/modern_human_3Dgenome/data/genomes/hg38_reference.fa $fastq1 $fastq2 | samtools view -Shb - > $prefix.bam
+#bwa mem -t ${NSLOTS} -SP5M /wynton/group/capra/projects/modern_human_3Dgenome/data/genomes/hg38_reference.fa $fastq1 $fastq2 | samtools view -Shb - > $prefix.bam
 samtools view -h $prefix.bam | {
 	pairtools parse -c /wynton/group/capra/projects/modern_human_3Dgenome/data/experimental/hg38.chromsizes --add-columns mapq
 } | {
