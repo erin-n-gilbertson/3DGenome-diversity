@@ -16,6 +16,10 @@ outdir=/wynton/group/capra/projects/modern_human_3Dgenome/data/experimental
 
 cd $outdir
 
-cooler cload pairix -s 2 --assembly hg38 -p ${NSLOTS} hg38.chromsizes:1000 $prefix.dedup.pairs.gz $prefix.cool
-cooler balance --max-iters 500 --convergence-policy store_final $prefix_1000.cool 
-cooler zoomify -n ${NSLOTS} --balance --balance-args '--max-iters 500 --convergence-policy store_final' -r 1000,2000,5000,10000,25000,50000,100000,250000,500000,1000000,2500000,5000000,10000000 -o $prefix_1000.mcool $prefix_1000.cool
+cooler cload pairix -s 2 --assembly hg38 -p ${NSLOTS} hg38.chromsizes:1000 $prefix.dedup.pairs.gz ${prefix}_1000.cool
+cooler balance --max-iters 500 --convergence-policy store_final ${prefix}_1000.cool 
+cooler zoomify -n ${NSLOTS} --balance --balance-args '--max-iters 500 --convergence-policy store_final' -r 1000,2000,5000,10000,25000,50000,100000,250000,500000,1000000,2500000,5000000,10000000 -o ${prefix}_1000.mcool ${prefix}_1000.cool
+
+cooler cload pairix -s 2 --assembly hg38 -p ${NSLOTS} hg38.chromsizes:2048 $prefix.dedup.pairs.gz ${prefix}_2048.cool
+cooler balance --max-iters 500 --convergence-policy store_final ${prefix}_2048.cool 
+cooler zoomify -n ${NSLOTS} --balance --balance-args '--max-iters 500 --convergence-policy store_final' -r 1000,2000,5000,10000,25000,50000,100000,250000,500000,1000000,2500000,5000000,10000000 -o ${prefix}_2048.mcool ${prefix}_2048.cool
