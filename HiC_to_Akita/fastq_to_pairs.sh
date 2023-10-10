@@ -11,8 +11,8 @@ conda activate hic
 module load CBI fastqc bwa samtools 
 #conda activate modern3d
 
-fastq1=HG00514__CGCTACAT-TAGTCTCG_HF35FDSXY_L004_001.R1.fastq.gz
-fastq2=HG00514__CGCTACAT-TAGTCTCG_HF35FDSXY_L004_001.R2.fastq.gz
+fastq1=HG00514_CGCTACAT-TAGTCTCG_HF35FDSXY_L004_001.R1.fastq.gz
+fastq2=HG00514_CGCTACAT-TAGTCTCG_HF35FDSXY_L004_001.R2.fastq.gz
 prefix=HG00514
 
 outdir=/wynton/group/capra/projects/modern_human_3Dgenome/data/experimental/HG00514
