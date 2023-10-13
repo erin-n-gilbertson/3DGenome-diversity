@@ -31,11 +31,18 @@ cd $outdir
 # } | {
 # 	pairtools sort --nproc ${NSLOTS} --memory 32G --compress-program lz4c --tmpdir $outdir --output $prefix.sam.pairs.gz
 # }
-# pairtools dedup --mark-dups --output-dups - --output-unmapped - --output $prefix.marked.sam.pairs.gz $prefix.sam.pairs.gz
+pairtools dedup --mark-dups --output-dups - --output-unmapped - --output $prefix.marked.sam.pairs.gz $prefix.sam.pairs.gz
+echo "done dedup line 34"
 pairix $prefix.marked.sam.pairs.gz
+echo "done pairix line 36"
 pairtools stats --cmd-in 'pbgzip -dc -n '${NSLOTS}'' -o $prefix.marked.pairs.stats $prefix.marked.sam.pairs.gz
+echo "done stats line 38"
 pairtools select '(pair_type == "UU") or (pair_type == "UR") or (pair_type == "RU")' --output-rest $prefix.unmapped.sam.pairs.gz --output temp.gz $prefix.marked.sam.pairs.gz
+echo "done select line 40"
 pairtools split --output-pairs temp1.gz temp.gz
+echo "done split line 42"
 pairtools select 'True' --chrom-subset /wynton/group/capra/projects/modern_human_3Dgenome/data/experimental/hg38.chromsizes -o $prefix.dedup.pairs.gz temp1.gz
+echo "done select line 44"
 pairix $prefix.dedup.pairs.gz
+echo "done pairix line 46"
 
