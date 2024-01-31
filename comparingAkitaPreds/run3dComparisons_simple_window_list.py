@@ -108,7 +108,7 @@ for i in range(max(len(lines1),len(lines2))): # loop through indexes of the long
   # If the position at the current index is the same in both files, just simply output the comparison data
   if (indiv1_chr == indiv2_chr) and (indiv1_pos == indiv2_pos):
     print((indiv1_chr, indiv1_pos))
-    if (indiv1_chr, indiv1_pos) in div_windows_tuples:
+    if (indiv1_chr, int(indiv1_pos)) in div_windows_tuples:
       mse, spearman = comparePreds(np.array(indiv1), np.array(indiv2))
       f_out.write("%s\t%s\t%s\t%s\n" % (indiv1_chr, indiv1_pos, mse, spearman))
       # mse, spearman, triangle_mse,triangle_spearman, insulation_spearman = comparePreds(np.array(indiv1), np.array(indiv2))
