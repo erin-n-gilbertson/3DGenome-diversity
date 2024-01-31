@@ -44,8 +44,8 @@ indivname2=sys.argv[1].split(" ")[1]
 print("Indiv1 = %s, Indiv2 = %s" % (indivname1, indivname2),flush=True)
 
 
-in_file_loc1 = '/wynton/group/capra/projects/modern_human_3Dgenome/data/akitaPreds/3dpreds/HFF_original'
-in_file_loc2 = '/wynton/group/capra/projects/modern_human_3Dgenome/data/akitaPreds/3dpreds/HFF_original'
+in_file_loc1 = '/wynton/group/capra/projects/modern_human_3Dgenome/data/akitaPreds/3dpreds/HFF_original/'
+in_file_loc2 = '/wynton/group/capra/projects/modern_human_3Dgenome/data/akitaPreds/3dpreds/HFF_original/'
 
 # if using gzip file read binary and use .decode() for l1 & l2 below (4x)
 if path.exists("%s3dpreds_%s.txt.gz" % (in_file_loc1, indivname1)):
