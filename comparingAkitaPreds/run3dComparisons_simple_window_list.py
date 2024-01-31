@@ -104,9 +104,10 @@ for i in range(max(len(lines1),len(lines2))): # loop through indexes of the long
   indiv2 = list(map(float,indiv2[2:]))
   divergent_windows = pd.read_csv('/wynton/group/capra/projects/modern_human_3Dgenome/data/divergent_windows_exp_distributions.txt')
   div_windows_tuples = list(zip(divergent_windows.chr, divergent_windows.windowStartPos))
-
+  print(div_windows_tuples)
   # If the position at the current index is the same in both files, just simply output the comparison data
   if (indiv1_chr == indiv2_chr) and (indiv1_pos == indiv2_pos):
+    print((indiv1_chr, indiv1_pos))
     if (indiv1_chr, indiv1_pos) in div_windows_tuples:
       mse, spearman = comparePreds(np.array(indiv1), np.array(indiv2))
       f_out.write("%s\t%s\t%s\t%s\n" % (indiv1_chr, indiv1_pos, mse, spearman))
