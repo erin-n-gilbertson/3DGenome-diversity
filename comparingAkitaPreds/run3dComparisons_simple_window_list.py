@@ -2,6 +2,7 @@
 
 print("Started python",flush=True)
 import numpy as np
+import pandas as pd
 from scipy import stats
 #from cooltools.lib.numutils import set_diag
 import sys
@@ -10,6 +11,7 @@ import warnings
 import os.path
 from os import path
 import gzip
+
 
 ### for converting from flattened upper-triangluar vector to symmetric matrix  ###
 
