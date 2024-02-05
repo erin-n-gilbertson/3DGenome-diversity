@@ -27,5 +27,5 @@ wndw=$(awk -F"," -v row=$SGE_TASK_ID 'NR == row+1 {print $2}' "$window_list")
 script="/wynton/group/capra/projects/modern_human_3Dgenome/bin/comparingAkitaPreds/pairwise_comparisons_by_window.py"
 
 
-python3 "$script" --chromosome "$chr" --window "$window"
+python3 "$script" --chromosome "$chr" --window "$wndw"
 echo "$chr: $wndw comparisons complete"
