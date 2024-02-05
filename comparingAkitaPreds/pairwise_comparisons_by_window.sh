@@ -23,7 +23,7 @@ cd /wynton/group/capra/projects/modern_human_3Dgenome/data/pairwise/divergent_wi
 # assign variables
 window_list="/wynton/group/capra/projects/modern_human_3Dgenome/data/divergent_windows_exp_distributions.txt"
 chr=$(awk -F"," -v row=$SGE_TASK_ID 'NR == row+1 {print $1}' "$window_list")
-wndw=$(awk -v row=$SGE_TASK_ID 'NR == row+1 {print $2}' "$window_list")
+wndw=$(awk -F"," -v row=$SGE_TASK_ID 'NR == row+1 {print $2}' "$window_list")
 script="/wynton/group/capra/projects/modern_human_3Dgenome/bin/comparingAkitaPreds/pairwise_comparisons_by_window.py"
 
 
