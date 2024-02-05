@@ -7,6 +7,7 @@ from scipy import stats
 from basenji import dataset, dna_io, seqnn
 from scipy import stats
 import pandas as pd
+import os
 
 def parse_args():
 	parser = argparse.ArgumentParser()
