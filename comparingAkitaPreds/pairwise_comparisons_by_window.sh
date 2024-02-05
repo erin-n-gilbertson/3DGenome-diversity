@@ -6,6 +6,17 @@
 #$ -o /wynton/group/capra/projects/modern_human_3Dgenome/stdout/comps/
 #$ -t 1-392
 
+
+echo "JOB_NAME: ${JOB_NAME}"
+echo "JOBID:  ${JOB_ID}"
+
+source ~/.bash_profile
+source ~/.bashrc
+#source /wynton/home/capra/egilbertson/envs/akita/bin/activate
+
+load_conda
+conda activate modern3d
+
 # change directories
 cd /wynton/group/capra/projects/modern_human_3Dgenome/data/pairwise/divergent_windows
 
