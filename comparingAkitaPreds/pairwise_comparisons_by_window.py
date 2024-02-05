@@ -8,6 +8,8 @@ from basenji import dataset, dna_io, seqnn
 from scipy import stats
 import pandas as pd
 import os
+import json
+import pysam
 
 def parse_args():
 	parser = argparse.ArgumentParser()
@@ -51,7 +53,7 @@ def comparePreds(individual_1, individual_2):
 def main():
     loadAkita()
     args = parse_args()
-    indivs = pd.read_csv('%s/reference/1KG_unrelated_indivs.txt' % DATA_PATH, index_col=0)
+    indivs = pd.read_csv('/wynton/group/capra/projects/modern_human_3Dgenome/data/reference/1KG_unrelated_indivs.txt', index_col=0)
     outfile = open(f'{args.chromosome}_{args.window}_comparisons.txt', 'w')
 
     for i in indivs['1KG']:
