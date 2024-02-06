@@ -46,7 +46,7 @@ def runAkitaPreds(seq):
     return test_pred_from_seq
 
 def comparePreds(individual_1, individual_2):
-    mse = np.mean(np.square(individual_1 - individual_2))
+    mse = np.mean(np.square(individual_1 - individual_2)) 
     spearman = stats.spearmanr(individual_1, individual_2)[0]
     return (mse, spearman)
 
@@ -56,7 +56,7 @@ def main():
     args = parse_args()
     indivs = pd.read_csv('/wynton/group/capra/projects/modern_human_3Dgenome/data/reference/1KG_unrelated_indivs.txt', index_col=0)
     preds = {}
-    for i in indivs['1KG']:
+    for i in indivs['1KG'][:10]:
         if path.exists('/wynton/group/capra/projects/modern_human_3Dgenome/data/genomes/1KG/%s/%s/%s_%s_hg38_full.fa' % (i.split('_')[0], i, args.chromosome, i.split('_')[-1])):
             i_fasta = pysam.Fastafile('/wynton/group/capra/projects/modern_human_3Dgenome/data/genomes/1KG/%s/%s/%s_%s_hg38_full.fa' % (i.split('_')[0], i, args.chromosome, i.split('_')[-1]))
             i_seq = i_fasta.fetch(args.chromosome, args.window, args.window+2**20).upper()
@@ -77,8 +77,8 @@ def main():
     triu = df.pivot(index='Col1', columns='Col2', values='divergence')
     tril = df.pivot(index='Col2', columns='Col1', values='divergence')
     sym = triu.fillna(tril)
-    sym.to_csv(f'{args.chromosome}_{args.window}_comparisons_symmetric.txt')
-    df.to_csv(f'{args.chromosome}_{args.window}_comparisons_long.txt')
+    sym.to_csv('/wynton/group/capra/projects/modern_human_3Dgenome/data/pairwise/divergent_windows/%s_%s_comparisons_symmetric.txt' % (args.chromosome, args.window))
+    df.to_csv('/wynton/group/capra/projects/modern_human_3Dgenome/data/pairwise/divergent_windows/%s_%s_comparisons_long.txt' % (args.chromosome, args.window))
 
 
 if __name__ == '__main__':
