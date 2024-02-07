@@ -75,7 +75,7 @@ def main():
     print(comps.keys())
     outfile = open( '/wynton/group/capra/projects/modern_human_3Dgenome/data/pairwise/divergent_windows/%s_%s_comparisons_dict.txt' % (args.chromosome, args.window), 'w' )
     for key, value in sorted(comps.items()):
-        outfile.write( key[0] + '\t' + key[1] + '\t' + value + '\n' )
+        outfile.write( str(key[0]) + '\t' + str(key[1]) + '\t' + str(value) + '\n' )
     # df = pd.Series(comps).rename_axis(['Col1', 'Col2']).reset_index(name='spearman')
     # df['divergence'] = 1- df['spearman']
     # df = df.drop(columns=['spearman'])
