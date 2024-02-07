@@ -69,14 +69,17 @@ def main():
     for i in preds.keys():
         for j in preds.keys():
             if (i != j) and ((i,j) not in comps.keys()):
+                print(i,j)
                 mse, spearman = comparePreds(preds[i], preds[j])
                 comps[(i,j)] = spearman
     df = pd.Series(comps).rename_axis(['Col1', 'Col2']).reset_index(name='spearman')
     df['divergence'] = 1- df['spearman']
     df = df.drop(columns=['spearman'])
+    print(df.shape)
     triu = df.pivot(index='Col1', columns='Col2', values='divergence')
     tril = df.pivot(index='Col2', columns='Col1', values='divergence')
     sym = triu.fillna(tril)
+    print(sym.shape)
     sym.to_csv('/wynton/group/capra/projects/modern_human_3Dgenome/data/pairwise/divergent_windows/%s_%s_comparisons_symmetric.txt' % (args.chromosome, args.window), sep='\t', index=False)
     df.to_csv('/wynton/group/capra/projects/modern_human_3Dgenome/data/pairwise/divergent_windows/%s_%s_comparisons_long.txt' % (args.chromosome, args.window), sep='\t', index=False)
 
