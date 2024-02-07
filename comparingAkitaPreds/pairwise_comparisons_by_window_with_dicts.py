@@ -66,11 +66,14 @@ def main():
             preds[i] = i_pred
 
     comps = {}
+    outfile = open( '/wynton/group/capra/projects/modern_human_3Dgenome/data/pairwise/divergent_windows/%s_%s_comparisons_dict.txt' % (args.chromosome, args.window), 'w' )
+    outfile.write( 'indiv1' + '\t' + 'indiv2' + '\t' + 'divergence' + '\n' )
     for i in preds.keys():
         for j in preds.keys():
             if (i != j) and ((i,j) not in comps.keys()):
                 mse, spearman = comparePreds(preds[i], preds[j])
                 comps[(i,j)] = spearman
+                outfile.write( str(i) + '\t' + str(j) + '\t' + str((1-spearman)) + '\n' )
     
     print(comps.keys())
     outfile = open( '/wynton/group/capra/projects/modern_human_3Dgenome/data/pairwise/divergent_windows/%s_%s_comparisons_dict.txt' % (args.chromosome, args.window), 'w' )
