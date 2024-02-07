@@ -56,7 +56,7 @@ def main():
     args = parse_args()
     indivs = pd.read_csv('/wynton/group/capra/projects/modern_human_3Dgenome/data/reference/1KG_unrelated_indivs.txt', index_col=0)
     preds = {}
-    for i in indivs['1KG'][:100]:
+    for i in indivs['1KG'][:1000]:
         if path.exists('/wynton/group/capra/projects/modern_human_3Dgenome/data/genomes/1KG/%s/%s/%s_%s_hg38_full.fa' % (i.split('_')[0], i, args.chromosome, i.split('_')[-1])):
             i_fasta = pysam.Fastafile('/wynton/group/capra/projects/modern_human_3Dgenome/data/genomes/1KG/%s/%s/%s_%s_hg38_full.fa' % (i.split('_')[0], i, args.chromosome, i.split('_')[-1]))
             i_seq = i_fasta.fetch(args.chromosome, args.window, args.window+2**20).upper()
@@ -76,6 +76,7 @@ def main():
     outfile = open( '/wynton/group/capra/projects/modern_human_3Dgenome/data/pairwise/divergent_windows/%s_%s_comparisons_dict.txt' % (args.chromosome, args.window), 'w' )
     for key, value in sorted(comps.items()):
         outfile.write( str(key[0]) + '\t' + str(key[1]) + '\t' + str(value) + '\n' )
+    outfile.close()
     # df = pd.Series(comps).rename_axis(['Col1', 'Col2']).reset_index(name='spearman')
     # df['divergence'] = 1- df['spearman']
     # df = df.drop(columns=['spearman'])

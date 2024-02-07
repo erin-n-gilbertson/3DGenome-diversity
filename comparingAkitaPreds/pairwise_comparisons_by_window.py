@@ -55,24 +55,23 @@ def main():
     args = parse_args()
     indivs = pd.read_csv('/wynton/group/capra/projects/modern_human_3Dgenome/data/reference/1KG_unrelated_indivs.txt', index_col=0)
     outfile = open(f'{args.chromosome}_{args.window}_comparisons.txt', 'w')
-
+    preds = {}
     for i in indivs['1KG']:
         i_fasta = pysam.Fastafile('/wynton/group/capra/projects/modern_human_3Dgenome/data/genomes/1KG/%s/%s/%s_%s_hg38_full.fa' % (i.split('_')[0], i, args.chromosome, i.split('_')[-1]))
         i_seq = i_fasta.fetch(args.chromosome, args.window, args.window+2**20).upper()
         i_pred = runAkitaPreds(i_seq)
         i_pred = i_pred[:,:,0][0]
         i_fasta.close()
-        
-        for j in indivs['1KG']:
-            if i != j:
-                j_fasta = pysam.Fastafile('/wynton/group/capra/projects/modern_human_3Dgenome/data/genomes/1KG/%s/%s/%s_%s_hg38_full.fa' % (j.split('_')[0], j, args.chromosome, j.split('_')[-1]))
-                j_seq = j_fasta.fetch(args.chromosome, args.window, args.window+2**20).upper()
-                j_fasta.close()
-                j_pred = runAkitaPreds(j_seq)
-                j_pred = j_pred[:,:,0][0]
-                mse, spearman = comparePreds(i_pred, j_pred)
-                outfile.write('{}\t{}\t{}\t{}\t{}\t{}\n'.format(i, j, args.chromosome, args.window, mse, spearman))
+        preds[i] = i_pred
 
+    comps = {}
+    for i in indivs['1KG']:
+        for j in indivs['1KG']:
+            if (i != j) and ((i,j) not in comps.keys())
+                mse, spearman = comparePreds(preds[i], preds[j])
+                comps[(i,j)] = spearman
+                outfile.write('{}\t{}\t{}\t{}\t{}\t{}\n'.format(i, j, args.chromosome, args.window, mse, spearman))
+    
     outfile.close()
 
 if __name__ == '__main__':
