@@ -1,7 +1,9 @@
 #!/bin/bash
 #$ -N runAkitaComps
-#$ -l h_rt=36:00:00 #3
+#$ -l h_rt=72:00:00 #3
 #$ -l mem_free=60G #80G300
+#$ -M erin.gilbertson@ucsf.edu
+#$ -m a
 #$ -e /wynton/group/capra/projects/modern_human_3Dgenome/stdout/comps/
 #$ -o /wynton/group/capra/projects/modern_human_3Dgenome/stdout/comps/
 #$ -t 1-392
