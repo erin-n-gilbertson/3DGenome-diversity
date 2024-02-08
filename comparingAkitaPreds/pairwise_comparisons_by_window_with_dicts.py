@@ -68,18 +68,24 @@ def main():
     comps = {}
     outfile = open( '/wynton/group/capra/projects/modern_human_3Dgenome/data/pairwise/divergent_windows/%s_%s_comparisons_dict.txt' % (args.chromosome, args.window), 'w' )
     outfile.write( 'indiv1' + '\t' + 'indiv2' + '\t' + 'divergence' + '\n' )
+    icount = 0
+    jcount = 0
     for i in preds.keys():
+        print("i count = " + str(icount))
         for j in preds.keys():
             if (i != j) and ((i,j) not in comps.keys()):
+                if jcount % 500 == 0:
+                    print("jcount = " + str(jcount))
                 mse, spearman = comparePreds(preds[i], preds[j])
                 comps[(i,j)] = spearman
                 outfile.write( str(i) + '\t' + str(j) + '\t' + str((1-spearman)) + '\n' )
-    
+                jcount +=1
+        icount += 1
     print(comps.keys())
-    outfile = open( '/wynton/group/capra/projects/modern_human_3Dgenome/data/pairwise/divergent_windows/%s_%s_comparisons_dict.txt' % (args.chromosome, args.window), 'w' )
-    for key, value in sorted(comps.items()):
-        outfile.write( str(key[0]) + '\t' + str(key[1]) + '\t' + str(value) + '\n' )
-    outfile.close()
+    # outfile = open( '/wynton/group/capra/projects/modern_human_3Dgenome/data/pairwise/divergent_windows/%s_%s_comparisons_dict.txt' % (args.chromosome, args.window), 'w' )
+    # for key, value in sorted(comps.items()):
+    #     outfile.write( str(key[0]) + '\t' + str(key[1]) + '\t' + str(value) + '\n' )
+    # outfile.close()
     # df = pd.Series(comps).rename_axis(['Col1', 'Col2']).reset_index(name='spearman')
     # df['divergence'] = 1- df['spearman']
     # df = df.drop(columns=['spearman'])
