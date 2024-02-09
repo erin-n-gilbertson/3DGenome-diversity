@@ -73,7 +73,7 @@ def main():
     for i in preds.keys():
         print("i count = " + str(icount))
         for j in preds.keys():
-            if (i != j) and ((i,j) not in comps.keys()):
+            if (i != j) and ((i,j) not in comps.keys()) and ((j,i) not in comps.keys()):
                 if jcount % 500 == 0:
                     print("jcount = " + str(jcount))
                 mse, spearman = comparePreds(preds[i], preds[j])
