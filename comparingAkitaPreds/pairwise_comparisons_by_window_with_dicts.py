@@ -19,7 +19,7 @@ def parse_args():
 	
 	parser.add_argument('--window', type = int, required = True, help = 'start position of window to compare')
      
-	parser.add_argument('--outpath', type = int, required = True, help = 'path to save output file')
+	parser.add_argument('--outpath', type = str, required = True, help = 'path to save output file')
 	args = parser.parse_args()
 	return args
 
