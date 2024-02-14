@@ -18,7 +18,8 @@ def parse_args():
 	parser.add_argument('--chromosome', type = str, required = True, help = 'chromosome of window to compare')
 	
 	parser.add_argument('--window', type = int, required = True, help = 'start position of window to compare')
-		
+     
+	parser.add_argument('--outpath', type = int, required = True, help = 'path to save output file')
 	args = parser.parse_args()
 	return args
 
@@ -66,7 +67,7 @@ def main():
             preds[i] = i_pred
 
     comps = {}
-    outfile = open( '/wynton/group/capra/projects/modern_human_3Dgenome/data/pairwise/divergent_windows/%s_%s_comparisons_dict.txt' % (args.chromosome, args.window), 'w' )
+    outfile = open( '%s/%s_%s_comparisons_dict.txt' % ( args.outpath, args.chromosome, args.window), 'w' )
     outfile.write( 'indiv1' + '\t' + 'indiv2' + '\t' + 'divergence' + '\n' )
     icount = 0
     jcount = 0
