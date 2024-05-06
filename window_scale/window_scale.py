@@ -118,7 +118,7 @@ def main():
     args = parse_args()
     loadAkita()
     i = args.indiv
-    e = args.window_size_exponent
+    e = int(args.window_size_exponent)
     window_size = 2**e
     mat_size = window_size/2048
     crop_size = mat_size - 2**(e-14)
