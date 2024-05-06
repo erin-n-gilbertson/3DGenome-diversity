@@ -7,7 +7,7 @@ import os
 import json
 from basenji import dataset, dna_io, seqnn
 import scipy.stats as stats
-
+import numpy as np
 
 BASE_PATH = '/wynton/group/capra/projects/modern_human_3Dgenome' # base directory level
 
@@ -56,6 +56,13 @@ def comparePreds(pred1, pred2):
     spearman = stats.spearmanr(pred1, pred2)[0]
     divergence = 1 - spearman
     return (mse, divergence)
+
+def set_diag(arr, x, i=0):
+    start = max(i, -arr.shape[1] * i)
+    stop = max(0, (arr.shape[1] - i)) * arr.shape[1]
+    step = arr.shape[1] + 1
+    arr.flat[start:stop:step] = x
+    return arr
 
 def from_upper_triu(vector_repr, matrix_len, num_diags):
     z = np.zeros((matrix_len,matrix_len))
