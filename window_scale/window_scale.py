@@ -170,8 +170,8 @@ def main():
         seq_idx0, seq_idx1 = (mat_size-crop_size)/2, (mat_size-crop_size)/2+crop_size
         for sw in range(num_subs):
 
-            i_pred_sw = i_pred_sw[idx0:idx1, idx0:idx1]
-            anc_pred_sw = anc_pred_sw[idx0:idx1, idx0:idx1]
+            i_pred_sw = sym_pred_i[idx0:idx1, idx0:idx1]
+            anc_pred_sw = sym_pred_anc[idx0:idx1, idx0:idx1]
 
             mse_sw, div_sw = comparePreds(flatten(anc_pred_sw).astype('float32'), flatten(i_pred_sw).astype('float32'))
             wlist += [seq_idx0*2048, seq_idx1*2048, mse_sw, div_sw]
