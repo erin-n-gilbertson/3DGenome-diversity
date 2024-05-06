@@ -128,7 +128,7 @@ def main():
     e = int(args.window_size_exponent)
     window_size = 2**e
     mat_size = window_size/2048
-    crop_size = mat_size - 2**(e-14)
+    crop_size = int(mat_size - 2**(e-14))
     divisor = 2**(20-e) * 2
     num_subs = divisor - 1
 
@@ -176,10 +176,10 @@ def main():
             mse_sw, div_sw = comparePreds(flatten(anc_pred_sw).astype('float32'), flatten(i_pred_sw).astype('float32'))
             wlist += [seq_idx0*2048, seq_idx1*2048, mse_sw, div_sw]
 
-            idx0 += crop_size/2
-            idx1 += crop_size/2
-            seq_idx0 += crop_size/2
-            seq_idx1 += crop_size/2
+            idx0 += int(crop_size/2)
+            idx1 += int(crop_size/2)
+            seq_idx0 += int(crop_size/2)
+            seq_idx1 += int(crop_size/2)
 
         df.append(wlist)
 
