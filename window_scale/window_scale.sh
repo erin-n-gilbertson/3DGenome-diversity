@@ -25,7 +25,7 @@ echo "SGE_TASK_ID:  ${SGE_TASK_ID}"
 
 #cd /wynton/group/capra/projects/modern_human_3Dgenome/data/reference/lists
 
-indiv=$(awk -v var="$SGE_TASK_ID" 'NR==row' /wynton/group/capra/projects/modern_human_3Dgenome/data/reference/lists/rep_indivs.txt)
+indiv=$(awk -v var="$SGE_TASK_ID" 'NR==var' /wynton/group/capra/projects/modern_human_3Dgenome/data/reference/lists/rep_indivs.txt)
 echo "indiv: ${indiv}"
 echo "window exponent: ${EXP}"
 

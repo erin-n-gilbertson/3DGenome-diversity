@@ -126,7 +126,7 @@ def main():
     num_subs = divisor - 1
 
     windows = pd.read_table('%s/intermediates/windows_to_keep.csv' % DATA_PATH, sep=',', index_col=0)
-    
+    print("indiv: %s" % i)
     df = []
     df.append(['window_start', 'window_end', 'mse', 'div'])
     for sw in range(num_subs):
@@ -144,7 +144,7 @@ def main():
         print(chr,window_start)
 
         i_fasta = pysam.Fastafile('%s/genomes/1KG/%s/%s/%s_%s_hg38_full.fa' % (DATA_PATH, i.split('_')[0], i, chr, i.split('_')[-1]))
-        
+
         anc_seq = get_anc_seq(chr, window_start)
         anc_pred = runAkitaPreds(anc_seq)
         anc_pred = anc_pred[:,:,0][0]
