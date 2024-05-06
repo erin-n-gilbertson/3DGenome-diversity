@@ -185,7 +185,7 @@ def main():
 
     i_fasta.close()
     df = pd.DataFrame(df)
-    df.to_csv(args.out, sep='\t', index=False)
+    df.to_csv("%s/window_scale/%s_%s.txt" % (DATA_PATH, i, e), sep='\t', index=False)
     
 
 
