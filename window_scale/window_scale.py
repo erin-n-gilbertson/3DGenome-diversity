@@ -24,17 +24,17 @@ COMP_PATH = os.path.join(DATA_PATH,"pairwise/reference")
 
 
 def parse_args():
-	parser = argparse.ArgumentParser()
-	
-	parser.add_argument(
-		"--indiv", type=str, required=True,
-		help="1KG individual to use")
+    parser = argparse.ArgumentParser()
 
-	parser.add_argument(
-		"--window_size_exponent", type=str, required=True,
-		help="window size for comparison, represented as the exponent for 2**n that will be used to define window size and related characteristics")
+    parser.add_argument(
+        "--indiv", type=str, required=True,
+        help="1KG individual to use")
 
-	return args
+    parser.add_argument(
+        "--window_size_exponent", type=str, required=True,
+        help="window size for comparison, represented as the exponent for 2**n that will be used to define window size and related characteristics")
+    args = parser.parse_args()
+    return args
 
 
 def get_anc_seq(chr, window_start):
