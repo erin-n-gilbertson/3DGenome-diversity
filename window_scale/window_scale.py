@@ -135,15 +135,15 @@ def main():
     windows = pd.read_table('%s/intermediates/windows_to_keep.csv' % DATA_PATH, sep=',', index_col=0)
     print("indiv: %s" % i)
     df = []
-    df.append(['window_start', 'window_end', 'mse', 'div'])
+    head = ['window_start', 'window_end', 'mse', 'div']
     for sw in range(num_subs):
         sub_start = 'sub_start_%s' % sw
         sub_end = 'sub_end_%s' % sw
         sub_mse = 'sub_mse_%s' % sw
         sub_div = 'sub_div_%s' % sw
-        df.append([sub_start, sub_end, sub_mse, sub_div])
+        head += [sub_start, sub_end, sub_mse, sub_div]
 
-
+    seq_idx0, seq_idx1 = (mat_size-crop_size)/2, (mat_size-crop_size)/2+crop_size
     for w in windows.index:
         wlist = []
         chr = windows.loc[w].chr
