@@ -143,7 +143,6 @@ def main():
         sub_div = 'sub_div_%s' % sw
         head += [sub_start, sub_end, sub_mse, sub_div]
 
-    seq_idx0, seq_idx1 = (mat_size-crop_size)/2, (mat_size-crop_size)/2+crop_size
     for w in windows.index:
         wlist = []
         chr = windows.loc[w].chr
@@ -174,7 +173,7 @@ def main():
             anc_pred_sw = sym_pred_anc[idx0:idx1, idx0:idx1]
 
             mse_sw, div_sw = comparePreds(flatten(anc_pred_sw).astype('float32'), flatten(i_pred_sw).astype('float32'))
-            wlist += [seq_idx0*2048, seq_idx1*2048, mse_sw, div_sw]
+            wlist += [window_start + (seq_idx0*2048), window_start + (seq_idx1*2048), mse_sw, div_sw]
 
             idx0 += int(crop_size/2)
             idx1 += int(crop_size/2)
