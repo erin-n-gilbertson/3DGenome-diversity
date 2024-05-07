@@ -31,4 +31,4 @@ echo "start: ${start}"
 echo "end: ${end}"
 
 # run
-python3 ../../bin/3_in_silico_mutagenesis/in_silico_mutagenesis.py --fasta human_archaic_ancestor  --input variants_in_non_divergent_windows_10AF.txt  --start "$start" --end "$end" --out non_divergent_windows_10AF_variants_"$SGE_TASK_ID".txt
+python3 ../../../bin/3_in_silico_mutagenesis/in_silico_mutagenesis.py --fasta human_archaic_ancestor  --input variants_in_non_divergent_windows_10AF.txt  --start "$start" --end "$end" --out non_divergent_windows_10AF_variants_"$SGE_TASK_ID".txt
