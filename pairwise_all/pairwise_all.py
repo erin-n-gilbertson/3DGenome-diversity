@@ -68,7 +68,7 @@ for w in list(windows.index):
     sym['AFR_ACB_female_HG01880'] = new_col.values
     dict_3d[w] = sym
 
-    pickle.dump( dict_3d, open( "dict_3d_all_pairs.p", "wb" ) )
-    pickle.dump( matrix_3d, open( "matrix_3d_all_pairs.p", "wb" ) )
+    pickle.dump( dict_3d, open( "%s/dict_3d_all_pairs.p" % COMP_PATH, "wb" ) )
+    pickle.dump( matrix_3d, open( "%s/matrix_3d_all_pairs.p" % COMP_PATH, "wb" ) )
 
 
