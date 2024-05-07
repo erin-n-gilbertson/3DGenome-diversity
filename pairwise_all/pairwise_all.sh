@@ -21,7 +21,7 @@ load_conda
 conda activate modern3d
 
 
-#cd /wynton/group/capra/projects/modern_human_3Dgenome/bin/pairwise_all
+cd /wynton/group/capra/projects/modern_human_3Dgenome
 
 
 python3 bin/pairwise_all/pairwise_all.py 
