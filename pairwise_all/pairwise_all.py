@@ -55,10 +55,10 @@ for w in list(windows.index):
     except:
         print("error on %s" % w)
 
-    if count%50 == 0:
-        print(count)
-    triu = df.pivot(index='indiv1', columns='indiv2', values='divergence')
-    tril = df.pivot(index='indiv2', columns='indiv1', values='divergence')
+
+    print(count)
+    triu = df.pivot(index='indiv1', columns='indiv2', values=w)
+    tril = df.pivot(index='indiv2', columns='indiv1', values=w)
     sym = triu.fillna(tril)
     new_col = sym.loc['AFR_ACB_female_HG01880'].T
     new_col = pd.concat([pd.Series([np.nan], index=[new_col.name]), new_col])
