@@ -40,6 +40,8 @@ COMP_PATH = os.path.join(DATA_PATH, "pairwise/all_windows")
 windows = pd.read_table('%s/intermediates/windows_to_keep.csv' % DATA_PATH, sep=',', index_col=[1,2]).drop(columns=['Unnamed: 0'])
 indivs = pd.read_csv('/wynton/group/capra/projects/modern_human_3Dgenome/data/reference/1KG_unrelated_indivs.txt', index_col=0)
 comp_list = list(combinations(list(indivs['1KG']), 2))
+df = pd.read_table('%s/chr9_9961472_comparisons_dict.txt' % COMP_PATH)
+
 count = 0
 dict_3d = {} 
 matrix_3d = pd.DataFrame(df[['indiv1','indiv2']])
