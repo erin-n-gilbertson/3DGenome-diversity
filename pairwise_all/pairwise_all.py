@@ -1,3 +1,4 @@
+print('python imports')
 import pandas as pd
 import numpy as np
 import seaborn as sns
@@ -16,6 +17,8 @@ from typing import Dict, Tuple, List, Union, Optional
 import os
 
 from itertools import combinations
+
+print('start python')
 #local
 BASE_PATH = "/".join(os.getcwd().split("/")) # base directory level
 
@@ -37,6 +40,7 @@ COMP_PATH = os.path.join(DATA_PATH, "pairwise/all_windows")
 
 
 # Create pickle data structures 3D by window
+print('setup data structures')
 windows = pd.read_table('%s/intermediates/windows_to_keep.csv' % DATA_PATH, sep=',', index_col=[1,2]).drop(columns=['Unnamed: 0'])
 indivs = pd.read_csv('/wynton/group/capra/projects/modern_human_3Dgenome/data/reference/1KG_unrelated_indivs.txt', index_col=0)
 comp_list = list(combinations(list(indivs['1KG']), 2))
@@ -45,7 +49,9 @@ df = pd.read_table('%s/chr9_9961472_comparisons_dict.txt' % COMP_PATH)
 count = 0
 dict_3d = {} 
 matrix_3d = pd.DataFrame(df[['indiv1','indiv2']])
+print('start looping')
 for w in list(windows.index):
+    print(w)
     try:
         df = pd.read_table('%s/%s_%s_comparisons_dict.txt' % (COMP_PATH, w[0], w[1]))
         df.columns = ['indiv1','indiv2',w]
@@ -70,7 +76,7 @@ for w in list(windows.index):
     sym['AFR_ACB_female_HG01880'] = new_col.values
     dict_3d[w] = sym
 
-    pickle.dump( dict_3d, open( "%s/dict_3d_all_pairs.p" % COMP_PATH, "wb" ) )
-    pickle.dump( matrix_3d, open( "%s/matrix_3d_all_pairs.p" % COMP_PATH, "wb" ) )
+pickle.dump( dict_3d, open( "%s/dict_3d_all_pairs.p" % COMP_PATH, "wb" ) )
+pickle.dump( matrix_3d, open( "%s/matrix_3d_all_pairs.p" % COMP_PATH, "wb" ) )
 
 
