@@ -106,7 +106,7 @@ def main():
             continue
 
     windows['seqComp'] = seqcomps
-    windows.to_csv("%s/SeqComps%s_%s_vs_%s.txt" % (args.window_size_exp, out_path,indivname1,indivname2))
+    windows.to_csv("%s/SeqComps%s_%s_vs_%s.txt" % (out_path,args.window_size_exp,indivname1,indivname2))
 
     return
 
