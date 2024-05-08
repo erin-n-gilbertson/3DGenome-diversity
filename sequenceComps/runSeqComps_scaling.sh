@@ -20,12 +20,12 @@ load_conda
 conda activate modern3d
 
 
-
-COMP_LIST=/wynton/group/capra/projects/modern_human_3Dgenome/data/reference/lists/rep_indivs.txt
+cd /wynton/group/capra/projects/modern_human_3Dgenome
+COMP_LIST=data/reference/lists/rep_indivs.txt
 
 indivs=$(awk -v var="$SGE_TASK_ID" 'NR==var' ${COMP_LIST})
 echo $indivs
 
-PYSCRIPT=runSeqComparisons_scaling.py
+PYSCRIPT=bin/runSeqComps/runSeqComparisons_scaling.py
 
-python3 ${PYSCRIPT} --indivs "$indivs" --window_size_exp "$EXP" > /wynton/group/capra/projects/modern_human_3Dgenome/stdout/runSeqComps/runSeqComps_"$SGE_TASK_ID".python.out
+python3 ${PYSCRIPT} --indivs "$indivs" --window_size_exp "$EXP" > stdout/runSeqComps/runSeqComps_"$SGE_TASK_ID".python.out
