@@ -26,6 +26,6 @@ COMP_LIST=data/reference/lists/rep_indivs.txt
 indivs=$(awk -v var="$SGE_TASK_ID" 'NR==var' ${COMP_LIST})
 echo $indivs
 
-PYSCRIPT=bin/runSeqComps/runSeqComparisons_scaling.py
+PYSCRIPT=bin/sequenceComps/runSeqComparisons_scaling.py
 
 python3 ${PYSCRIPT} --indivs "$indivs" --window_size_exp "$EXP" > stdout/runSeqComps/runSeqComps_"$SGE_TASK_ID".python.out
