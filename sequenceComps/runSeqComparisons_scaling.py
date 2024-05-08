@@ -27,13 +27,13 @@ def parse_args():
     parser = argparse.ArgumentParser()
 
     parser.add_argument(
-        "--indivs", type=str, required=True,
+        "--indiv", type=str, required=True,
         help="1KG individual to use")
 
     
     parser.add_argument(
         "--window_size_exp", type=str, required=True,
-        help="individual 2")
+        help="")
     args = parser.parse_args()
     return args
 
@@ -70,8 +70,8 @@ def find_fastaFiles(indiv, chrm):
 def main():
     args = parse_args()
     # input individuals
-    indivname1=args.indivs[0]
-    indivname2=args.indivs[1]
+    indivname1=args.indiv
+    indivname2='hsmrca_ancestral'
 
 
     print("Indiv1 = %s, Indiv2 = %s" % (indivname1, indivname2),flush=True)
