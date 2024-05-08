@@ -59,7 +59,7 @@ for w in list(windows.index):
         count +=1 
 
     except:
-        print("error on %s" % w)
+        print("error on %s, %s" % (w[0], w[1]))
 
 
     print(count)
