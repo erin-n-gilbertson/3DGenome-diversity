@@ -80,7 +80,7 @@ def main():
 
     windows = pd.read_table('%s/window_scale/windows%s.txt' % (DATA_PATH, args.window_size_exp))
     seqcomps = []
-    for w in windows.index():
+    for w in windows.index:
         chrm = windows.loc[w]['chr']
         start_loc = windows.loc[w]['sub_start']
         end_loc = windows.loc[w]['sub_end']
