@@ -82,15 +82,15 @@ def main():
     seqcomps = []
     for w in windows.index:
         chrm = windows.loc[w]['chr']
-        start_loc = windows.loc[w]['sub_start']
-        end_loc = windows.loc[w]['sub_end']
+        start_loc = int(windows.loc[w]['sub_start'])
+        end_loc = int(windows.loc[w]['sub_end'])
         try:
             indiv1_fasta_open = find_fastaFiles(indivname1, chrm)
             indiv2_fasta_open = find_fastaFiles(indivname2, chrm)
 
             print("starting sequence comparisons on %s" % start_loc,flush=True)
-            indiv1_seq = indiv1_fasta_open.fetch(chrm, start_loc, start_loc+2**20).upper()
-            indiv2_seq = indiv2_fasta_open.fetch(chrm, start_loc, start_loc+2**20).upper()
+            indiv1_seq = indiv1_fasta_open.fetch(chrm, start_loc, end_loc).upper()
+            indiv2_seq = indiv2_fasta_open.fetch(chrm, start_loc, end_loc).upper()
             print("length of seq1: %s, length of seq2: %s" % (str(len(indiv1_seq)), str(len(indiv2_seq))))
             # calculate coverage
             indiv1_coverage = np.mean([ 0 if s == "N" else 1 for s in indiv1_seq])
