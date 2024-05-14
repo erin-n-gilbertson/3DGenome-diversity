@@ -23,5 +23,5 @@ conda activate modern3d
 
 cd /wynton/group/capra/projects/modern_human_3Dgenome
 
-
-python3 bin/pairwise_all/pairwise_all.py 
+echo "call python"
+python3 bin/pairwise_all/pairwise_all.py > /wynton/group/capra/projects/modern_human_3Dgenome/stdout/pairwise_all.python.out
