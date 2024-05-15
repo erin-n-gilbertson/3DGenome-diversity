@@ -62,7 +62,7 @@ def main():
             print('set columns')
             df.columns = ['indiv1','indiv2',(wchr, wpos)]
             print('concat matrix3d')
-            matrix_3d = pd.concat([matrix_3d, df[w]],axis=1)
+            matrix_3d = pd.concat([matrix_3d, df[(wchr, wpos)]],axis=1)
             count +=1 
 
             print(count)
