@@ -67,8 +67,8 @@ def main():
 
 
         print(count)
-        triu = df.pivot(index='indiv1', columns='indiv2', values=[(wchr, wpos)])
-        tril = df.pivot(index='indiv2', columns='indiv1', values=[(wchr, wpos)])
+        triu = df.pivot(index='indiv1', columns='indiv2', values=(wchr, wpos))
+        tril = df.pivot(index='indiv2', columns='indiv1', values=(wchr, wpos))
         sym = triu.fillna(tril)
         new_col = sym.loc['AFR_ACB_female_HG01880'].T
         new_col = pd.concat([pd.Series([np.nan], index=[new_col.name]), new_col])
