@@ -83,3 +83,7 @@ def main():
     pickle.dump( dict_3d, open( "%s/dict_3d_all_pairs_%s.p" % (COMP_PATH, args.chromosome), "wb" ) )
     pickle.dump( matrix_3d, open( "%s/matrix_3d_all_pairs_%s.p" % (COMP_PATH, args.chromosome), "wb" ) )  
     return
+
+if __name__ == '__main__':
+    main()
+    
