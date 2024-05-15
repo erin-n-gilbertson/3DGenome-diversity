@@ -40,7 +40,7 @@ def main():
     args = parse_args()
     # Create pickle data structures 3D by window
     print('setup data structures')
-    windows = pd.read_table('%s/intermediates/windows_to_keep.csv' % DATA_PATH, sep=',', index_col=[1,2]).drop(columns=['Unnamed: 0'])
+    windows = pd.read_table('%s/intermediates/windows_to_keep.csv' % DATA_PATH, sep=',', index_col=0)
     #indivs = pd.read_csv('/wynton/group/capra/projects/modern_human_3Dgenome/data/reference/1KG_unrelated_indivs.txt', index_col=0)
     #comp_list = list(combinations(list(indivs['1KG']), 2))
     df = pd.read_table('%s/chr9_9961472_comparisons_dict.txt' % COMP_PATH)
@@ -86,4 +86,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    
