@@ -57,28 +57,32 @@ def main():
         wchr = windows.loc[w]['chr']
         wpos = windows.loc[w]['windowStartPos']
         try:
+            print('read df')
             df = pd.read_table('%s/%s_%s_comparisons_dict.txt' % (COMP_PATH, wchr, wpos))
+            print('set columns')
             df.columns = ['indiv1','indiv2',(wchr, wpos)]
+            print('concat matrix3d')
             matrix_3d = pd.concat([matrix_3d, df[w]],axis=1)
             count +=1 
 
+            print(count)
+            triu = df.pivot(index='indiv1', columns='indiv2', values=(wchr, wpos))
+            tril = df.pivot(index='indiv2', columns='indiv1', values=(wchr, wpos))
+            sym = triu.fillna(tril)
+            new_col = sym.loc['AFR_ACB_female_HG01880'].T
+            new_col = pd.concat([pd.Series([np.nan], index=[new_col.name]), new_col])
+            new_row = sym['SAS_STU_male_HG04229'].T
+            new_row = pd.concat([new_row, pd.Series([np.nan], index=[new_row.name])])
+            sym['AFR_ACB_female_HG01880'] = np.nan
+            sym = pd.concat([sym['AFR_ACB_female_HG01880'], sym[sym.columns[:-1]]], axis=1)
+            sym.loc['SAS_STU_male_HG04229'] = new_row.values
+            sym['AFR_ACB_female_HG01880'] = new_col.values
+            dict_3d[(wchr, wpos)] = sym
         except:
             print("error on %s, %s" % (wchr, wpos))
 
 
-        print(count)
-        triu = df.pivot(index='indiv1', columns='indiv2', values=(wchr, wpos))
-        tril = df.pivot(index='indiv2', columns='indiv1', values=(wchr, wpos))
-        sym = triu.fillna(tril)
-        new_col = sym.loc['AFR_ACB_female_HG01880'].T
-        new_col = pd.concat([pd.Series([np.nan], index=[new_col.name]), new_col])
-        new_row = sym['SAS_STU_male_HG04229'].T
-        new_row = pd.concat([new_row, pd.Series([np.nan], index=[new_row.name])])
-        sym['AFR_ACB_female_HG01880'] = np.nan
-        sym = pd.concat([sym['AFR_ACB_female_HG01880'], sym[sym.columns[:-1]]], axis=1)
-        sym.loc['SAS_STU_male_HG04229'] = new_row.values
-        sym['AFR_ACB_female_HG01880'] = new_col.values
-        dict_3d[(wchr, wpos)] = sym
+
 
     pickle.dump( dict_3d, open( "%s/dict_3d_all_pairs_%s.p" % (COMP_PATH, args.chromosome), "wb" ) )
     pickle.dump( matrix_3d, open( "%s/matrix_3d_all_pairs_%s.p" % (COMP_PATH, args.chromosome), "wb" ) )  
