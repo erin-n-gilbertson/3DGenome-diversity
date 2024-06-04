@@ -23,7 +23,7 @@ def main():
 	
 	# construct match line
 	match = []
-	for x in range(5,135):
+	for x in range(4,2460):
 		print(args.ids)
 		ids = args.ids
 		print(ids)

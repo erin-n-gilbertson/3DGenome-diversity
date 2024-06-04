@@ -11,7 +11,7 @@ cd ../../data/IDWs
 
 # set paths
 script_path="../../bin/3_in_silico_mutagenesis/retrieve_private_variants_rare_alternate.py"
-genotypes_path="../vcfs/one_zero_genotypes.txt"
+genotypes_path="../vcfs/one_zero_genotypes_all.txt"
 
 
 # echo "SGE_TASK_ID:  ${SGE_TASK_ID}"
@@ -29,11 +29,11 @@ genotypes_path="../vcfs/one_zero_genotypes.txt"
 
 echo "SGE_TASK_ID:  ${SGE_TASK_ID}"
 # assign variables using the SGE task ID
-id=$(awk -v row=$SGE_TASK_ID 'NR == row {print $1}' idw_mut_params.txt)
-chr=$(awk -v row=$SGE_TASK_ID 'NR == row {print $2}' idw_mut_params.txt)
-start=$(awk -v row=$SGE_TASK_ID 'NR == row {print $3}' idw_mut_params.txt)
-end=$(awk -v row=$SGE_TASK_ID 'NR == row {print $4}' idw_mut_params.txt)
-name=$(awk -v row=$SGE_TASK_ID 'NR == row {print $5}' idw_mut_params.txt)
+id=$(awk -v row=$SGE_TASK_ID 'NR == row {print $1}' idw_mut_params_all.txt)
+chr=$(awk -v row=$SGE_TASK_ID 'NR == row {print $2}' idw_mut_params_all.txt)
+start=$(awk -v row=$SGE_TASK_ID 'NR == row {print $3}' idw_mut_params_all.txt)
+end=$(awk -v row=$SGE_TASK_ID 'NR == row {print $4}' idw_mut_params_all.txt)
+name=$(awk -v row=$SGE_TASK_ID 'NR == row {print $5}' idw_mut_params_all.txt)
 echo "id: ${id}"
 echo "chr: ${chr}"
 echo "start: ${start}"
