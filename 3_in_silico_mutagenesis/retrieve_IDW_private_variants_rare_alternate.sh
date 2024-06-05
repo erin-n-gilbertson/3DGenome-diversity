@@ -7,11 +7,11 @@
 #$ -l mem_free=30G
 
 # change directories
-cd ../../data/IDWs
+cd ../../data/IDWs/all_indivs
 
 # set paths
 script_path="../../bin/3_in_silico_mutagenesis/retrieve_private_variants_rare_alternate.py"
-genotypes_path="../vcfs/one_zero_genotypes_all.txt"
+genotypes_path="../../vcfs/one_zero_all_indivs"
 
 
 # echo "SGE_TASK_ID:  ${SGE_TASK_ID}"
@@ -39,11 +39,12 @@ echo "chr: ${chr}"
 echo "start: ${start}"
 echo "end: ${end}"
 
+awk '$2 >= '$start' && $2 <= '$end'' "${genotypes_path}/${chr:3}_variants.txt" > "${chr}_${start}_allvars.txt"
 
 # run
-python3 "$script_path" --genotypes "$genotypes_path" --ids "$id" --out "${name}_${chr}_${start}.tmp" --region $chr $start $end
+python3 "$script_path" --genotypes "${chr}_${start}_allvars.txt" --ids "$id" --out "${name}_${chr}_${start}.tmp" --region $chr $start $end
 
 
 # concat .tmp files
-# for f in *.tmp >> IDW_variants_new.txt
+# for f in *.tmp >> IDW_variants_rare_alternate_all.txt
 # cd
