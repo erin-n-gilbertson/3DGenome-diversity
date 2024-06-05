@@ -20,15 +20,15 @@ load_conda
 conda activate modern3d
 
 # change directories
-cd ../../data/in_silico_mutagenesis/IDW
+cd ../../data/in_silico_mutagenesis/IDW/all_indivs
 
 
 echo "SGE_TASK_ID:  ${SGE_TASK_ID}"
 # assign variables using the SGE task ID
-start=$(awk -v row=$SGE_TASK_ID 'NR == row {print $1}' ISM_splits_idw_rare_alternate.txt)
-end=$(awk -v row=$SGE_TASK_ID 'NR == row {print $2}' ISM_splits_idw_rare_alternate.txt)
+start=$(awk -v row=$SGE_TASK_ID 'NR == row {print $1}' ISM_splits_idw_rare_alternate_all.txt)
+end=$(awk -v row=$SGE_TASK_ID 'NR == row {print $2}' ISM_splits_idw_rare_alternate_all.txt)
 echo "start: ${start}"
 echo "end: ${end}"
 
 # run
-python3 ../../../bin/3_in_silico_mutagenesis/in_silico_mutagenesis.py --fasta hg38_reference  --input ../../IDWs/IDW_variants_rare_alternate.txt  --start "$start" --end "$end" --out ism_scores_idw_rare_alternate_"$SGE_TASK_ID".txt
+python3 ../../../../bin/3_in_silico_mutagenesis/in_silico_mutagenesis.py --fasta hg38_reference  --input ../../../IDWs/all_indivs/IDW_variants_rare_alternate_all.txt  --start "$start" --end "$end" --out ism_scores_idw_rare_alternate_"$SGE_TASK_ID".txt
