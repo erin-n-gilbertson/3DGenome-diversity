@@ -10,7 +10,7 @@
 cd ../../data/IDWs/all_indivs
 
 # set paths
-script_path="../../bin/3_in_silico_mutagenesis/retrieve_private_variants_rare_alternate.py"
+script_path="../../../bin/3_in_silico_mutagenesis/retrieve_private_variants_rare_alternate.py"
 genotypes_path="../../vcfs/one_zero_all_indivs"
 
 
