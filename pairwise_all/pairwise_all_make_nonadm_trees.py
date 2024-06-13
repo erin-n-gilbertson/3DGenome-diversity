@@ -40,7 +40,7 @@ def make_dict_3d():
 
     return dict_3d
 
-def one_window_tree(dict3d, w, tree_summary, tree_complete, link_method, idx):
+def one_window_tree(dict_3d, w, tree_summary, tree_complete, link_method, idx):
         window_df = dict_3d[w].loc[idx][idx]
         length = len(idx)
         array = window_df.reindex(index=idx, columns=idx).fillna(0, downcast='infer').to_numpy()
@@ -120,8 +120,8 @@ def write_trees_to_file(trees, output_file):
 def main():
     indivs = pd.read_csv('/wynton/group/capra/projects/modern_human_3Dgenome/data/reference/1KG_unrelated_indivs.txt', index_col=0)
     windows = pd.read_table('%s/intermediates/windows_to_keep.csv' % DATA_PATH, sep=',', index_col=[1,2]).drop(columns=['Unnamed: 0'])
-    dict_3d = make_dict_3d()
-
+    # dict_3d = make_dict_3d()
+    dict_3d = pickle.load( open( "%s/dict_3d_all_pairs.p" % (COMP_PATH), "rb" ) )
     idx = list(indivs['1KG'])
     idx.remove('SAS_ITU_male_HG04060')
     sub_idx = []
