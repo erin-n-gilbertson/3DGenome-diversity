@@ -41,26 +41,29 @@ COMP_PATH = os.path.join(DATA_PATH, "pairwise/all_windows")
 #     return dict_3d
 
 def one_window_tree(dict_3d, w, link_method, idx):
-        window_df = dict_3d[w].loc[idx][idx]
-        length = len(idx)
-        array = window_df.reindex(index=idx, columns=idx).fillna(0, downcast='infer').to_numpy()
-        condensed = array[np.triu_indices(length, k = 1)]
-        Z = sch.linkage(condensed, method = link_method)
-        # dendrogram = sch.dendrogram(Z, labels=idx)
-        # whole_tree = [Z, dendrogram]
+        try:
+            window_df = dict_3d[w].loc[idx][idx]
+            length = len(idx)
+            array = window_df.reindex(index=idx, columns=idx).fillna(0, downcast='infer').to_numpy()
+            condensed = array[np.triu_indices(length, k = 1)]
+            Z = sch.linkage(condensed, method = link_method)
+            # dendrogram = sch.dendrogram(Z, labels=idx)
+            # whole_tree = [Z, dendrogram]
 
-        # cluster_sample_IDs = dendrogram['leaves']
-        # cluster_IDs = dendrogram['leaves_color_list']
-        # clusters_dict = dict(zip(cluster_sample_IDs, cluster_IDs))
+            # cluster_sample_IDs = dendrogram['leaves']
+            # cluster_IDs = dendrogram['leaves_color_list']
+            # clusters_dict = dict(zip(cluster_sample_IDs, cluster_IDs))
 
-        # cluster_IDs_list = []
-        # for key, value in sorted(clusters_dict.items()):
-        #         cluster_IDs_list.append(value)
+            # cluster_IDs_list = []
+            # for key, value in sorted(clusters_dict.items()):
+            #         cluster_IDs_list.append(value)
 
-        # top_tree_y = dendrogram['dcoord'][-1]
-        # window_stats = cluster_IDs_list + top_tree_y
+            # top_tree_y = dendrogram['dcoord'][-1]
+            # window_stats = cluster_IDs_list + top_tree_y
 
-
+        except:
+            print('error on: %s: %s ' % (w[0], w[1]))
+            return np.nan
         return Z
 
 def _scipy_tree_to_newick_list(node: ClusterNode, newick: List[str], parentdist: float, leaf_names: List[str]) -> List[str]:
