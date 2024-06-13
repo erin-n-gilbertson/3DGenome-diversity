@@ -6,7 +6,7 @@
 #$ -o /wynton/group/capra/projects/modern_human_3Dgenome/stdout/
 #$ -e /wynton/group/capra/projects/modern_human_3Dgenome/stdout/
 #$ -l h_rt=48:00:00
-#$ -l mem_free=100G
+#$ -l mem_free=300G
 
 
 # load conda environment
@@ -26,4 +26,4 @@ pwd
 
 
 echo "call python"
-python3 bin/pairwise_all/pairwise_all_make_nonadm_trees.py > stdout/pairwise_all_trees.python.out
+python3 bin/pairwise_all/pairwise_all_make_nonadm_trees.py
