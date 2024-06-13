@@ -26,4 +26,4 @@ pwd
 
 
 echo "call python"
-python3 bin/pairwise_all/pairwise_all_nonadm_trees.py > stdout/pairwise_all_trees.python.out
+python3 bin/pairwise_all/pairwise_all_make_nonadm_trees.py > stdout/pairwise_all_trees.python.out
