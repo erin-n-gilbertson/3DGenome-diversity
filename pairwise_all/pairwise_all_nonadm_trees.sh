@@ -5,9 +5,8 @@
 #$ -cwd
 #$ -o /wynton/group/capra/projects/modern_human_3Dgenome/stdout/
 #$ -e /wynton/group/capra/projects/modern_human_3Dgenome/stdout/
-#$ -l h_rt=144:00:00
+#$ -l h_rt=48:00:00
 #$ -l mem_free=100G
-#$ -t 1-22
 
 
 # load conda environment
