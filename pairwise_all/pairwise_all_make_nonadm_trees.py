@@ -22,46 +22,46 @@ RESULTS_PATH = os.path.join(BASE_PATH, "results")  # where I analyze results
 COMP_PATH = os.path.join(DATA_PATH, "pairwise/all_windows")
 
 
-def make_dict_3d():
-    print('make dict 3d')
-    dict_3d = {}
-    slices = [(1,5), (5,10), (10,15), (15,20), (20,23)]
+# def make_dict_3d():
+#     print('make dict 3d')
+#     dict_3d = {}
+#     slices = [(1,5), (5,10), (10,15), (15,20), (20,23)]
 
-    for i in slices:
-        print(i)
-        dicti = pickle.load( open( "%s/dict_3d_all_pairs_%s-%s.p" % (COMP_PATH, i[0], i[1]), "rb" ) )
-        dict_3d.update(dicti)
+#     for i in slices:
+#         print(i)
+#         dicti = pickle.load( open( "%s/dict_3d_all_pairs_%s-%s.p" % (COMP_PATH, i[0], i[1]), "rb" ) )
+#         dict_3d.update(dicti)
 
-    print('save dict 3d')
+#     print('save dict 3d')
 
-    pickle.dump( dict_3d, open( "%s/dict_3d_all_pairs.p" % (COMP_PATH), "wb" ) )
+#     pickle.dump( dict_3d, open( "%s/dict_3d_all_pairs.p" % (COMP_PATH), "wb" ) )
 
-    print('done make dict 3d')
+#     print('done make dict 3d')
 
-    return dict_3d
+#     return dict_3d
 
-def one_window_tree(dict_3d, w, tree_summary, tree_complete, link_method, idx):
+def one_window_tree(dict_3d, w, link_method, idx):
         window_df = dict_3d[w].loc[idx][idx]
         length = len(idx)
         array = window_df.reindex(index=idx, columns=idx).fillna(0, downcast='infer').to_numpy()
         condensed = array[np.triu_indices(length, k = 1)]
         Z = sch.linkage(condensed, method = link_method)
-        dendrogram = sch.dendrogram(Z, labels=idx)
-        whole_tree = [Z, dendrogram]
+        # dendrogram = sch.dendrogram(Z, labels=idx)
+        # whole_tree = [Z, dendrogram]
 
-        cluster_sample_IDs = dendrogram['leaves']
-        cluster_IDs = dendrogram['leaves_color_list']
-        clusters_dict = dict(zip(cluster_sample_IDs, cluster_IDs))
+        # cluster_sample_IDs = dendrogram['leaves']
+        # cluster_IDs = dendrogram['leaves_color_list']
+        # clusters_dict = dict(zip(cluster_sample_IDs, cluster_IDs))
 
-        cluster_IDs_list = []
-        for key, value in sorted(clusters_dict.items()):
-                cluster_IDs_list.append(value)
+        # cluster_IDs_list = []
+        # for key, value in sorted(clusters_dict.items()):
+        #         cluster_IDs_list.append(value)
 
-        top_tree_y = dendrogram['dcoord'][-1]
-        window_stats = cluster_IDs_list + top_tree_y
+        # top_tree_y = dendrogram['dcoord'][-1]
+        # window_stats = cluster_IDs_list + top_tree_y
 
 
-        return window_stats, whole_tree
+        return Z
 
 def _scipy_tree_to_newick_list(node: ClusterNode, newick: List[str], parentdist: float, leaf_names: List[str]) -> List[str]:
     """Construct Newick tree from SciPy hierarchical clustering ClusterNode
@@ -138,26 +138,29 @@ def main():
 
     print('cluster into trees')
     # Non admixed version
-    tree_summary = {}
-    tree_complete = {}
+    # tree_summary = {}
+    # tree_complete = {}
     #takes about 3 minutes 20 seconds +/-
+    trees = {}
     for i in range(len(list(windows.index))):
         w = list(windows.index)[i]
-        window_stats, whole_tree = one_window_tree(dict_3d, w, tree_summary, tree_complete, link_method='complete', idx=non_adm_ids)
-        tree_summary[w] = window_stats
-        tree_complete[w] = whole_tree
+        Z = one_window_tree(dict_3d, w, link_method='complete', idx=non_adm_ids)
+        T = Tree(to_newick(hc.to_tree(Z), non_adm_ids))
+        trees[w] = T
+        # tree_summary[w] = window_stats
+        # tree_complete[w] = whole_tree
 
         if i%100==0:
             print(i)
 
-    pickle.dump( tree_summary, open( "%s/tree_summary_nonadm.p" % (COMP_PATH), "wb" ) )
-    pickle.dump( tree_complete, open( "%s/tree_complete_nonadm.p" % (COMP_PATH), "wb" ) )
+    # pickle.dump( tree_summary, open( "%s/tree_summary_nonadm.p" % (COMP_PATH), "wb" ) )
+    # pickle.dump( tree_complete, open( "%s/tree_complete_nonadm.p" % (COMP_PATH), "wb" ) )
 
-    trees = {}
-    for w in list(windows.index):
-        Z = tree_complete[w][0]
-        T = Tree(to_newick(hc.to_tree(Z), non_adm_ids))
-        trees[w] = T
+    # trees = {}
+    # for w in list(windows.index):
+    #     Z = tree_complete[w][0]
+    #     T = Tree(to_newick(hc.to_tree(Z), non_adm_ids))
+    #     trees[w] = T
 
     output_file = "%s/trees_nonadm.txt" % COMP_PATH
     write_trees_to_file(trees, output_file)
