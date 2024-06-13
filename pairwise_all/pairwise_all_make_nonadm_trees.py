@@ -145,14 +145,15 @@ def main():
     for i in range(len(list(windows.index))):
         w = list(windows.index)[i]
         Z = one_window_tree(dict_3d, w, link_method='complete', idx=non_adm_ids)
-        T = Tree(to_newick(hc.to_tree(Z), non_adm_ids))
-        trees[w] = T
+        #T = Tree(to_newick(hc.to_tree(Z), non_adm_ids))
+        trees[w] =Z
         # tree_summary[w] = window_stats
         # tree_complete[w] = whole_tree
 
         if i%100==0:
             print(i)
-
+        
+    pickle.dump( trees, open( "%s/trees_nonadm_dict.p" % (COMP_PATH), "wb" ) )
     # pickle.dump( tree_summary, open( "%s/tree_summary_nonadm.p" % (COMP_PATH), "wb" ) )
     # pickle.dump( tree_complete, open( "%s/tree_complete_nonadm.p" % (COMP_PATH), "wb" ) )
 
