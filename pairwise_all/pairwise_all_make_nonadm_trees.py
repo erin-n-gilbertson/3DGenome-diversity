@@ -127,9 +127,50 @@ def main():
     dict_3d = pickle.load( open( "%s/dict_3d_all_pairs.p" % (COMP_PATH), "rb" ) )
     idx = list(indivs['1KG'])
     idx.remove('SAS_ITU_male_HG04060')
+    idx_wa = idx
+
+
+    hsmrca_gagp = pd.read_table('%s/3dcomp_hsmrca_ancestral_vs_GAGP_ancestral.txt' % DATA_PATH, index_col=[0,1])
+    hsmrca_gagp['div'] = 1-hsmrca_gagp['spearman']
+
+    anc_spear = pd.read_table('%s/comp_tables/anc_window_spearman.csv' % DATA_PATH
+                    , sep=',', header=[0,1,2,3], index_col=[0,1])
+    anc_div = 1-anc_spear
+    anc_div.columns = ['_'.join(col) for col in anc_div.columns.values]
+    anc_div = anc_div[idx]
+
+
+    gagp_spear = pd.read_table('%s/comp_tables/gagp_window_spearman.csv' % DATA_PATH
+                    , sep=',', header=[0,1,2,3], index_col=[0,1])
+
+    gagp_div = 1-gagp_spear
+    gagp_div.columns = ['_'.join(col) for col in gagp_div.columns.values]
+    gagp_div = gagp_div[idx]
+    gagp_div['hsmrca'] = hsmrca_gagp['div']
+
+    idx_hsmrca = idx_wa + ['hsmrca']
+    idx = idx_hsmrca + ['gagp']
+    
+    for w in dict_3d.keys():
+        b = anc_div.loc[[w]]
+        b = b.reset_index(drop=True).rename(index={0:'hsmrca'})
+        a = dict_3d[w].copy()
+        a = pd.concat([a[idx_wa].loc[idx_wa], b])
+        a['hsmrca'] = b.T['hsmrca']
+
+        c = gagp_div.loc[[w]]
+        c = c.reset_index(drop=True).rename(index={0:'gagp'})
+        a = pd.concat([a[idx_hsmrca].loc[idx_hsmrca], c])
+        a['gagp'] = c.T['gagp']
+
+        dict_3d[w] = a
+
     sub_idx = []
     for i in idx:
         sub_idx.append(i[4:7])
+    sub_idx = sub_idx[:-2]
+    sub_idx.append('hsmrca')
+    sub_idx.append('gagp')
 
     non_adm = []
     for i in range(len(sub_idx)):
@@ -138,6 +179,10 @@ def main():
             non_adm.append(i)
 
     non_adm_ids = [idx[i] for i in non_adm]
+
+
+
+
 
     print('cluster into trees')
     # Non admixed version
@@ -166,8 +211,8 @@ def main():
     #     T = Tree(to_newick(hc.to_tree(Z), non_adm_ids))
     #     trees[w] = T
 
-    output_file = "%s/trees_nonadm.txt" % COMP_PATH
-    write_trees_to_file(trees, output_file)
+    # output_file = "%s/trees_nonadm.txt" % COMP_PATH
+    # write_trees_to_file(trees, output_file)
     
     return
 
