@@ -124,23 +124,23 @@ def main():
     indivs = pd.read_csv('/wynton/group/capra/projects/modern_human_3Dgenome/data/reference/1KG_unrelated_indivs.txt', index_col=0)
     windows = pd.read_table('%s/intermediates/windows_to_keep.csv' % DATA_PATH, sep=',', index_col=[1,2]).drop(columns=['Unnamed: 0'])
     # dict_3d = make_dict_3d()
-    dict_3d = pickle.load( open( "%s/dict_3d_all_pairs.p" % (COMP_PATH), "rb" ) )
+    
     idx = list(indivs['1KG'])
     idx.remove('SAS_ITU_male_HG04060')
     idx_wa = idx
 
 
-    hsmrca_gagp = pd.read_table('%s/3dcomp_hsmrca_ancestral_vs_GAGP_ancestral.txt' % DATA_PATH, index_col=[0,1])
+    hsmrca_gagp = pd.read_table('%s/pairwise/hsmrca/3dcomp_hsmrca_ancestral_vs_GAGP_ancestral.txt' % DATA_PATH, index_col=[0,1])
     hsmrca_gagp['div'] = 1-hsmrca_gagp['spearman']
 
-    anc_spear = pd.read_table('%s/comp_tables/anc_window_spearman.csv' % DATA_PATH
+    anc_spear = pd.read_table('%s/comp_tables/anc_window_spearman.csv' % RESULTS_PATH
                     , sep=',', header=[0,1,2,3], index_col=[0,1])
     anc_div = 1-anc_spear
     anc_div.columns = ['_'.join(col) for col in anc_div.columns.values]
     anc_div = anc_div[idx]
 
 
-    gagp_spear = pd.read_table('%s/comp_tables/gagp_window_spearman.csv' % DATA_PATH
+    gagp_spear = pd.read_table('%s/comp_tables/gagp_window_spearman.csv' % RESULTS_PATH
                     , sep=',', header=[0,1,2,3], index_col=[0,1])
 
     gagp_div = 1-gagp_spear
@@ -150,6 +150,8 @@ def main():
 
     idx_hsmrca = idx_wa + ['hsmrca']
     idx = idx_hsmrca + ['gagp']
+    
+    dict_3d = pickle.load( open( "%s/dict_3d_all_pairs.p" % (COMP_PATH), "rb" ) )
     
     for w in dict_3d.keys():
         b = anc_div.loc[[w]]
