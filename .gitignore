@@ -4159,3 +4159,120 @@ lib/colt.jar
 lib/JSAP-2.1.jar
 lib/main.jar
 .DS_Store
+Ryder.ipynb
+activeNotebooks/.DS_Store
+activeNotebooks/anc_controls.bed
+activeNotebooks/ancestral_3D_modifying.txt
+activeNotebooks/ancestral_controls.txt
+activeNotebooks/Ashley_Rotation.ipynb
+activeNotebooks/clustering.ipynb
+activeNotebooks/DataSetup (erin.gilbertson@ucsf.edu).ipynb
+activeNotebooks/DataSetup.ipynb
+activeNotebooks/divergent_windows_all_comps.ipynb
+activeNotebooks/expected_divergence.ipynb
+activeNotebooks/experimental.ipynb
+activeNotebooks/Figure2.ipynb
+activeNotebooks/GENERATE_config_comparisons.ipynb
+activeNotebooks/idw_investigation.ipynb
+activeNotebooks/insilico_mutagenesis (erin.gilbertson@ucsf.edu).ipynb
+activeNotebooks/insilico_mutagenesis.ipynb
+activeNotebooks/liftover.ipynb
+activeNotebooks/non_additive_snv_effects.ipynb
+activeNotebooks/Pairwise_all.ipynb
+activeNotebooks/Pairwise_sequence.ipynb
+activeNotebooks/PIPELINE_Akita_predictions.ipynb
+activeNotebooks/pybedtools_troubleshoot.ipynb
+activeNotebooks/reference_3D_modifying.txt
+activeNotebooks/reference_controls.txt
+activeNotebooks/scaling_windows.ipynb
+activeNotebooks/upset.svg
+activeNotebooks/visualization_hic.ipynb
+activeNotebooks/visualize_maps_current.ipynb
+activeNotebooks/visualize_maps_erin.ipynb
+activeNotebooks/visualize_maps.ipynb
+activeNotebooks/Legacy/Untitled-checkpoint.ipynb
+Astral (erin.gilbertson@ucsf.edu)/fake_base_score_quartet_percent.log
+Astral (erin.gilbertson@ucsf.edu)/fake_base_score.log
+Astral (erin.gilbertson@ucsf.edu)/fake_base_scored_quartet_percent.tre
+Astral (erin.gilbertson@ucsf.edu)/fake_base_scored.tre
+Astral (erin.gilbertson@ucsf.edu)/fake_base.txt
+Astral (erin.gilbertson@ucsf.edu)/freqQuad.csv
+Astral (erin.gilbertson@ucsf.edu)/freqQuadVisualization.R
+Astral (erin.gilbertson@ucsf.edu)/seq_base_ones_scored_postprob.log
+Astral (erin.gilbertson@ucsf.edu)/seq_base_ones_scored_postprob.tree
+Astral (erin.gilbertson@ucsf.edu)/seq_base_ones_scored_quartet.log
+Astral (erin.gilbertson@ucsf.edu)/seq_base_ones_scored_quartet.tree
+Astral (erin.gilbertson@ucsf.edu)/seq_base_ones_scored.log
+Astral (erin.gilbertson@ucsf.edu)/seq_base_ones_scored.tree
+Astral (erin.gilbertson@ucsf.edu)/seq_base_ones.txt
+Astral (erin.gilbertson@ucsf.edu)/seq_base_score_quartet_percent.log
+Astral (erin.gilbertson@ucsf.edu)/seq_base_score.log
+Astral (erin.gilbertson@ucsf.edu)/seq_base_scored_quartet_percent.tre
+Astral (erin.gilbertson@ucsf.edu)/seq_base_scored.log
+Astral (erin.gilbertson@ucsf.edu)/seq_base_scored.tre
+Astral (erin.gilbertson@ucsf.edu)/seq_base_scored.tree
+Astral (erin.gilbertson@ucsf.edu)/archive/fake_base_score_quartet_percent.log
+Astral (erin.gilbertson@ucsf.edu)/archive/fake_base_score.log
+Astral (erin.gilbertson@ucsf.edu)/archive/fake_base_scored_quartet_percent.tre
+Astral (erin.gilbertson@ucsf.edu)/archive/fake_base_scored.tre
+Astral (erin.gilbertson@ucsf.edu)/archive/fake_base.txt
+Astral (erin.gilbertson@ucsf.edu)/archive/seq_base_score_quartet_percent.log
+Astral (erin.gilbertson@ucsf.edu)/archive/seq_base_score.log
+Astral (erin.gilbertson@ucsf.edu)/archive/seq_base_scored_quartet_percent.tre
+Astral (erin.gilbertson@ucsf.edu)/archive/seq_base_scored.tre
+basenji/bed.py
+basenji/blocks.py
+basenji/dataset.py
+basenji/dna_io.py
+basenji/emerald.py
+basenji/gene.py
+basenji/genedata.py
+basenji/genome.py
+basenji/gff.py
+basenji/layers.py
+basenji/metrics.py
+basenji/plots.py
+basenji/sad5.py
+basenji/seqnn.py
+basenji/stream.py
+basenji/trainer.py
+basenji/util.py
+basenji/vcf.py
+basenji/archive/accuracy.py
+basenji/archive/augmentation.py
+basenji/archive/ops.py
+basenji/archive/params.py
+basenji/archive/seqnn_util.py
+basenji/archive/stream.py
+basenji/archive/tfrecord_batcher.py
+HiC_to_Akita/pairs_to_cool_rep.sh
+runningAkita/runAkita.one_individual.py
+activeNotebooks/.DS_Store
+activeNotebooks/clustering.ipynb
+activeNotebooks/DataSetup.ipynb
+activeNotebooks/expected_divergence.ipynb
+activeNotebooks/experimental.ipynb
+activeNotebooks/Figure2.ipynb
+activeNotebooks/GENERATE_config_comparisons.ipynb
+activeNotebooks/idw_investigation.ipynb
+activeNotebooks/insilico_mutagenesis (erin.gilbertson@ucsf.edu).ipynb
+activeNotebooks/insilico_mutagenesis.ipynb
+activeNotebooks/Pairwise_sequence.ipynb
+activeNotebooks/PIPELINE_Akita_predictions.ipynb
+activeNotebooks/upset.svg
+activeNotebooks/visualize_maps_current.ipynb
+activeNotebooks/visualize_maps.ipynb
+activeNotebooks/Legacy/Untitled-checkpoint.ipynb
+Astral (erin.gilbertson@ucsf.edu)/fake_base_score_quartet_percent.log
+Astral (erin.gilbertson@ucsf.edu)/fake_base_score.log
+Astral (erin.gilbertson@ucsf.edu)/fake_base_scored_quartet_percent.tre
+Astral (erin.gilbertson@ucsf.edu)/fake_base_scored.tre
+Astral (erin.gilbertson@ucsf.edu)/fake_base.txt
+Astral (erin.gilbertson@ucsf.edu)/seq_base_score_quartet_percent.log
+Astral (erin.gilbertson@ucsf.edu)/seq_base_score.log
+Astral (erin.gilbertson@ucsf.edu)/seq_base_scored_quartet_percent.tre
+Astral (erin.gilbertson@ucsf.edu)/seq_base_scored.tre
+HiC_to_Akita/pairs_to_cool_rep.sh
+runningAkita/runAkita.one_individual.py
+runningAkita/runAkita.one_individual.py
+makeFASTA/make.genome.1KG.one_indiv.sh
