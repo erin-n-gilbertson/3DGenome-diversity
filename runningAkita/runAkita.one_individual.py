@@ -12,15 +12,6 @@ import json
 import configparser
 import subprocess
 
-os.environ["CUDA_VISIBLE_DEVICES"] = '-1' ### run on CPU
-
-import tensorflow as tf
-print(tf.__version__)
-if tf.__version__[0] == '1':
-    tf.compat.v1.enable_eager_execution()
-
-import numpy as np
-np.random.seed(1337)
 import pandas as pd
 import pysam
 import matplotlib.pyplot as plt
@@ -29,6 +20,18 @@ from cooltools.lib.numutils import set_diag
 from basenji import dataset, dna_io, seqnn
 from matplotlib.pyplot import xticks, yticks
 from scipy import stats
+
+import numpy as np
+
+os.environ["CUDA_VISIBLE_DEVICES"] = '-1' ### run on CPU
+
+import tensorflow as tf
+print(tf.__version__)
+if tf.__version__[0] == '1':
+    tf.compat.v1.enable_eager_execution()
+
+np.random.seed(1337)
+
 
 ## loading config
 configfile_name = sys.argv[2]

@@ -30,7 +30,7 @@ cd /wynton/group/capra/projects/modern_human_3Dgenome
 
 
 # assign variables, all windows
-window_list="/wynton/group/capra/projects/modern_human_3Dgenome/data/intermediates/windows_to_keep.csv"
+window_list="windows_to_keep.csv"
 chr=$(awk -F"," -v row=$SGE_TASK_ID 'NR == row+1 {print $2}' "$window_list")
 wndw=$(awk -F"," -v row=$SGE_TASK_ID 'NR == row+1 {print $3}' "$window_list")
 outpath='/wynton/group/capra/projects/modern_human_3Dgenome/data/pairwise/all_windows'

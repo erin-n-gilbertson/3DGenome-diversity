@@ -1,4 +1,4 @@
-#!/bin/bash
+'pr#!/bin/bash
 #$ -N retrieve_IDW_private_variants_SMBE
 #$ -cwd
 #$ -o /wynton/group/capra/projects/modern_human_3Dgenome/stdout/in_silico_mutagenesis/retrieve_variants_IDWs.out
