@@ -11,6 +11,9 @@
 
 ## path to config.ini file that specifies variables and parameters needed here.
 ## THIS IS THE ONLY THING THAT SHOULD HAVE TO CHANGE!!!
+
+CONFIGPATH='config_makeFASTA_1KG_SNVs.ini'
+
 source ~/bin/bash_utils/ini_parse
 
 
