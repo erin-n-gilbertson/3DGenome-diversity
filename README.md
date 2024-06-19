@@ -2,7 +2,8 @@
 
 This repository houses data and scripts used in the Human 3D Genome Diversity project.
 
-- The data directory contains many of the data used in the analysis. Due to space constraints, some of the larger files (e.g., FASTAs and VCFs), are not included here but the means to retrieve or generate such files is described in the directory README.md. 
+- The data directory contains many of the data used in the analysis. Due to space constraints, some of the larger files (e.g., FASTAs and VCFs), are not included here but the means to retrieve or generate such files is described in the directory README.md.
+- makeFASTA: contains scripts that generate pseudo-haploid sequences per individual from filtered genotypes.
 
 - TODO: describe other directories here
 
