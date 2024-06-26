@@ -7,5 +7,5 @@
 - expected_divergence: analysis and vizualization of expected divergence and evolutionary constraint data based on random sequence shuffles
 - experimental: experimental data validation and exploration
 - in_silico_mutagenesis: analysis of in silico mutagenesis results
-- 
+- visualize_maps: code for nicely visualizing predicted 3D contact maps. 
 
