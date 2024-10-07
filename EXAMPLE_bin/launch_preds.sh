@@ -16,7 +16,7 @@ source ~/.bashrc
 load_conda
 conda activate modern3d
 
-chrm=$(awk -v row=$SGE_TASK_ID 'NR == row {print $1}' windows.txt)
-pos=$(awk -v row=$SGE_TASK_ID 'NR == row {print $2}' windows.txt)
+chrm=$(awk -v row=$SGE_TASK_ID 'NR == row {print $1}' ../windows.txt)
+pos=$(awk -v row=$SGE_TASK_ID 'NR == row {print $2}' ../windows.txt)
 
 python --chrm $chrm --window_pos $pos example_individual_predictions.py
