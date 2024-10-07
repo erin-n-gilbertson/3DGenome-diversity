@@ -163,9 +163,9 @@ def get_max_div_inds(anc_div, windows):
 def one_window_pred_and_plot(w, most_div_ind_per_window, out_dir):
     maxind = most_div_ind_per_window.loc[[w]].ind.values[0]
 
-    ind_out = open((out_dir + '3d_predictions_HFF_%s.txt' % (maxind)),'w')
-    anc_out = open((out_dir + '3d_predictions_HFF_%s.txt' % ('human_archaic_hominin_ancestor')),'w')
-    ref_out = open((out_dir + '3d_predictions_HFF_%s.txt' % ('hg38_reference')),'w')
+    ind_out = open((out_dir + '%s_%s_3d_predictions_HFF_%s.txt' % (w[0], w[1], maxind)),'w')
+    anc_out = open((out_dir + '%s_%s_3d_predictions_HFF_%s.txt' % (w[0], w[1], 'human_archaic_hominin_ancestor')),'w')
+    ref_out = open((out_dir + '%s_%s_3d_predictions_HFF_%s.txt' % (w[0], w[1], 'hg38_reference')),'w')
 
     ind_seq = get_1KGseq(chr=w[0], window_start=w[1], ind=maxind)
     anc_seq = get_anc_seq(chr=w[0], window_start=w[1])
@@ -217,7 +217,7 @@ def main():
     anc_div = 1-anc_spear # we define 3D divergence as 1 minus the spearman correlation 
     windows = list(anc_div.index)
 
-    out_dir='akita_predictions/preds'
+    out_dir='akita_predictions/preds/'
 
     most_div_ind_per_window = get_max_div_inds(anc_div, windows)
 
