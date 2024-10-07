@@ -15,7 +15,7 @@ source ~/.bashrc
 
 load_conda
 conda activate modern3d
-cd /wynton/group/capra/projects/modern_human_3Dgenome/EXAMPLE
+cd /wynton/group/capra/projects/modern_human_3Dgenome/EXAMPLE/bin
 
 chrm=$(awk -v row=$SGE_TASK_ID 'NR == row {print $1}' ../windows.txt)
 pos=$(awk -v row=$SGE_TASK_ID 'NR == row {print $2}' ../windows.txt)
