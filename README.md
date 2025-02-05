@@ -1,7 +1,17 @@
 # Human 3D Genome Diversity
 
+## Making your own 3D genome predictions
+For those who want to make their own 3D genome predictions, we highly recommend checking out the fantastic work by Katie Gjoni in the Pollard lab. She has created a fantastic tool called SuPreMo (https://github.com/ketringjoni/SuPreMo) which allows for scalable in silico mutagenesis on the human reference, followed by predictions made with Akita. Katie's work is a valuable resource for the whole field and should make any future work much more approachable to new folks!
+
+Her paper is linked here: https://academic.oup.com/bioinformatics/article/40/6/btae340/7682378
+
+
+
+## Code from the paper
 This repository houses data and scripts used in the Human 3D Genome Diversity project.
 See also https://github.com/brandcm/Pan_3d_Genome/tree/main and https://github.com/emcarthur/neanderthal-3D-genome for related manuscripts and analyses. 
+
+
 
 - The data directory contains many of the data used in the analysis. Due to space constraints, some of the larger files (e.g., FASTAs and VCFs), are not included here but the means to retrieve or generate such files is described in the directory README.md.
 - basenji: copy of https://github.com/calico/basenji/tree/master to be used in generating Akita predictions. 
@@ -15,4 +25,4 @@ See also https://github.com/brandcm/Pan_3d_Genome/tree/main and https://github.c
 - scripts: other utility scripts
 - 3_in_silico_mutagenesis: scripts for in silico mutagenesis and subsequent 3d map prediction
 
-Do not hesitate to reach out with questions or comments on any aspect of this work: erin.gilbertson@ucsf.edu, tony@capralab.org.
+Do not hesitate to reach out with questions or comments on any aspect of this work: erin.gilbertson@yale.edu, tony@capralab.org.
