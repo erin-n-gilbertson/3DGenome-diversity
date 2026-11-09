@@ -1,7 +1,7 @@
 # Human 3D Genome Diversity
 
 ## Making your own 3D genome predictions
-For those who want to make their own 3D genome predictions, we highly recommend checking out the fantastic work by Katie Gjoni in the Pollard lab. She has created a fantastic tool called SuPreMo (https://github.com/ketringjoni/SuPreMo) which allows for scalable in silico mutagenesis on the human reference, followed by predictions made with Akita. Katie's work is a valuable resource for the whole field and should make any future work much more approachable to new folks!
+For those who want to make their own 3D genome predictions, we highly recommend checking out the fantastic work by Katie Gjoni in the Pollard lab. She has created a tool called SuPreMo (https://github.com/ketringjoni/SuPreMo) which allows for scalable in silico mutagenesis on the human reference, followed by predictions made with Akita. Katie's work is a valuable resource for the whole field and should make any future work much more approachable to new folks!
 
 Her paper is linked here: https://academic.oup.com/bioinformatics/article/40/6/btae340/7682378
 
